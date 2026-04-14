@@ -1,6 +1,6 @@
 {
   "name": "durag",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "where patterns emerge. Drop your data, find the waves.",
   "type": "module",
   "main": "dist/durag.umd.js",
@@ -52,8 +52,11 @@
     }
   },
   "devDependencies": {
-    "rollup": "^4.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
     "@rollup/plugin-terser": "^0.4.0",
-    "@rollup/plugin-node-resolve": "^15.0.0"
+    "rollup": "^4.0.0"
+  },
+  "dependencies": {
+    "simple-statistics": "^7.8.9"
   }
 }

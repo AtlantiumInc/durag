@@ -6,3 +6,4 @@ export { profileColumn, normalizers, chooseNormalizer, buildVectors } from './no
 export { CLUSTER_PALETTE, findNumericCols, findMrrCol, findNameCol, analyzeCluster, generateInsights, analyze } from './analyzer.js';
 export { durag } from './pipeline.js';
 export { ask } from './ask.js';
+export { detectOutcome, computePolarity, detectCompounds, enrich } from './intelligence.js';
