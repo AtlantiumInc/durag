@@ -1,166 +1,51 @@
-import { CLUSTER_PALETTE } from './analyzer.js';
-
 /**
- * Question → column mapping.
- * Maps natural language intent to data column patterns and scoring direction.
+ * durag ask() — polarity-based question answering
+ * No static intent map. Reads column names, infers polarity, answers any question.
  */
-const INTENT_MAP = [
-  // Churn / risk
-  { keywords: ['churn', 'cancel', 'leave', 'lose', 'at risk', 'at-risk', 'leaving', 'dropping off', 'about to leave'],
-    signals: [
-      { match: ['login', 'active', 'session', 'visit', 'engagement'], direction: 'low', weight: 3 },
-      { match: ['last_contact', 'last_touch', 'last_activity', 'days_since'], direction: 'high', weight: 2 },
-      { match: ['nps', 'satisfaction', 'score', 'rating'], direction: 'low', weight: 2 },
-      { match: ['delinquent', 'overdue', 'failed', 'failure'], direction: 'high', weight: 2 },
-      { match: ['cancel', 'churn', 'status'], direction: 'match', value: ['canceled', 'churned', 'inactive', 'false'], weight: 3 },
-    ]},
 
-  // Upsell / expansion
-  { keywords: ['upsell', 'expand', 'upgrade', 'grow', 'expansion', 'ready to buy', 'upsell opportunity'],
-    signals: [
-      { match: ['nps', 'satisfaction', 'score'], direction: 'high', weight: 3 },
-      { match: ['login', 'active', 'session', 'engagement'], direction: 'high', weight: 2 },
-      { match: ['product', 'feature', 'integration'], direction: 'low', weight: 2 },
-      { match: ['mrr', 'revenue', 'spend', 'value', 'amount'], direction: 'mid', weight: 1 },
-      { match: ['plan', 'tier'], direction: 'match', value: ['starter', 'basic', 'free', 'growth'], weight: 2 },
-    ]},
+// Polarity: is high good (+1) or bad (-1)?
+const GOOD_HIGH = ['revenue','mrr','spend','value','amount','balance','income','login','active','session','visit','engagement','nps','satisfaction','score','rating','product','feature','order','referr','recommend','volunteer','loyalty','retention','conversion','growth','profit','credit_score','tenure','enrolled','member','team','integration','classes','attended'];
+const BAD_HIGH = ['churn','cancel','leave','delinquent','overdue','failed','failure','complaint','ticket','support_call','refund','return','dispute','fraud','flag','suspicious','overdraft','crisis','emergency','risk','last_contact','last_touch','last_activity','days_since','last_login','last_order','incident','barrier','debt','loss','bounce','abandon'];
 
-  // High value / VIP
-  { keywords: ['best', 'top', 'vip', 'highest value', 'most valuable', 'champions', 'biggest', 'whale'],
-    signals: [
-      { match: ['mrr', 'revenue', 'spend', 'total_spent', 'value', 'amount', 'balance'], direction: 'high', weight: 4 },
-      { match: ['product', 'feature', 'order'], direction: 'high', weight: 1 },
-      { match: ['tenure', 'since', 'enrolled', 'created'], direction: 'high', weight: 1 },
-    ]},
-
-  // New / recent
-  { keywords: ['new', 'recent', 'just signed up', 'onboarding', 'fresh', 'just joined'],
-    signals: [
-      { match: ['tenure', 'since', 'enrolled', 'created', 'signup', 'first_order'], direction: 'low', weight: 4 },
-      { match: ['login', 'visit', 'order', 'activity'], direction: 'low', weight: 1 },
-    ]},
-
-  // Inactive / dormant / zombie
-  { keywords: ['inactive', 'dormant', 'zombie', 'sleeping', 'ghost', 'dead', 'quiet', 'silent', 'not using'],
-    signals: [
-      { match: ['login', 'active', 'session', 'visit', 'engagement', 'activity'], direction: 'low', weight: 4 },
-      { match: ['last_login', 'last_activity', 'last_order', 'days_since'], direction: 'high', weight: 3 },
-      { match: ['cancel', 'churn', 'status'], direction: 'match', value: ['active', 'true'], weight: 1 },
-    ]},
-
-  // Happy / satisfied
-  { keywords: ['happy', 'satisfied', 'love', 'loyal', 'engaged', 'advocates', 'promoters'],
-    signals: [
-      { match: ['nps', 'satisfaction', 'score', 'rating'], direction: 'high', weight: 4 },
-      { match: ['login', 'active', 'engagement', 'visit'], direction: 'high', weight: 2 },
-      { match: ['referr', 'recommend', 'referred_others'], direction: 'high', weight: 2 },
-      { match: ['volunteer', 'community'], direction: 'high', weight: 1 },
-    ]},
-
-  // Unhappy / at risk sentiment
-  { keywords: ['unhappy', 'angry', 'frustrated', 'complaining', 'detractors', 'low nps'],
-    signals: [
-      { match: ['nps', 'satisfaction', 'score', 'rating'], direction: 'low', weight: 4 },
-      { match: ['support', 'ticket', 'complaint', 'call'], direction: 'high', weight: 3 },
-      { match: ['refund', 'return', 'dispute'], direction: 'high', weight: 2 },
-    ]},
-
-  // Fraud / suspicious
-  { keywords: ['fraud', 'suspicious', 'anomaly', 'weird', 'unusual', 'outlier', 'strange'],
-    signals: [
-      { match: ['fraud', 'flag', 'suspicious', 'dispute'], direction: 'high', weight: 4 },
-      { match: ['overdraft', 'failure', 'failed', 'delinquent'], direction: 'high', weight: 3 },
-      { match: ['transaction', 'order', 'amount'], direction: 'high', weight: 1 },
-    ]},
-
-  // Need help / struggling
-  { keywords: ['struggling', 'need help', 'support heavy', 'high touch', 'crisis', 'at need'],
-    signals: [
-      { match: ['support', 'ticket', 'call', 'help'], direction: 'high', weight: 4 },
-      { match: ['crisis', 'emergency', 'incident'], direction: 'high', weight: 3 },
-      { match: ['income', 'balance', 'spend'], direction: 'low', weight: 1 },
-      { match: ['needs_met', 'satisfaction'], direction: 'low', weight: 2 },
-    ]},
-
-  // Similar to a specific entity (nearest neighbor)
-  { keywords: ['similar to', 'like', 'remind', 'looks like', 'same as'],
-    type: 'nearest_neighbor' },
-];
-
-/**
- * Score a row against signals using available columns.
- */
-function scoreRow(row, signals, numericCols, allRows) {
-  let score = 0;
-  let maxPossible = 0;
-  const reasons = [];
-
-  for (const signal of signals) {
-    // Find matching column
-    const col = numericCols.find(c => signal.match.some(m => c.toLowerCase().includes(m)));
-    if (!col) continue;
-
-    const val = parseFloat(row[col]);
-    if (isNaN(val)) continue;
-
-    // Get global stats for this column
-    const allVals = allRows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
-    const min = Math.min(...allVals), max = Math.max(...allVals);
-    const range = max - min || 1;
-    const normalized = (val - min) / range; // 0 to 1
-
-    const avg = allVals.reduce((a, b) => a + b, 0) / allVals.length;
-
-    maxPossible += signal.weight;
-
-    if (signal.direction === 'high') {
-      score += normalized * signal.weight;
-      if (val > avg * 1.3) reasons.push(`high ${col.replace(/^metadata[_.]/, '').replace(/_/g, ' ')} (${Math.round(val)} vs ${Math.round(avg)} avg)`);
-    } else if (signal.direction === 'low') {
-      score += (1 - normalized) * signal.weight;
-      if (val < avg * 0.7) reasons.push(`low ${col.replace(/^metadata[_.]/, '').replace(/_/g, ' ')} (${Math.round(val)} vs ${Math.round(avg)} avg)`);
-    } else if (signal.direction === 'mid') {
-      // Mid-range is interesting (not too high, not too low)
-      const midScore = 1 - Math.abs(normalized - 0.5) * 2;
-      score += midScore * signal.weight;
-    } else if (signal.direction === 'match') {
-      const strVal = String(row[col] || '').toLowerCase();
-      if (signal.value && signal.value.some(v => strVal.includes(v))) {
-        score += signal.weight;
-        reasons.push(`${col.replace(/^metadata[_.]/, '').replace(/_/g, ' ')} is ${row[col]}`);
-      }
-    }
-  }
-
-  // Also check non-numeric columns for 'match' signals
-  for (const signal of signals) {
-    if (signal.direction !== 'match') continue;
-    const col = Object.keys(row).find(c => signal.match.some(m => c.toLowerCase().includes(m)));
-    if (!col || numericCols.includes(col)) continue; // already handled above
-    const strVal = String(row[col] || '').toLowerCase();
-    if (signal.value && signal.value.some(v => strVal.includes(v))) {
-      maxPossible += signal.weight;
-      score += signal.weight;
-      reasons.push(`${col.replace(/^metadata[_.]/, '').replace(/_/g, ' ')} is ${row[col]}`);
-    }
-  }
-
-  return {
-    score: maxPossible > 0 ? score / maxPossible : 0,
-    reasons: [...new Set(reasons)].slice(0, 3),
-  };
+function getPolarity(colName) {
+  const lc = colName.toLowerCase().replace(/[_.-]/g, ' ');
+  for (const pat of BAD_HIGH) if (lc.includes(pat.replace(/_/g, ' '))) return -1;
+  for (const pat of GOOD_HIGH) if (lc.includes(pat.replace(/_/g, ' '))) return 1;
+  return 0;
 }
 
-/**
- * Find the entity name in a question for nearest-neighbor queries.
- */
-function extractEntity(question, rows, nameCol) {
-  const q = question.toLowerCase();
-  for (const row of rows) {
-    const name = String(row[nameCol] || '').toLowerCase();
-    if (name && name.length > 2 && q.includes(name)) return row;
+// Question sentiment
+const POS_WORDS = ['best','top','highest','most','biggest','strongest','happiest','loyal','engaged','healthy','valuable','active','satisfied','growing','ready','opportunity','advocates','promoters','vip','champion','whale'];
+const NEG_WORDS = ['worst','bottom','lowest','least','weakest','unhappy','angry','frustrated','risk','churn','cancel','leave','lose','inactive','dormant','zombie','quiet','silent','dead','struggling','crisis','fraud','suspicious','weird','anomaly','declining','dropping','failing','bad','poor','low','problem','issue','concern','danger','threat','need help','needs help','help','at risk','about to leave','disengaged','lapsed','stale','cold'];
+
+function questionSentiment(q) {
+  const lc = q.toLowerCase();
+  let pos = 0, neg = 0;
+  for (const w of POS_WORDS) if (lc.includes(w)) pos++;
+  for (const w of NEG_WORDS) if (lc.includes(w)) neg++;
+  if (neg > pos) return -1;
+  if (pos > neg) return 1;
+  return 0;
+}
+
+// Column relevance to question
+function columnRelevance(colName, question) {
+  const lc = colName.toLowerCase().replace(/[_.-]/g, ' ');
+  const words = question.toLowerCase().replace(/[?!.,;:'"]/g, '').split(/\s+/).filter(w => w.length > 2);
+  let score = 0;
+  for (const w of words) {
+    if (lc.includes(w)) score += 2;
+    if (w === 'churn' && (lc.includes('login') || lc.includes('cancel') || lc.includes('active') || lc.includes('engagement') || lc.includes('last'))) score += 1;
+    if (w === 'upsell' && (lc.includes('nps') || lc.includes('product') || lc.includes('plan') || lc.includes('feature'))) score += 1;
+    if ((w === 'happy' || w === 'satisfied') && (lc.includes('nps') || lc.includes('satisfaction') || lc.includes('score'))) score += 1;
+    if ((w === 'unhappy' || w === 'frustrated') && (lc.includes('nps') || lc.includes('ticket') || lc.includes('complaint') || lc.includes('support'))) score += 1;
+    if ((w === 'inactive' || w === 'dormant' || w === 'quiet' || w === 'disengaged' || w === 'engaged') && (lc.includes('login') || lc.includes('active') || lc.includes('visit') || lc.includes('last') || lc.includes('engagement') || lc.includes('session'))) score += 1;
+    if ((w === 'new' || w === 'recent') && (lc.includes('tenure') || lc.includes('enrolled') || lc.includes('created') || lc.includes('signup') || lc.includes('since'))) score += 1;
+    if ((w === 'fraud' || w === 'suspicious') && (lc.includes('fraud') || lc.includes('flag') || lc.includes('overdraft') || lc.includes('dispute'))) score += 1;
+    if ((w === 'struggling' || w === 'help' || w === 'crisis') && (lc.includes('crisis') || lc.includes('support') || lc.includes('ticket') || lc.includes('needs') || lc.includes('barrier'))) score += 1;
+    if ((w === 'value' || w === 'revenue' || w === 'money' || w === 'worst' || w === 'best') && (lc.includes('mrr') || lc.includes('revenue') || lc.includes('spend') || lc.includes('amount') || lc.includes('income') || lc.includes('balance'))) score += 1;
   }
-  return null;
+  return score;
 }
 
 /**
@@ -168,215 +53,113 @@ function extractEntity(question, rows, nameCol) {
  *
  * @param {string} question - Natural language question
  * @param {object} analysisResult - Output from durag() pipeline
- * @returns {object} { members, count, confidence, insight, reasons, mrrExposed, suggestedAction }
+ * @returns {object} { question, members, count, pct, confidence, insight, reasons, mrrExposed, suggestedAction }
  */
 export function ask(question, analysisResult) {
-  const { rows, headers, clusters, numericCols, mrrCol, nameCol, embedding } = analysisResult;
+  const { rows, headers, embedding, numericCols, mrrCol, nameCol } = analysisResult;
   const q = question.toLowerCase().trim();
+  const sentiment = questionSentiment(q);
 
-  // Find matching intent
-  let matchedIntent = null;
-  let bestMatchCount = 0;
+  // Build scoring plan from the data itself
+  const plan = [];
+  for (const col of (numericCols || [])) {
+    const polarity = getPolarity(col);
+    const relevance = columnRelevance(col, q);
+    if (polarity === 0 && relevance === 0) continue;
 
-  for (const intent of INTENT_MAP) {
-    if (intent.type === 'nearest_neighbor') {
-      // Check if it's a "similar to X" query
-      if (intent.keywords.some(k => q.includes(k))) {
-        const entity = extractEntity(question, rows, nameCol);
-        if (entity) {
-          return nearestNeighborQuery(entity, analysisResult);
-        }
+    let wantHigh;
+    if (sentiment === 1) wantHigh = polarity >= 0;
+    else if (sentiment === -1) wantHigh = polarity <= 0;
+    else wantHigh = polarity > 0;
+
+    // Only include if the question actually relates to this column
+    if (relevance === 0 && sentiment === 0) continue;
+    const weight = Math.max(1, relevance + Math.abs(polarity));
+    plan.push({ col, wantHigh, weight, polarity, relevance });
+  }
+
+  // Fallback: column name matching
+  if (plan.length === 0) {
+    const words = q.split(/\s+/).filter(w => w.length > 2);
+    for (const col of (numericCols || [])) {
+      const lc = col.toLowerCase().replace(/[_.-]/g, ' ');
+      if (words.some(w => lc.includes(w))) {
+        const wantsHigh = POS_WORDS.some(w => q.includes(w));
+        plan.push({ col, wantHigh: wantsHigh, weight: 2, polarity: 0, relevance: 1 });
       }
-      continue;
-    }
-
-    let matchCount = 0;
-    for (const kw of intent.keywords) {
-      if (q.includes(kw)) matchCount++;
-    }
-    if (matchCount > bestMatchCount) {
-      bestMatchCount = matchCount;
-      matchedIntent = intent;
     }
   }
 
-  if (!matchedIntent) {
-    // Fallback: try to match column names directly
-    return columnQuery(q, analysisResult);
+  if (plan.length === 0) {
+    const colNames = (numericCols || []).slice(0, 5).map(c => c.replace(/^metadata[_.]/, '').replace(/_/g, ' ')).join(', ');
+    return { question: q, count: 0, pct: 0, insight: `No columns in this dataset clearly relate to "${q}". The data has: ${colNames}${(numericCols || []).length > 5 ? '...' : ''}.`, members: [], memberScores: [], reasons: [], suggestedAction: '', confidence: 0, mrrExposed: 0 };
   }
 
-  // Score every row against the intent's signals
-  const scored = rows.map((row, i) => {
-    const { score, reasons } = scoreRow(row, matchedIntent.signals, numericCols || [], rows);
-    return { row, index: i, score, reasons };
+  // Pre-compute column stats
+  const colStats = {};
+  for (const { col } of plan) {
+    const vals = rows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
+    const mn = Math.min(...vals), mx = Math.max(...vals), rng = mx - mn || 1;
+    const avg = vals.reduce((a, b) => a + b, 0) / vals.length;
+    colStats[col] = { mn, mx, rng, avg };
+  }
+
+  // Score every row
+  const scored = rows.map(row => {
+    let score = 0, maxP = 0;
+    const reasons = [];
+    for (const { col, wantHigh, weight } of plan) {
+      const val = parseFloat(row[col]);
+      if (isNaN(val)) continue;
+      const s = colStats[col];
+      const norm = (val - s.mn) / s.rng;
+      maxP += weight;
+      const cn = col.replace(/^metadata[_.]/, '').replace(/_/g, ' ');
+      if (wantHigh) {
+        score += norm * weight;
+        if (val > s.avg * 1.3) reasons.push(`high ${cn} (${Math.round(val)} vs ${Math.round(s.avg)} avg)`);
+      } else {
+        score += (1 - norm) * weight;
+        if (val < s.avg * 0.7) reasons.push(`low ${cn} (${Math.round(val)} vs ${Math.round(s.avg)} avg)`);
+      }
+    }
+    return { row, score: maxP > 0 ? score / maxP : 0, reasons: [...new Set(reasons)].slice(0, 4) };
   });
-
   scored.sort((a, b) => b.score - a.score);
 
-  // Find a natural threshold — top scoring group
   const topScore = scored[0]?.score || 0;
   const threshold = Math.max(topScore * 0.6, 0.3);
   const members = scored.filter(s => s.score >= threshold);
 
-  // Aggregate reasons
   const allReasons = {};
-  for (const m of members) {
-    for (const r of m.reasons) {
-      allReasons[r] = (allReasons[r] || 0) + 1;
-    }
-  }
-  const topReasons = Object.entries(allReasons)
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 3)
-    .map(([reason, count]) => `${reason} (${count}/${members.length})`);
+  for (const m of members) for (const r of m.reasons) allReasons[r] = (allReasons[r] || 0) + 1;
+  const topReasons = Object.entries(allReasons).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([r, c]) => `${r} (${c}/${members.length})`);
 
-  // MRR exposure
-  let mrrExposed = 0;
-  if (mrrCol) {
-    mrrExposed = members.reduce((s, m) => s + (parseFloat(m.row[mrrCol]) || 0), 0);
-  }
-
-  // Avg confidence
-  const avgScore = members.length > 0
-    ? members.reduce((s, m) => s + m.score, 0) / members.length
-    : 0;
-
-  // Generate insight
+  const avgScore = members.length > 0 ? members.reduce((s, m) => s + m.score, 0) / members.length : 0;
   const pct = Math.round(members.length / rows.length * 100);
-  let insight = `${members.length} customers (${pct}%) match "${question}".`;
-  if (mrrCol && mrrExposed > 0) {
-    insight += ` $${Math.round(mrrExposed).toLocaleString()} revenue involved.`;
-  }
-  if (topReasons.length > 0) {
-    insight += ` Primary signal: ${topReasons[0]}.`;
-  }
+  const mrrExposed = mrrCol ? Math.round(members.reduce((s, m) => s + (parseFloat(m.row[mrrCol]) || 0), 0)) : 0;
 
-  // Suggested action based on intent
-  const intentKeyword = matchedIntent.keywords[0];
-  const actions = {
-    churn: 'trigger re-engagement sequence targeting the primary risk factor',
-    upsell: 'create upsell tasks for account managers with specific product recommendations',
-    best: 'schedule executive business reviews to strengthen these relationships',
-    new: 'ensure onboarding sequence is active and monitor first-30-day engagement',
-    inactive: 'send reactivation campaign and flag for CS review if no response in 7 days',
-    happy: 'request referrals and case studies from this group',
-    unhappy: 'prioritize support outreach and schedule recovery calls',
-    fraud: 'escalate to review queue with transaction details',
-    struggling: 'connect with case manager and assess resource needs',
-  };
-  const suggestedAction = actions[intentKeyword] || 'review these customers and determine next steps';
+  let insight = `${members.length} customers (${pct}%) match "${question}".`;
+  if (mrrCol && mrrExposed > 0) insight += ` $${mrrExposed.toLocaleString()} revenue involved.`;
+  if (topReasons.length > 0) insight += ` Primary signal: ${topReasons[0]}.`;
+
+  const topCols = plan.sort((a, b) => b.weight - a.weight).slice(0, 2).map(p => p.col.replace(/^metadata[_.]/, '').replace(/_/g, ' '));
+  let suggestedAction;
+  if (sentiment === -1) suggestedAction = `investigate and intervene on ${topCols[0] || 'key metrics'} — these customers need attention`;
+  else if (sentiment === 1) suggestedAction = `strengthen relationships with this group — they drive outsized ${topCols[0] || 'value'}`;
+  else suggestedAction = `review these ${members.length} customers by ${topCols.join(' and ') || 'their distinguishing metrics'}`;
 
   return {
-    question,
+    question: q,
     members: members.map(m => m.row),
-    memberScores: members.map(m => ({ id: m.row[nameCol] || m.row[headers[0]], score: Math.round(m.score * 100), reasons: m.reasons })),
+    memberScores: members.map(m => ({ score: Math.round(m.score * 100), reasons: m.reasons })),
     count: members.length,
     total: rows.length,
     pct,
     confidence: Math.round(avgScore * 100),
     reasons: topReasons,
     insight,
-    mrrExposed: Math.round(mrrExposed),
+    mrrExposed,
     suggestedAction,
-  };
-}
-
-/**
- * Nearest neighbor query: "who's similar to X?"
- */
-function nearestNeighborQuery(targetRow, analysisResult) {
-  const { rows, headers, embedding, nameCol, mrrCol } = analysisResult;
-  const targetIdx = rows.indexOf(targetRow);
-  if (targetIdx < 0) return { members: [], count: 0, insight: 'Customer not found.' };
-
-  const targetEmb = embedding[targetIdx];
-
-  // Compute distances in embedding space
-  const distances = rows.map((row, i) => {
-    if (i === targetIdx) return { row, index: i, dist: Infinity };
-    const emb = embedding[i];
-    let d = 0;
-    for (let j = 0; j < targetEmb.length; j++) { const df = targetEmb[j] - emb[j]; d += df * df; }
-    return { row, index: i, dist: Math.sqrt(d) };
-  });
-
-  distances.sort((a, b) => a.dist - b.dist);
-  const similar = distances.slice(0, 20);
-
-  const targetName = targetRow[nameCol] || targetRow[headers[0]];
-
-  return {
-    question: `similar to ${targetName}`,
-    members: similar.map(s => s.row),
-    memberScores: similar.map(s => ({ id: s.row[nameCol] || s.row[headers[0]], score: Math.round((1 - s.dist / (similar[similar.length - 1]?.dist || 1)) * 100), reasons: [`distance: ${s.dist.toFixed(2)}`] })),
-    count: similar.length,
-    total: rows.length,
-    pct: Math.round(similar.length / rows.length * 100),
-    confidence: 95,
-    reasons: [`20 nearest neighbors to ${targetName} in pattern space`],
-    insight: `${similar.length} customers behave most similarly to ${targetName} across all measured dimensions.`,
-    mrrExposed: mrrCol ? Math.round(similar.reduce((s, m) => s + (parseFloat(m.row[mrrCol]) || 0), 0)) : 0,
-    suggestedAction: `apply the same strategy used for ${targetName} to these similar customers`,
-  };
-}
-
-/**
- * Fallback: match question against column names directly.
- */
-function columnQuery(q, analysisResult) {
-  const { rows, headers, numericCols, nameCol, mrrCol } = analysisResult;
-
-  // Find column that matches the question
-  const words = q.split(/\s+/).filter(w => w.length > 2);
-  let bestCol = null, bestMatch = 0;
-
-  for (const col of numericCols || []) {
-    const cleanCol = col.toLowerCase().replace(/[_.-]/g, ' ');
-    let matches = 0;
-    for (const w of words) {
-      if (cleanCol.includes(w)) matches++;
-    }
-    if (matches > bestMatch) { bestMatch = matches; bestCol = col; }
-  }
-
-  if (!bestCol) {
-    return {
-      question: q,
-      members: [],
-      count: 0,
-      total: rows.length,
-      pct: 0,
-      confidence: 0,
-      reasons: [],
-      insight: `Could not find a clear match for "${q}" in the data columns. Try asking about churn, upsell, engagement, value, or a specific column name.`,
-      mrrExposed: 0,
-      suggestedAction: 'rephrase the question or explore the default segments',
-    };
-  }
-
-  // Determine if they want high or low
-  const wantsHigh = ['high', 'most', 'top', 'biggest', 'highest', 'best', 'max'].some(w => q.includes(w));
-  const wantsLow = ['low', 'least', 'worst', 'smallest', 'lowest', 'min', 'no', 'zero', 'none'].some(w => q.includes(w));
-
-  const vals = rows.map((r, i) => ({ row: r, index: i, val: parseFloat(r[bestCol]) || 0 }));
-  vals.sort((a, b) => wantsLow ? a.val - b.val : b.val - a.val);
-
-  // Top 20% or bottom 20%
-  const cutoff = Math.max(10, Math.round(rows.length * 0.2));
-  const members = vals.slice(0, cutoff);
-  const cleanName = bestCol.replace(/^metadata[_.]/, '').replace(/_/g, ' ');
-
-  return {
-    question: q,
-    members: members.map(m => m.row),
-    memberScores: members.map(m => ({ id: m.row[nameCol] || m.row[headers[0]], score: Math.round(m.val), reasons: [`${cleanName}: ${m.val}`] })),
-    count: members.length,
-    total: rows.length,
-    pct: Math.round(members.length / rows.length * 100),
-    confidence: bestMatch > 1 ? 80 : 50,
-    reasons: [`${wantsLow ? 'lowest' : 'highest'} ${cleanName}`],
-    insight: `${members.length} customers with ${wantsLow ? 'lowest' : 'highest'} ${cleanName}. Range: ${members[0]?.val} to ${members[members.length - 1]?.val}.`,
-    mrrExposed: mrrCol ? Math.round(members.reduce((s, m) => s + (parseFloat(m.row[mrrCol]) || 0), 0)) : 0,
-    suggestedAction: `review these ${members.length} customers and take action based on their ${cleanName} values`,
   };
 }
