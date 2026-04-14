@@ -73,7 +73,7 @@ Return ONLY a JSON object with these fields:
   "umapNeighbors": number (5 for <100 rows, 15 for 100-1000, 30 for 1000+),
   "umapMinDist": number (0.1 for tight clusters, 0.3 for spread out),
   "riskThresholds": { "columnName": { "operator": "<", "value": 5 } } (what counts as at-risk per column, based on the data ranges you see),
-  "suggestedQuestions": ["5 specific business questions to ask this data, using actual column names"],
+  "suggestedQuestions": ["5 retrieval questions starting with 'who' that find specific groups of customers — e.g. 'who has low nps and high support tickets?' NOT analytical questions like 'what is the average?' The system finds PEOPLE, not statistics."],
   "reasoning": "one sentence explaining your choices"
 }
 
