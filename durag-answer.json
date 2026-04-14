@@ -1,0 +1,127 @@
+{
+  "engine": "durag v0.4.0 (polarity-based, no AI)",
+  "question": "who is about to churn?",
+  "count": 298,
+  "total": 500,
+  "pct": 60,
+  "confidence": 63,
+  "mrrExposed": 155232,
+  "insight": "298 customers (60%) match \"who is about to churn?\". $155,232 revenue involved. Primary signal: low products (1 vs 3 avg) (159/298).",
+  "reasons": [
+    "low products (1 vs 3 avg) (159/298)",
+    "high last contact days (999 vs 207 avg) (46/298)",
+    "low login count 30d (8 vs 49 avg) (27/298)"
+  ],
+  "suggestedAction": "investigate and intervene on last contact days — these customers need attention",
+  "topMembers": [
+    {
+      "score": 83,
+      "reasons": [
+        "low mrr (53 vs 843 avg)",
+        "low products (1 vs 3 avg)",
+        "high last contact days (999 vs 207 avg)",
+        "low login count 30d (31 vs 49 avg)"
+      ]
+    },
+    {
+      "score": 82,
+      "reasons": [
+        "low mrr (35 vs 843 avg)",
+        "low products (1 vs 3 avg)",
+        "high last contact days (999 vs 207 avg)",
+        "low login count 30d (33 vs 49 avg)"
+      ]
+    },
+    {
+      "score": 81,
+      "reasons": [
+        "low mrr (94 vs 843 avg)",
+        "low products (1 vs 3 avg)",
+        "high last contact days (999 vs 207 avg)"
+      ]
+    },
+    {
+      "score": 81,
+      "reasons": [
+        "low mrr (242 vs 843 avg)",
+        "low products (1 vs 3 avg)",
+        "high last contact days (999 vs 207 avg)",
+        "low login count 30d (31 vs 49 avg)"
+      ]
+    },
+    {
+      "score": 80,
+      "reasons": [
+        "low mrr (91 vs 843 avg)",
+        "low products (1 vs 3 avg)",
+        "high last contact days (999 vs 207 avg)",
+        "low login count 30d (19 vs 49 avg)"
+      ]
+    },
+    {
+      "score": 80,
+      "reasons": [
+        "low mrr (68 vs 843 avg)",
+        "low nps score (0 vs 6 avg)",
+        "high last contact days (363 vs 207 avg)",
+        "high support tickets (48 vs 11 avg)"
+      ]
+    },
+    {
+      "score": 79,
+      "reasons": [
+        "low mrr (311 vs 843 avg)",
+        "low products (1 vs 3 avg)",
+        "high last contact days (999 vs 207 avg)"
+      ]
+    },
+    {
+      "score": 79,
+      "reasons": [
+        "low mrr (74 vs 843 avg)",
+        "low products (1 vs 3 avg)",
+        "high last contact days (999 vs 207 avg)"
+      ]
+    },
+    {
+      "score": 78,
+      "reasons": [
+        "low mrr (53 vs 843 avg)",
+        "low products (1 vs 3 avg)",
+        "high last contact days (999 vs 207 avg)",
+        "low login count 30d (18 vs 49 avg)"
+      ]
+    },
+    {
+      "score": 78,
+      "reasons": [
+        "low mrr (470 vs 843 avg)",
+        "low products (1 vs 3 avg)",
+        "high last contact days (999 vs 207 avg)",
+        "low login count 30d (28 vs 49 avg)"
+      ]
+    }
+  ],
+  "sampleIds": [
+    "Pulse Systems",
+    "Terra Industries",
+    "Ridge Ventures",
+    "Sail Insights",
+    "Ember Market",
+    "Spark Market",
+    "Gate Security",
+    "Volt Brew",
+    "Leaf Partners",
+    "Keen Inc",
+    "Vibe Cafe",
+    "Helix Market",
+    "Cloud Inc",
+    "Luna Creative",
+    "Maple Finance",
+    "Tango Supply",
+    "Clarity Base",
+    "Maple Group",
+    "Dynamo Software",
+    "Core Finance"
+  ]
+}

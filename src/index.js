@@ -1,4 +1,4 @@
-// durag.js — 360° data pattern recognition
+// durag.js — where patterns emerge
 // https://github.com/AtlantiumInc/durag
 
 export { mount } from './ui/index.js';

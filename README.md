@@ -1,8 +1,8 @@
 # durag.js
 
-360° data pattern recognition.
+**where patterns emerge.**
 
-Drop a CSV, discover segments, get insights. No AI keys. No backend. Everything runs client-side.
+Drop your data, find the waves. No AI keys. No backend. Everything runs client-side.
 
 ## Install
 

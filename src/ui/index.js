@@ -28,7 +28,7 @@ export function mount(selector, csvData) {
   root.innerHTML = `
     <div class="durag-upload">
       <div class="logo">durag.js</div>
-      <div class="tagline">360&deg; data pattern recognition</div>
+      <div class="tagline">where patterns emerge</div>
       <div class="durag-drop-zone">
         <div class="dz-icon">&#8593;</div>
         <div class="dz-text">drop your export here</div>
@@ -38,7 +38,7 @@ export function mount(selector, csvData) {
     </div>
     <div class="durag-processing">
       <div class="logo">durag.js</div>
-      <div class="tagline">360&deg; data pattern recognition</div>
+      <div class="tagline">where patterns emerge</div>
       <div class="durag-file-info"></div>
       <div class="durag-progress-wrap"><div class="durag-progress-bar"></div></div>
       <div class="durag-progress-text">initializing...</div>
@@ -48,7 +48,7 @@ export function mount(selector, csvData) {
       <div class="durag-topbar">
         <div style="display:flex;align-items:center;gap:16px;">
           <button class="durag-btn durag-btn-ghost durag-back-home">&#8592; New data</button>
-          <div><div class="logo">durag.js</div><div class="tag">360&deg; pattern recognition</div></div>
+          <div><div class="logo">durag.js</div><div class="tag">where patterns emerge</div></div>
         </div>
         <button class="durag-btn durag-open-3d">Explore in 3D &#8594;</button>
       </div>
