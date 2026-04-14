@@ -127,9 +127,28 @@ export function ask(question, analysisResult) {
   });
   scored.sort((a, b) => b.score - a.score);
 
-  const topScore = scored[0]?.score || 0;
-  const threshold = Math.max(topScore * 0.6, 0.3);
-  const members = scored.filter(s => s.score >= threshold);
+  // Adaptive threshold: percentile + gap detection
+  const n = scored.length;
+  const defaultCutoff = Math.max(5, Math.min(Math.floor(n * 0.15), 300));
+
+  // Look for the biggest score drop in the top 25% — that's the natural cliff
+  let bestGapIdx = defaultCutoff;
+  let bestGapSize = 0;
+  const searchEnd = Math.min(Math.floor(n * 0.25), 500);
+  for (let i = 1; i < searchEnd; i++) {
+    const gap = scored[i - 1].score - scored[i].score;
+    // Only consider gaps after at least 5 results and if the gap is significant
+    if (i >= 5 && gap > bestGapSize && gap > 0.03) {
+      bestGapSize = gap;
+      bestGapIdx = i;
+    }
+  }
+
+  // Use the cliff if it's a clear drop (>5% gap), otherwise use percentile
+  // But never return fewer than 2% of the dataset
+  const minResults = Math.max(5, Math.floor(n * 0.02));
+  const cliffCutoff = bestGapSize > 0.05 ? Math.max(bestGapIdx, minResults) : defaultCutoff;
+  const members = scored.slice(0, cliffCutoff).filter(s => s.score > 0.15);
 
   const allReasons = {};
   for (const m of members) for (const r of m.reasons) allReasons[r] = (allReasons[r] || 0) + 1;
