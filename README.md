@@ -2,7 +2,21 @@
 
 **where patterns emerge.**
 
-Drop your data, find the waves. No AI keys. No backend. Everything runs client-side.
+The pattern engine for your data. Finds segments, computes insights, answers questions — from any CSV, any size, in milliseconds.
+
+Alone, it's fast and free. With AI, it's accurate at scale. Together, they do what neither can alone.
+
+## The Problem
+
+| | Raw data → LLM | durag alone | AI + durag |
+|---|---|---|---|
+| 500 rows | Works. $0.60. 2 min. | Works. Free. Instant. | Works. $0.02. Instant. |
+| 50K rows | Can't. Context limit. | Works. Free. 30 sec. | Works. $0.02. 30 sec. |
+| 500K rows | Impossible. | Works. Free. 5 min. | Works. $0.02. 5 min. |
+| Deterministic | No | Yes | Yes |
+| Actionable output | Yes | Mediocre | Yes |
+
+AI can't read 100K rows. durag can, but its output is generic. Together: durag compresses 100K rows into 800 tokens of structured context. AI reads 800 tokens and generates strategy with specific names, numbers, and timelines.
 
 ## Install
 
@@ -10,76 +24,91 @@ Drop your data, find the waves. No AI keys. No backend. Everything runs client-s
 npm install durag
 ```
 
-For the 3D explorer (optional):
-```bash
-npm install three
-```
-
-## Quick Start
+## Quick Start — Drop-in Widget
 
 ```js
 import { mount } from 'durag'
-
-// Mount the full experience — upload screen, dashboard, 3D explorer
 mount('#app')
 ```
 
-That's it. One line. Users drop a CSV and get:
-- Auto-discovered customer segments
-- Real-time computed insights per segment
-- Risk detection with exposed revenue
-- Searchable customer table
-- Optional 3D constellation explorer
+One line. Upload screen → tuning → dashboard with segments, insights, and ask bar.
 
-## Pass Data Directly
+## Quick Start — Engine Only
 
 ```js
-import { mount } from 'durag'
+import { durag, ask } from 'durag'
 
-const csv = await fetch('/my-data.csv').then(r => r.text())
-mount('#app', csv) // skips upload screen, goes straight to dashboard
+const result = await durag(csvString, { seed: 42 })
+const answer = ask("who's about to churn?", result)
+// → { count: 14, confidence: 87, insight: "14 customers (3%) match...", reasons: [...] }
 ```
 
-## Engine Only
-
-Use the analysis engine without the UI:
+## Quick Start — AI + durag (the unlock)
 
 ```js
-import { parseCSV, buildVectors, runUMAP, clusterize, analyze } from 'durag/engine'
+import { durag, ask, enrich } from 'durag'
+import Anthropic from '@anthropic-ai/sdk'
 
-const { rows, headers } = parseCSV(csvText)
-const { vectors } = buildVectors(rows, headers)
-const { embedding, knnIndices } = await runUMAP(vectors)
-const { labels, k } = clusterize(embedding)
-const { clusters } = analyze(rows, headers, embedding, labels, k)
+const csv = await fetch('/api/customers').then(r => r.text())
 
-// clusters[0].insights → [
-//   "mrr is 3.9x the global average — this is the strongest signal separating this group",
-//   "also shows elevated products (4 avg vs 2.5 global) — may be correlated",
-//   "high-value segment — 14% of customers but 56% of total revenue"
-// ]
+// 1. AI configures durag (one call, ~200 tokens)
+const client = new Anthropic()
+const config = await client.messages.create({
+  model: 'claude-sonnet-4-20250514',
+  max_tokens: 300,
+  messages: [{
+    role: 'user',
+    content: `Columns: ${headers.join(', ')}\nReturn JSON: {outcomeColumn, badValue, revenueColumn, excludeColumns, suggestedQuestions}`
+  }]
+})
+
+// 2. durag runs the math (free, instant, deterministic)
+const result = await durag(csv, { seed: 42, ignore: config.excludeColumns })
+const enriched = enrich(result)
+
+// 3. AI reads structured context (one call, ~800 tokens instead of 100K)
+const strategy = await client.messages.create({
+  model: 'claude-sonnet-4-20250514',
+  max_tokens: 600,
+  messages: [{
+    role: 'user',
+    content: `Analysis of ${result.meta.rowCount} customers:\n${JSON.stringify(enriched.intelligence)}\nWhat should we do this week?`
+  }]
+})
 ```
 
-## How It Works
+Two AI calls ($0.02). One durag pass (free). 100K rows compressed to 800 tokens. Specific, actionable strategy with dollar amounts and timelines.
 
-1. **Parse** — reads any CSV with headers
-2. **Profile** — classifies each column as numeric, binary, or categorical
-3. **Normalize** — scales all features to 0-1 using appropriate strategies (min-max, robust, ordinal)
-4. **Reduce** — UMAP projects high-dimensional vectors into 3D space
-5. **Cluster** — k-means finds natural groupings in the embedding
-6. **Analyze** — computes z-scores per cluster, generates plain-text insights from the math
-7. **Render** — dashboard with segment cards, risk flags, customer table, optional 3D view
+## What durag computes
 
-Every label, every insight, every number is computed at runtime from the data. No AI. No API calls. Pure math.
+- **Normalization** — auto-profiles every column, picks the right scaling strategy
+- **UMAP** — dimensionality reduction, finds which dimensions actually matter
+- **K-means++** — clusters similar records, seeded for deterministic output
+- **Correlation polarity** — computes which columns drive the outcome (not guessed from names)
+- **Compound signals** — "low NPS + high support tickets → 2.5x delinquent rate"
+- **ask()** — natural language questions scored by polarity with adaptive thresholds
+- **enrich()** — outcome detection, feature importance, compound signal detection
 
-## Cleanup
+## Configuration
 
 ```js
-const instance = mount('#app')
-// later...
-instance.destroy()
+const result = await durag(csv, {
+  seed: 42,           // deterministic output
+  k: 8,               // override cluster count
+  features: ['mrr', 'logins', 'nps'],  // whitelist columns
+  ignore: ['id', 'email'],              // blacklist columns
+})
 ```
+
+## Tuning (UI)
+
+The drop-in widget includes a tuning screen after CSV upload:
+- Select outcome column (what you're trying to prevent)
+- Set bad value or numeric threshold
+- Choose revenue and identity columns
+- Exclude irrelevant columns
+- Or skip and auto-detect everything
 
 ## License
 
-MIT - Atlantium Inc
+MIT — [Atlantium Inc](https://github.com/AtlantiumInc)

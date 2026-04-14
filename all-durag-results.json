@@ -1,0 +1,228 @@
+{
+  "Stripe": {
+    "rows": 500,
+    "features": 9,
+    "outcomeCol": "delinquent",
+    "topFeatures": [
+      "nps score (r=-0.37, high = good)",
+      "login count 30d (r=-0.299, high = good)",
+      "support tickets (r=0.212, high = bad)"
+    ],
+    "compounds": 4,
+    "topCompound": "low nps score + high support tickets (2.5x)",
+    "churnCount": 75,
+    "churnConf": 74,
+    "bestCount": 75,
+    "bestConf": 72,
+    "riskCount": 75,
+    "riskConf": 73,
+    "churnTop5": [
+      "Pulse Systems",
+      "Terra Industries",
+      "Ridge Ventures",
+      "Sail Insights",
+      "Ember Market"
+    ]
+  },
+  "HubSpot": {
+    "rows": 500,
+    "features": 7,
+    "outcomeCol": "none",
+    "topFeatures": [],
+    "compounds": 0,
+    "topCompound": "none",
+    "churnCount": 75,
+    "churnConf": 72,
+    "bestCount": 75,
+    "bestConf": 87,
+    "riskCount": 75,
+    "riskConf": 71,
+    "churnTop5": [
+      "Cobalt Industries",
+      "DataStream",
+      "Starlight",
+      "NexGen",
+      "Summit Solutions"
+    ]
+  },
+  "SaaS Usage": {
+    "rows": 500,
+    "features": 12,
+    "outcomeCol": "none",
+    "topFeatures": [],
+    "compounds": 0,
+    "topCompound": "none",
+    "churnCount": 75,
+    "churnConf": 92,
+    "bestCount": 75,
+    "bestConf": 78,
+    "riskCount": 75,
+    "riskConf": 92,
+    "churnTop5": [
+      "emilyjohnson53@yahoo.com",
+      "ryan_wright2@protonmail.com",
+      "isabella.lee42@gmail.com",
+      "ethan_brown7@yahoo.com",
+      "daniel.martinez@hotmail.com"
+    ]
+  },
+  "Ecommerce": {
+    "rows": 500,
+    "features": 12,
+    "outcomeCol": "marketing_opt_in",
+    "topFeatures": [
+      "days since last order (r=0.748, high = bad)",
+      "orders last 90d (r=-0.587, high = good)",
+      "product categories (r=-0.511, high = good)"
+    ],
+    "compounds": 5,
+    "topCompound": "high days since last order + low orders last 90d (2.3x)",
+    "churnCount": 75,
+    "churnConf": 79,
+    "bestCount": 75,
+    "bestConf": 72,
+    "riskCount": 75,
+    "riskConf": 76,
+    "churnTop5": [
+      "Layla Wilson",
+      "Ryan Scott",
+      "Victoria Martinez",
+      "Benjamin Harris",
+      "Dylan Thompson"
+    ]
+  },
+  "Fintech": {
+    "rows": 500,
+    "features": 12,
+    "outcomeCol": "direct_deposits",
+    "topFeatures": [
+      "mobile logins 30d (r=-0.648, high = good)",
+      "recurring payments (r=-0.633, high = good)",
+      "monthly transactions (r=-0.584, high = good)"
+    ],
+    "compounds": 5,
+    "topCompound": "low avg transaction size + low overdraft count 12m (3.1x)",
+    "churnCount": 75,
+    "churnConf": 61,
+    "bestCount": 75,
+    "bestConf": 77,
+    "riskCount": 75,
+    "riskConf": 62,
+    "churnTop5": [
+      "Dylan Wilson",
+      "Aria Hill",
+      "Lily Jones",
+      "Grace Perez",
+      "Noah Hernandez"
+    ]
+  },
+  "Workspace": {
+    "rows": 500,
+    "features": 15,
+    "outcomeCol": "none",
+    "topFeatures": [],
+    "compounds": 0,
+    "topCompound": "none",
+    "churnCount": 75,
+    "churnConf": 89,
+    "bestCount": 102,
+    "bestConf": 59,
+    "riskCount": 75,
+    "riskConf": 87,
+    "churnTop5": [
+      "Flux Labs",
+      "Orbit Health",
+      "Clear Group",
+      "Bright Health",
+      "Atlas Studio"
+    ]
+  },
+  "Marketplace": {
+    "rows": 500,
+    "features": 20,
+    "outcomeCol": "none",
+    "topFeatures": [],
+    "compounds": 0,
+    "topCompound": "none",
+    "churnCount": 75,
+    "churnConf": 75,
+    "bestCount": 75,
+    "bestConf": 78,
+    "riskCount": 75,
+    "riskConf": 76,
+    "churnTop5": [
+      "Flux Works",
+      "Zenith Analytics",
+      "Apex Media",
+      "Vertex Media",
+      "Vertex Data"
+    ]
+  },
+  "Wealth": {
+    "rows": 500,
+    "features": 20,
+    "outcomeCol": "large_withdrawal_flag",
+    "topFeatures": [
+      "aum change pct 12m (r=0.497, high = bad)",
+      "withdrawal count 12m (r=-0.489, high = good)",
+      "ytd return pct (r=0.481, high = bad)"
+    ],
+    "compounds": 0,
+    "topCompound": "none",
+    "churnCount": 75,
+    "churnConf": 82,
+    "bestCount": 75,
+    "bestConf": 69,
+    "riskCount": 75,
+    "riskConf": 82,
+    "churnTop5": [
+      "Jordan Brown",
+      "Alex Patel",
+      "Taylor Patel",
+      "Casey Johnson",
+      "Casey Brown"
+    ]
+  },
+  "EdTech": {
+    "rows": 500,
+    "features": 17,
+    "outcomeCol": "none",
+    "topFeatures": [],
+    "compounds": 0,
+    "topCompound": "none",
+    "churnCount": 75,
+    "churnConf": 83,
+    "bestCount": 75,
+    "bestConf": 69,
+    "riskCount": 75,
+    "riskConf": 81,
+    "churnTop5": [
+      "Morgan Patel",
+      "Avery Smith",
+      "Morgan Brown",
+      "Alex Johnson",
+      "Blake Anderson"
+    ]
+  },
+  "Healthcare": {
+    "rows": 500,
+    "features": 20,
+    "outcomeCol": "none",
+    "topFeatures": [],
+    "compounds": 0,
+    "topCompound": "none",
+    "churnCount": 75,
+    "churnConf": 75,
+    "bestCount": 75,
+    "bestConf": 62,
+    "riskCount": 75,
+    "riskConf": 81,
+    "churnTop5": [
+      "35",
+      "39",
+      "26",
+      "39",
+      "35"
+    ]
+  }
+}
