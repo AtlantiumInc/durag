@@ -6,17 +6,18 @@ import { analyze } from './analyzer.js';
 
 /**
  * Full durag pipeline with config.
+ * Accepts manual config or AI-generated config from aiConfigToDurag().
  *
  * @param {string} csv - Raw CSV text
  * @param {object} config
- * @param {number} config.seed - Random seed for deterministic output (default: 42)
+ * @param {number} config.seed - Random seed (default: 42)
  * @param {number} config.k - Number of clusters (default: auto)
- * @param {string[]} config.features - Whitelist of column names to use
- * @param {string[]} config.ignore - Blacklist of column names to skip
- * @param {string} config.revenue - Column name for revenue/MRR
- * @param {string} config.identity - Column name for row identity (name/email)
+ * @param {string[]} config.features - Whitelist columns
+ * @param {string[]} config.ignore - Blacklist columns
+ * @param {number} config.nNeighbors - UMAP neighbors (default: auto from row count)
+ * @param {number} config.minDist - UMAP min distance (default: 0.1)
  * @param {function} config.onProgress - Progress callback (0-100)
- * @returns {object} { rows, headers, clusters, embedding, knnIndices, meta }
+ * @param {object} config._aiConfig - Full AI config (stored on result for downstream use)
  */
 export async function durag(csv, config = {}) {
   const {
@@ -24,7 +25,10 @@ export async function durag(csv, config = {}) {
     k,
     features,
     ignore,
+    nNeighbors,
+    minDist,
     onProgress,
+    _aiConfig,
   } = config;
 
   const progress = onProgress || (() => {});
@@ -36,10 +40,10 @@ export async function durag(csv, config = {}) {
   const { vectors, columns } = buildVectors(rows, headers, { features, ignore });
 
   progress(15);
-  const { embedding, knnIndices } = await runUMAP(vectors, {
-    seed,
-    onProgress: pct => progress(15 + Math.round(pct * 0.65)),
-  });
+  const umapOpts = { seed, onProgress: pct => progress(15 + Math.round(pct * 0.65)) };
+  if (nNeighbors) umapOpts.nNeighbors = nNeighbors;
+  if (minDist) umapOpts.minDist = minDist;
+  const { embedding, knnIndices } = await runUMAP(vectors, umapOpts);
 
   progress(85);
   const { labels, k: finalK } = clusterize(embedding, { k, seed });
@@ -64,6 +68,7 @@ export async function durag(csv, config = {}) {
       features: columns,
       rowCount: rows.length,
       clusterCount: finalK,
+      aiConfig: _aiConfig || null,
     },
   };
 }

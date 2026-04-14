@@ -65,15 +65,17 @@ export function ask(question, analysisResult) {
   for (const col of (numericCols || [])) {
     const polarity = getPolarity(col);
     const relevance = columnRelevance(col, q);
-    if (polarity === 0 && relevance === 0) continue;
+
+    // Only include columns that are semantically relevant to the question.
+    // Polarity + sentiment alone is not enough — "churn" shouldn't pull in MRR
+    // just because MRR has positive polarity and churn has negative sentiment.
+    if (relevance === 0) continue;
 
     let wantHigh;
     if (sentiment === 1) wantHigh = polarity >= 0;
     else if (sentiment === -1) wantHigh = polarity <= 0;
     else wantHigh = polarity > 0;
 
-    // Only include if the question actually relates to this column
-    if (relevance === 0 && sentiment === 0) continue;
     const weight = Math.max(1, relevance + Math.abs(polarity));
     plan.push({ col, wantHigh, weight, polarity, relevance });
   }

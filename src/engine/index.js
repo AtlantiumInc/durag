@@ -7,3 +7,4 @@ export { CLUSTER_PALETTE, findNumericCols, findMrrCol, findNameCol, analyzeClust
 export { durag } from './pipeline.js';
 export { ask } from './ask.js';
 export { detectOutcome, computePolarity, detectCompounds, enrich } from './intelligence.js';
+export { profileForAI, buildTunePrompt, parseAIConfig, aiConfigToDurag, aiTune } from './ai-tune.js';
