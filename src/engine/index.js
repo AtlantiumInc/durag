@@ -5,3 +5,4 @@ export { parseCSV } from './parser.js';
 export { profileColumn, normalizers, chooseNormalizer, buildVectors } from './normalizer.js';
 export { CLUSTER_PALETTE, findNumericCols, findMrrCol, findNameCol, analyzeCluster, generateInsights, analyze } from './analyzer.js';
 export { durag } from './pipeline.js';
+export { ask } from './ask.js';
