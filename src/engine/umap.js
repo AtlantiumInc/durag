@@ -1,9 +1,12 @@
+import { createRNG } from './rng.js';
+
 export class UMAP {
-  constructor({ nComponents = 2, nNeighbors = 15, minDist = 0.1, nEpochs = 200 } = {}) {
+  constructor({ nComponents = 2, nNeighbors = 15, minDist = 0.1, nEpochs = 200, seed = 42 } = {}) {
     this.nComponents = nComponents;
     this.nNeighbors = nNeighbors;
     this.minDist = minDist;
     this.nEpochs = nEpochs;
+    this.random = createRNG(seed);
     const md = minDist;
     if (md <= 0.001) { this._a = 1; this._b = 1; }
     else { this._b = 0.7 + 0.2 * md; this._a = 1 / (Math.pow(md, 2 * this._b) + 0.001); }
@@ -61,7 +64,7 @@ export class UMAP {
     const emb = [];
     for (let i = 0; i < n; i++) {
       emb[i] = new Float64Array(this.nComponents);
-      for (let d = 0; d < this.nComponents; d++) emb[i][d] = (Math.random() - 0.5) * 20;
+      for (let d = 0; d < this.nComponents; d++) emb[i][d] = (this.random() - 0.5) * 20;
     }
     for (let p = 0; p < 5; p++) {
       for (let i = 0; i < n; i++) {
@@ -94,7 +97,7 @@ export class UMAP {
           emb[i][d] += g; emb[j][d] -= g;
         }
         for (let neg = 0; neg < 5; neg++) {
-          const k = Math.floor(Math.random() * n);
+          const k = Math.floor(this.random() * n);
           if (k === i) continue;
           let rSq = 0;
           for (let d = 0; d < dim; d++) { const df = emb[i][d] - emb[k][d]; rSq += df * df; }
@@ -116,10 +119,10 @@ export class UMAP {
   }
 }
 
-export async function runUMAP(vectors, { nComponents = 3, nNeighbors = 15, minDist = 0.1, nEpochs, onProgress } = {}) {
+export async function runUMAP(vectors, { nComponents = 3, nNeighbors = 15, minDist = 0.1, nEpochs, seed = 42, onProgress } = {}) {
   const epochs = nEpochs || Math.min(300, Math.max(150, vectors.length));
   const neighbors = Math.min(nNeighbors, Math.floor(vectors.length / 10));
-  const umap = new UMAP({ nComponents, nNeighbors: neighbors, minDist, nEpochs: epochs });
+  const umap = new UMAP({ nComponents, nNeighbors: neighbors, minDist, nEpochs: epochs, seed });
   const embedding = await umap.fitAsync(vectors, ep => {
     if (onProgress) onProgress(Math.round((ep / epochs) * 100));
   });

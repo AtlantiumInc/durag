@@ -47,9 +47,14 @@ export function chooseNormalizer(profile, col) {
   return null;
 }
 
-export function buildVectors(rows, headers) {
+export function buildVectors(rows, headers, { features, ignore } = {}) {
   const used = [], colData = [];
-  for (const col of headers) {
+  const cols = features
+    ? headers.filter(h => features.some(f => h.toLowerCase().includes(f.toLowerCase())))
+    : ignore
+      ? headers.filter(h => !ignore.some(f => h.toLowerCase().includes(f.toLowerCase())))
+      : headers;
+  for (const col of cols) {
     let vals = rows.map(r => {
       const v = r[col];
       return (v === '' || v === null || v === undefined) ? -1 : v;

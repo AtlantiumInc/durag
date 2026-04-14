@@ -1,6 +1,6 @@
 {
   "name": "durag",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "360° data pattern recognition. Drop a CSV, discover segments, get insights.",
   "type": "module",
   "main": "dist/durag.umd.js",

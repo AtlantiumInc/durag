@@ -2,4 +2,4 @@
 // https://github.com/AtlantiumInc/durag
 
 export { mount } from './ui/index.js';
-export { parseCSV, buildVectors, runUMAP, clusterize, analyze, CLUSTER_PALETTE, generateInsights } from './engine/index.js';
+export { durag, parseCSV, buildVectors, runUMAP, clusterize, analyze, CLUSTER_PALETTE, generateInsights, createRNG } from './engine/index.js';

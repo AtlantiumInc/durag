@@ -1,0 +1,501 @@
+contact_id,first_name,last_name,email,company,lifecycle_stage,lead_source,deal_value,days_since_last_activity,email_opens_30d,email_clicks_30d,meetings_booked,support_tickets,owner,created_date
+HS-100000,Olivia,Hill,oliviahill@icloud.com,TechVision,subscriber,paid,0,21,27,6,0,3,Marcus Rivera,1769513931
+HS-100001,Charlotte,Scott,charlotte.scott@protonmail.com,IronBridge,subscriber,paid,0,34,14,7,0,3,Alex Patel,1770291531
+HS-100002,Caleb,Garcia,calebgarcia@outlook.com,Beacon Health,customer,referral,6642,179,1,0,0,30,Sarah Chen,1744630731
+HS-100003,Amelia,Lewis,amelia.lewis40@gmail.com,Horizon Labs,customer,partner,10557,343,1,0,0,21,Marcus Rivera,1714304331
+HS-100004,Sophia,Lopez,sophialopez@hotmail.com,Harbor Tech,customer,paid,11575,289,0,0,0,13,Jordan Blake,1740915531
+HS-100005,Ella,Flores,ella.flores32@icloud.com,Cobalt Industries,lead,paid,0,30,28,1,0,3,Taylor Kim,1773920331
+HS-100006,Layla,Ramirez,layla_ramirez@outlook.com,Cascade Digital,customer,partner,11097,20,24,15,4,13,Alex Patel,1755776331
+HS-100007,Jackson,Sanchez,jackson_sanchez@gmail.com,Zenith Digital,customer,partner,23568,28,48,4,4,14,Jordan Blake,1753443531
+HS-100008,Ryan,Smith,ryan.smith19@outlook.com,Beacon Health,lead,organic,3548,218,2,1,1,0,Marcus Rivera,1747309131
+HS-100009,Ryan,Torres,ryan.torres70@outlook.com,PulsePoint,mql,organic,3933,154,0,0,0,1,Taylor Kim,1741088331
+HS-100010,Hannah,King,hannah_king40@aol.com,ClearView,sql,outbound,28854,13,28,12,10,4,Sarah Chen,1760441931
+HS-100011,Matthew,Taylor,matthew_taylor@fastmail.com,Forge Systems,subscriber,paid,0,42,23,7,0,0,Taylor Kim,1772278731
+HS-100012,Aria,Hernandez,aria_hernandez@icloud.com,VertexAI,customer,referral,4181,154,2,0,0,24,Sarah Chen,1713958731
+HS-100013,Dylan,Brown,dylanbrown@fastmail.com,NexGen,subscriber,organic,0,25,25,1,0,2,Marcus Rivera,1770377931
+HS-100014,Daniel,Walker,daniel.walker@gmail.com,Cascade Digital,opportunity,referral,28901,4,67,9,8,3,Taylor Kim,1759145931
+HS-100015,Ella,Anderson,ella.anderson@yahoo.com,Keystone,customer,referral,26040,9,37,15,7,9,Sarah Chen,1751110731
+HS-100016,Emma,Sanchez,emma.sanchez@yahoo.com,Atlas Group,subscriber,organic,0,1,29,7,0,2,Taylor Kim,1768477131
+HS-100017,Isabella,Wilson,isabella.wilson67@aol.com,Summit Solutions,opportunity,partner,40368,8,58,6,5,3,Taylor Kim,1753702731
+HS-100018,Sofia,Scott,sofia_scott@protonmail.com,Starlight,opportunity,partner,24572,7,31,6,10,3,Jordan Blake,1756208331
+HS-100019,Aiden,Harris,aidenharris@yahoo.com,Oasis Network,sql,partner,44954,2,68,9,4,2,Alex Patel,1770377931
+HS-100020,Liam,Jones,liam_jones@hotmail.com,PulsePoint,opportunity,referral,30658,7,47,7,3,4,Taylor Kim,1760182731
+HS-100021,Hannah,Robinson,hannah.robinson48@gmail.com,Summit Solutions,opportunity,outbound,29964,4,51,18,8,1,Taylor Kim,1753529931
+HS-100022,Victoria,Gonzalez,victoria_gonzalez27@protonmail.com,Beacon Health,opportunity,referral,31746,3,38,12,13,3,Sarah Chen,1750246731
+HS-100023,Henry,Lewis,henrylewis@gmail.com,Beacon Health,customer,referral,24023,16,41,5,3,13,Alex Patel,1765193931
+HS-100024,Evelyn,Hernandez,evelyn.hernandez@aol.com,TrueNorth,subscriber,paid,0,18,19,5,0,2,Taylor Kim,1774438731
+HS-100025,Noah,Taylor,noah.taylor30@icloud.com,Relay Networks,lead,organic,1048,295,3,0,1,1,Marcus Rivera,1749728331
+HS-100026,William,Lee,william.lee@yahoo.com,PulsePoint,opportunity,partner,44306,2,20,16,10,1,Taylor Kim,1760614731
+HS-100027,Hannah,Lopez,hannah_lopez@yahoo.com,Beacon Health,customer,referral,9019,210,0,0,0,26,Sarah Chen,1749123531
+HS-100028,Mia,Smith,mia_smith@aol.com,Summit Solutions,mql,paid,4783,96,3,1,0,2,Jordan Blake,1728301131
+HS-100029,Abigail,Nguyen,abigail_nguyen49@yahoo.com,Orbit Media,sql,partner,40720,13,21,11,3,3,Alex Patel,1768390731
+HS-100030,Jackson,Hernandez,jackson.hernandez97@yahoo.com,Beacon Health,sql,referral,42506,2,60,14,13,1,Jordan Blake,1759059531
+HS-100031,Abigail,Thompson,abigailthompson@hotmail.com,SkyNet Solutions,sql,partner,18171,14,23,9,14,2,Alex Patel,1755689931
+HS-100032,Benjamin,Moore,benjamin_moore@yahoo.com,Orbit Media,customer,paid,13001,28,25,10,8,6,Taylor Kim,1753529931
+HS-100033,Riley,Anderson,riley_anderson@hotmail.com,TechVision,opportunity,referral,23368,10,32,12,10,5,Sarah Chen,1750678731
+HS-100034,James,Harris,james.harris@gmail.com,SkyNet Solutions,customer,referral,10790,168,2,0,0,14,Marcus Rivera,1745494731
+HS-100035,Alexander,White,alexander.white@outlook.com,CloudScale,customer,partner,7210,241,3,0,0,16,Marcus Rivera,1735904331
+HS-100036,Leo,Lee,leolee81@fastmail.com,BrightPath,lead,paid,0,2,10,5,0,1,Alex Patel,1775129931
+HS-100037,Harper,Rodriguez,harper.rodriguez2@icloud.com,Quantum Labs,sql,outbound,35252,5,39,8,3,0,Taylor Kim,1767613131
+HS-100038,Benjamin,Moore,benjamin_moore@icloud.com,Relay Networks,customer,organic,3822,266,2,0,0,6,Alex Patel,1749555531
+HS-100039,Riley,Thomas,rileythomas@yahoo.com,BrightPath,opportunity,referral,39784,8,75,7,3,3,Sarah Chen,1752925131
+HS-100040,Sophia,Martinez,sophiamartinez@protonmail.com,Harbor Tech,customer,referral,9833,239,3,0,0,10,Jordan Blake,1744457931
+HS-100041,Sophia,Miller,sophia.miller30@outlook.com,PulsePoint,opportunity,partner,32250,1,70,18,15,4,Taylor Kim,1770464331
+HS-100042,Nathan,Hill,nathan.hill@icloud.com,Cascade Digital,lead,paid,0,24,7,6,0,1,Alex Patel,1772019531
+HS-100043,Ethan,Jackson,ethanjackson@outlook.com,TechVision,customer,paid,14584,25,22,12,5,6,Sarah Chen,1735472331
+HS-100044,Lucas,White,lucas.white@aol.com,Atlas Group,sql,outbound,18692,8,52,12,11,1,Taylor Kim,1753875531
+HS-100045,Ethan,Thompson,ethanthompson@hotmail.com,Orbit Media,lead,organic,0,6,24,4,0,3,Taylor Kim,1774438731
+HS-100046,Alexander,Scott,alexander.scott97@hotmail.com,Cascade Digital,lead,paid,0,30,10,1,0,1,Marcus Rivera,1768822731
+HS-100047,Isabella,Moore,isabellamoore@yahoo.com,Acme Corp,subscriber,organic,0,8,20,2,0,2,Sarah Chen,1771673931
+HS-100048,Avery,Sanchez,avery_sanchez@gmail.com,DataStream,customer,organic,7272,357,0,0,0,21,Marcus Rivera,1726918731
+HS-100049,Mia,Garcia,mia_garcia54@yahoo.com,Forge Systems,lead,paid,2738,96,2,1,0,1,Marcus Rivera,1738496331
+HS-100050,Isabella,Flores,isabella.flores@icloud.com,CloudScale,customer,paid,11569,132,2,0,0,6,Taylor Kim,1728214731
+HS-100051,Hannah,Davis,hannahdavis16@fastmail.com,Redwood Systems,lead,organic,1134,119,2,1,1,0,Sarah Chen,1753184331
+HS-100052,Dylan,Torres,dylan_torres@icloud.com,Forge Systems,mql,paid,4012,266,0,2,0,0,Taylor Kim,1748173131
+HS-100053,Elizabeth,Torres,elizabethtorres@outlook.com,Acme Corp,customer,partner,5270,157,3,0,0,17,Sarah Chen,1729251531
+HS-100054,Lucas,Ramirez,lucasramirez41@icloud.com,PulsePoint,lead,paid,0,7,10,1,0,3,Marcus Rivera,1773315531
+HS-100055,Sophia,Brown,sophiabrown59@gmail.com,Beacon Health,lead,paid,1629,188,3,1,0,0,Sarah Chen,1751110731
+HS-100056,Hannah,Hill,hannahhill98@gmail.com,Relay Networks,customer,referral,5910,215,0,0,0,28,Sarah Chen,1728992331
+HS-100057,Aria,Martin,aria.martin@fastmail.com,TrueNorth,customer,paid,5394,252,1,0,0,8,Alex Patel,1716637131
+HS-100058,Sofia,White,sofia_white@hotmail.com,SkyNet Solutions,sql,partner,46086,9,80,12,13,4,Jordan Blake,1761133131
+HS-100059,Dylan,Clark,dylanclark@gmail.com,Pine Valley,customer,referral,9352,289,0,0,0,18,Taylor Kim,1734608331
+HS-100060,Jack,Miller,jackmiller@aol.com,Relay Networks,lead,organic,860,146,1,2,0,2,Jordan Blake,1728041931
+HS-100061,Ryan,Ramirez,ryan_ramirez@aol.com,CloudScale,lead,paid,0,29,27,2,0,3,Taylor Kim,1770464331
+HS-100062,Owen,Garcia,owen.garcia78@aol.com,Emerald Tech,customer,referral,7291,9,32,5,2,5,Marcus Rivera,1751542731
+HS-100063,Samuel,Sanchez,samuel_sanchez@hotmail.com,Quantum Labs,mql,paid,4851,174,0,2,1,0,Jordan Blake,1716464331
+HS-100064,Noah,Flores,noah_flores97@fastmail.com,Momentum Inc,opportunity,outbound,12060,5,68,18,4,0,Sarah Chen,1770205131
+HS-100065,Elijah,Wilson,elijah_wilson@protonmail.com,BrightPath,mql,paid,2104,186,5,0,1,2,Sarah Chen,1732534731
+HS-100066,Elijah,Ramirez,elijah.ramirez55@icloud.com,Quantum Labs,mql,organic,3984,287,3,0,1,2,Taylor Kim,1741433931
+HS-100067,Lily,Smith,lily_smith27@outlook.com,VertexAI,sql,outbound,22712,2,78,17,8,0,Sarah Chen,1750592331
+HS-100068,Avery,Williams,avery.williams87@gmail.com,Atlas Group,customer,partner,31086,7,37,3,1,14,Sarah Chen,1760441931
+HS-100069,Abigail,Perez,abigailperez@outlook.com,Beacon Health,customer,partner,19077,26,50,12,3,5,Marcus Rivera,1751974731
+HS-100070,Mia,Miller,mia_miller@outlook.com,Summit Solutions,customer,outbound,2349,241,0,0,0,5,Sarah Chen,1727437131
+HS-100071,Christian,Robinson,christianrobinson54@fastmail.com,SilverLine,customer,paid,11367,279,3,0,0,5,Sarah Chen,1714217931
+HS-100072,Elizabeth,Lewis,elizabeth_lewis@hotmail.com,Prism Data,customer,outbound,34365,24,46,3,3,1,Taylor Kim,1735645131
+HS-100073,Victoria,Wilson,victoriawilson80@hotmail.com,Harbor Tech,subscriber,paid,0,58,19,7,0,3,Jordan Blake,1773574731
+HS-100074,Sophia,Davis,sophia.davis@yahoo.com,Atlas Group,opportunity,partner,38183,4,42,8,4,0,Sarah Chen,1751974731
+HS-100075,Elizabeth,Davis,elizabeth_davis@yahoo.com,IronBridge,sql,referral,42317,11,78,17,4,4,Jordan Blake,1764934731
+HS-100076,Amelia,Lopez,amelia_lopez89@icloud.com,Apex Analytics,mql,organic,605,220,5,1,0,1,Taylor Kim,1738150731
+HS-100077,Samuel,Young,samuel_young72@outlook.com,Emerald Tech,lead,organic,258,243,5,0,1,1,Sarah Chen,1731065931
+HS-100078,Sophia,Ramirez,sophia.ramirez@gmail.com,Summit Solutions,sql,partner,11219,7,37,12,14,5,Alex Patel,1756640331
+HS-100079,William,Hill,williamhill@aol.com,Atlas Group,customer,paid,4067,135,0,0,0,14,Jordan Blake,1708083531
+HS-100080,Grace,Ramirez,graceramirez26@aol.com,Starlight,customer,paid,28883,9,43,10,5,0,Sarah Chen,1750851531
+HS-100081,Ella,Williams,ella.williams@hotmail.com,CloudScale,lead,paid,625,165,4,1,1,1,Sarah Chen,1744457931
+HS-100082,Lily,Lee,lily.lee@protonmail.com,Oasis Network,lead,paid,0,58,19,6,0,3,Marcus Rivera,1771673931
+HS-100083,Daniel,Martin,daniel.martin91@hotmail.com,Redwood Systems,mql,organic,1911,258,4,0,1,1,Sarah Chen,1726141131
+HS-100084,Jack,Johnson,jack.johnson21@protonmail.com,Cascade Digital,subscriber,organic,0,13,12,3,0,0,Marcus Rivera,1774179531
+HS-100085,Elijah,Williams,elijah.williams@outlook.com,BrightPath,customer,referral,11119,13,43,3,5,12,Sarah Chen,1726573131
+HS-100086,James,Miller,jamesmiller65@outlook.com,Apex Analytics,customer,paid,4340,180,3,0,0,13,Sarah Chen,1721043531
+HS-100087,Benjamin,Torres,benjamin.torres42@fastmail.com,Falcon Systems,customer,referral,8373,14,49,10,1,7,Taylor Kim,1755862731
+HS-100088,Charlotte,Walker,charlotte.walker@gmail.com,Atlas Group,customer,partner,26590,26,15,13,3,1,Taylor Kim,1763984331
+HS-100089,Sofia,Rodriguez,sofia.rodriguez42@protonmail.com,Harbor Tech,customer,partner,14003,20,22,3,3,5,Alex Patel,1754480331
+HS-100090,Lucas,White,lucas_white16@aol.com,IronBridge,opportunity,partner,24030,5,54,20,3,0,Taylor Kim,1759750731
+HS-100091,Ava,Clark,ava.clark@aol.com,Falcon Systems,customer,partner,13028,11,37,9,8,12,Marcus Rivera,1732361931
+HS-100092,Layla,Young,laylayoung@outlook.com,Falcon Systems,customer,referral,8825,231,3,0,0,22,Marcus Rivera,1737632331
+HS-100093,Sebastian,Martinez,sebastian_martinez66@icloud.com,TechVision,customer,outbound,13963,189,0,0,0,11,Taylor Kim,1724758731
+HS-100094,Lucas,King,lucasking@gmail.com,DataStream,mql,organic,3756,292,1,2,1,0,Marcus Rivera,1745667531
+HS-100095,Benjamin,Flores,benjaminflores@fastmail.com,Oasis Network,subscriber,paid,0,44,8,4,0,1,Alex Patel,1775907531
+HS-100096,Daniel,Garcia,daniel.garcia@protonmail.com,TechVision,sql,referral,25935,6,35,20,3,3,Alex Patel,1766749131
+HS-100097,Jack,White,jackwhite29@icloud.com,Harbor Tech,customer,organic,7906,25,26,11,5,15,Marcus Rivera,1739187531
+HS-100098,Chloe,Perez,chloe_perez@hotmail.com,Pine Valley,customer,organic,6493,17,40,6,2,6,Jordan Blake,1746790731
+HS-100099,Samuel,Martinez,samuel_martinez@gmail.com,Pine Valley,customer,paid,24230,12,41,7,4,4,Alex Patel,1756726731
+HS-100100,Ethan,Lopez,ethanlopez@icloud.com,Oasis Network,customer,partner,5510,168,2,0,0,18,Sarah Chen,1710848331
+HS-100101,Mia,Jones,mia.jones73@hotmail.com,Cascade Digital,subscriber,organic,0,33,22,2,0,2,Sarah Chen,1774179531
+HS-100102,Isabella,Rodriguez,isabella_rodriguez79@aol.com,Beacon Health,mql,organic,3866,253,1,1,0,0,Alex Patel,1737200331
+HS-100103,Riley,Gonzalez,rileygonzalez@gmail.com,VertexAI,lead,organic,0,60,25,8,0,1,Marcus Rivera,1772710731
+HS-100104,Sebastian,Wilson,sebastian.wilson@aol.com,ClearView,lead,paid,0,21,26,2,0,2,Sarah Chen,1771501131
+HS-100105,Ryan,Perez,ryan_perez84@hotmail.com,Forge Systems,customer,referral,4290,260,1,0,0,25,Sarah Chen,1743593931
+HS-100106,Isaac,Taylor,isaactaylor@fastmail.com,Redwood Systems,sql,outbound,31579,9,30,12,9,4,Marcus Rivera,1759405131
+HS-100107,Lily,Miller,lily_miller@icloud.com,Acme Corp,opportunity,outbound,21409,6,63,13,10,4,Marcus Rivera,1764416331
+HS-100108,Leo,White,leo_white@fastmail.com,Momentum Inc,customer,organic,18520,178,2,0,0,16,Taylor Kim,1716032331
+HS-100109,Avery,Martinez,averymartinez12@outlook.com,Falcon Systems,sql,outbound,49260,4,21,16,14,2,Sarah Chen,1752752331
+HS-100110,Ryan,Taylor,ryan_taylor@hotmail.com,Prism Data,mql,paid,4398,294,5,2,1,0,Marcus Rivera,1740829131
+HS-100111,Elijah,Anderson,elijah.anderson1@aol.com,PulsePoint,customer,referral,27640,30,13,14,5,2,Jordan Blake,1741693131
+HS-100112,Alexander,Brown,alexander_brown@protonmail.com,Starlight,opportunity,outbound,36211,3,67,9,6,3,Alex Patel,1755949131
+HS-100113,Chloe,Nguyen,chloenguyen8@yahoo.com,Starlight,customer,outbound,8475,321,3,0,0,14,Alex Patel,1732621131
+HS-100114,Amelia,Smith,amelia.smith73@protonmail.com,Oasis Network,customer,paid,6300,30,49,6,1,0,Jordan Blake,1727177931
+HS-100115,Ava,Thompson,ava_thompson@icloud.com,Oasis Network,mql,organic,4704,340,0,0,1,1,Sarah Chen,1728387531
+HS-100116,Olivia,Moore,olivia_moore@yahoo.com,Oasis Network,lead,organic,0,18,7,3,0,1,Taylor Kim,1774093131
+HS-100117,Caleb,Harris,calebharris@hotmail.com,SilverLine,lead,paid,0,57,7,4,0,2,Jordan Blake,1775043531
+HS-100118,Emma,Walker,emma_walker65@icloud.com,Starlight,opportunity,outbound,21337,8,71,18,11,1,Taylor Kim,1766749131
+HS-100119,Chloe,King,chloe_king@gmail.com,Forge Systems,customer,organic,21519,10,23,13,8,6,Marcus Rivera,1750937931
+HS-100120,Jack,Hernandez,jackhernandez12@aol.com,Cascade Digital,customer,partner,11481,269,2,0,0,10,Jordan Blake,1748777931
+HS-100121,Emily,Taylor,emily_taylor32@fastmail.com,ClearView,mql,organic,3635,97,5,0,1,1,Taylor Kim,1724240331
+HS-100122,Ryan,Young,ryanyoung74@hotmail.com,Redwood Systems,customer,organic,10239,318,1,0,0,11,Taylor Kim,1738841931
+HS-100123,Riley,Jones,riley_jones@hotmail.com,Summit Solutions,customer,outbound,15310,22,44,6,8,0,Marcus Rivera,1755085131
+HS-100124,Chloe,Davis,chloe.davis@hotmail.com,Relay Networks,opportunity,outbound,23486,7,44,9,6,5,Alex Patel,1756985931
+HS-100125,Avery,Wilson,avery.wilson@yahoo.com,Oasis Network,opportunity,referral,34977,10,76,10,9,0,Jordan Blake,1766749131
+HS-100126,James,Jackson,jamesjackson93@protonmail.com,Falcon Systems,lead,organic,0,50,28,4,0,1,Jordan Blake,1775389131
+HS-100127,Sofia,Walker,sofia_walker90@hotmail.com,Keystone,lead,organic,767,355,0,2,1,2,Taylor Kim,1737459531
+HS-100128,Hannah,Gonzalez,hannah.gonzalez@protonmail.com,Horizon Labs,opportunity,outbound,34862,7,29,9,5,3,Marcus Rivera,1757763531
+HS-100129,Charlotte,Brown,charlottebrown16@yahoo.com,CloudScale,customer,paid,7655,169,0,0,0,8,Jordan Blake,1736681931
+HS-100130,William,Walker,williamwalker@gmail.com,Acme Corp,customer,partner,9651,348,0,0,0,17,Alex Patel,1739792331
+HS-100131,Emily,Williams,emilywilliams@gmail.com,DataStream,customer,paid,11280,204,0,0,0,24,Marcus Rivera,1735213131
+HS-100132,Jack,Walker,jack.walker@yahoo.com,SkyNet Solutions,opportunity,outbound,22777,0,75,11,9,3,Jordan Blake,1753789131
+HS-100133,William,Clark,william.clark77@protonmail.com,Prism Data,customer,outbound,15467,299,3,0,0,8,Marcus Rivera,1747913931
+HS-100134,Owen,Allen,owen.allen@yahoo.com,Harbor Tech,lead,organic,2377,272,3,0,0,1,Marcus Rivera,1717069131
+HS-100135,Lucas,Anderson,lucas_anderson@gmail.com,CloudScale,opportunity,referral,21986,5,78,8,11,2,Marcus Rivera,1758973131
+HS-100136,Henry,Smith,henry.smith12@yahoo.com,Momentum Inc,lead,paid,2390,117,4,2,1,1,Marcus Rivera,1739533131
+HS-100137,Mia,Ramirez,mia.ramirez@fastmail.com,Zenith Digital,lead,organic,4611,131,2,2,1,0,Sarah Chen,1719142731
+HS-100138,Ava,Lopez,ava_lopez23@gmail.com,DataStream,sql,partner,15793,7,75,20,9,5,Taylor Kim,1755171531
+HS-100139,Hannah,Brown,hannah_brown@gmail.com,Starlight,opportunity,partner,17572,7,61,11,10,0,Sarah Chen,1764675531
+HS-100140,Ella,Nguyen,ellanguyen@icloud.com,IronBridge,sql,outbound,13681,4,51,13,14,2,Marcus Rivera,1764761931
+HS-100141,Abigail,Walker,abigail_walker36@outlook.com,SkyNet Solutions,customer,paid,17359,221,3,0,0,17,Taylor Kim,1718797131
+HS-100142,Ava,Garcia,ava_garcia@gmail.com,Apex Analytics,sql,referral,23599,1,36,5,10,5,Alex Patel,1754998731
+HS-100143,Avery,Thompson,avery.thompson36@gmail.com,Quantum Labs,customer,paid,5551,30,22,9,8,0,Jordan Blake,1750505931
+HS-100144,Harper,White,harperwhite@gmail.com,Cobalt Industries,opportunity,partner,33313,14,20,20,6,4,Marcus Rivera,1765107531
+HS-100145,Olivia,Sanchez,olivia_sanchez32@gmail.com,Emerald Tech,customer,outbound,3776,131,0,0,0,16,Taylor Kim,1722425931
+HS-100146,Benjamin,Allen,benjamin_allen@yahoo.com,Zenith Digital,lead,paid,0,8,14,2,0,2,Alex Patel,1770809931
+HS-100147,Emma,Rodriguez,emma.rodriguez87@yahoo.com,TrueNorth,subscriber,paid,0,49,6,8,0,2,Marcus Rivera,1771328331
+HS-100148,Owen,Flores,owen_flores93@outlook.com,Cobalt Industries,customer,partner,9314,204,2,0,0,8,Jordan Blake,1747481931
+HS-100149,Daniel,Thomas,danielthomas@outlook.com,Momentum Inc,customer,partner,2001,168,0,0,0,18,Marcus Rivera,1715600331
+HS-100150,Amelia,Flores,amelia_flores@fastmail.com,DataStream,subscriber,organic,0,47,14,3,0,2,Taylor Kim,1769168331
+HS-100151,Nathan,Walker,nathanwalker77@yahoo.com,BrightPath,mql,organic,2240,217,1,2,0,1,Alex Patel,1735645131
+HS-100152,Sofia,Nguyen,sofia_nguyen51@protonmail.com,Quantum Labs,lead,paid,282,154,3,1,1,2,Alex Patel,1720093131
+HS-100153,Owen,Lewis,owen_lewis@yahoo.com,NexGen,sql,referral,47621,7,34,19,8,0,Marcus Rivera,1761219531
+HS-100154,Noah,Lewis,noah_lewis@aol.com,BrightPath,lead,paid,3443,138,2,0,1,0,Jordan Blake,1746358731
+HS-100155,Alexander,Lopez,alexanderlopez@outlook.com,Prism Data,lead,organic,3667,178,4,0,1,1,Sarah Chen,1751629131
+HS-100156,Mia,Taylor,miataylor84@hotmail.com,SkyNet Solutions,customer,organic,21886,27,36,11,6,13,Marcus Rivera,1730288331
+HS-100157,Sofia,Anderson,sofia.anderson@gmail.com,Quantum Labs,customer,outbound,15761,26,34,10,6,5,Alex Patel,1741088331
+HS-100158,Ava,Martin,ava_martin65@icloud.com,Orbit Media,lead,paid,0,35,12,5,0,1,Sarah Chen,1769945931
+HS-100159,Riley,Miller,rileymiller@hotmail.com,BrightPath,mql,organic,2905,319,2,1,0,1,Alex Patel,1731152331
+HS-100160,Isabella,Martinez,isabella.martinez86@protonmail.com,Falcon Systems,customer,organic,4039,120,0,0,0,7,Marcus Rivera,1737805131
+HS-100161,Emma,Wilson,emmawilson40@fastmail.com,SilverLine,customer,organic,12176,25,40,5,4,7,Alex Patel,1754480331
+HS-100162,Charlotte,Anderson,charlotte_anderson8@outlook.com,Cobalt Industries,subscriber,organic,0,55,22,7,0,0,Taylor Kim,1772105931
+HS-100163,Sophia,Thomas,sophia.thomas36@outlook.com,Pine Valley,lead,paid,0,29,29,2,0,2,Sarah Chen,1771414731
+HS-100164,Ava,Wright,avawright@outlook.com,Forge Systems,customer,partner,20015,27,17,3,5,8,Jordan Blake,1726400331
+HS-100165,Layla,Garcia,layla_garcia@icloud.com,SilverLine,subscriber,paid,0,6,25,7,0,1,Alex Patel,1775302731
+HS-100166,Christian,Young,christianyoung89@gmail.com,Emerald Tech,lead,paid,228,217,4,0,0,2,Jordan Blake,1738323531
+HS-100167,Christian,Miller,christian.miller@fastmail.com,Cascade Digital,opportunity,referral,29331,10,42,18,6,2,Sarah Chen,1759664331
+HS-100168,Ryan,King,ryanking40@outlook.com,Harbor Tech,customer,partner,19646,17,50,7,6,2,Marcus Rivera,1761133131
+HS-100169,Henry,Moore,henrymoore70@fastmail.com,Pine Valley,customer,referral,34489,19,15,14,1,3,Sarah Chen,1757072331
+HS-100170,Olivia,Clark,olivia.clark@icloud.com,Quantum Labs,sql,referral,30125,9,41,20,6,3,Jordan Blake,1761305931
+HS-100171,Owen,Brown,owenbrown62@protonmail.com,IronBridge,customer,organic,2973,124,2,0,0,25,Jordan Blake,1749037131
+HS-100172,Ava,Flores,ava.flores@yahoo.com,PulsePoint,mql,paid,1709,149,4,2,1,1,Jordan Blake,1731757131
+HS-100173,Layla,Wright,layla.wright@gmail.com,Falcon Systems,opportunity,outbound,21187,0,40,6,3,0,Marcus Rivera,1757417931
+HS-100174,Isabella,Jackson,isabellajackson@aol.com,VertexAI,lead,organic,0,20,11,7,0,1,Taylor Kim,1768477131
+HS-100175,James,Hernandez,jameshernandez61@yahoo.com,Starlight,mql,organic,2252,130,1,0,0,0,Alex Patel,1729251531
+HS-100176,Evelyn,Young,evelyn.young@protonmail.com,Starlight,customer,referral,18898,210,2,0,0,11,Sarah Chen,1747222731
+HS-100177,Alexander,Wright,alexanderwright59@fastmail.com,Harbor Tech,lead,paid,0,39,22,3,0,1,Marcus Rivera,1774438731
+HS-100178,Ella,Johnson,ella.johnson@icloud.com,Starlight,customer,paid,17036,330,3,0,0,21,Sarah Chen,1749814731
+HS-100179,Harper,Hill,harper.hill74@aol.com,Falcon Systems,lead,paid,1897,148,0,1,0,0,Jordan Blake,1743939531
+HS-100180,Christian,Sanchez,christian.sanchez@protonmail.com,Oasis Network,lead,organic,3383,209,3,1,1,0,Sarah Chen,1758195531
+HS-100181,Benjamin,Clark,benjamin.clark@gmail.com,Beacon Health,mql,organic,3348,329,1,0,1,1,Taylor Kim,1721907531
+HS-100182,Elizabeth,Clark,elizabethclark41@hotmail.com,PulsePoint,mql,organic,2466,348,4,1,1,1,Taylor Kim,1741174731
+HS-100183,Leo,Jackson,leo_jackson@hotmail.com,Emerald Tech,subscriber,organic,0,29,18,3,0,1,Alex Patel,1775043531
+HS-100184,Layla,Torres,layla.torres16@yahoo.com,Cascade Digital,sql,partner,21139,4,42,7,6,2,Marcus Rivera,1754912331
+HS-100185,Aria,Allen,aria_allen@yahoo.com,Acme Corp,lead,paid,0,37,28,7,0,0,Jordan Blake,1775302731
+HS-100186,Isabella,Wright,isabella.wright78@yahoo.com,Forge Systems,subscriber,paid,0,13,23,3,0,2,Sarah Chen,1775302731
+HS-100187,Jackson,Garcia,jacksongarcia@yahoo.com,Atlas Group,lead,paid,4135,93,4,2,0,0,Sarah Chen,1748691531
+HS-100188,Isabella,King,isabellaking@hotmail.com,Summit Solutions,customer,organic,2801,334,3,0,0,20,Alex Patel,1724240331
+HS-100189,Nathan,Garcia,nathan.garcia93@hotmail.com,Harbor Tech,sql,partner,21959,6,61,5,11,1,Marcus Rivera,1760614731
+HS-100190,Ethan,Gonzalez,ethan_gonzalez@gmail.com,Atlas Group,sql,partner,10130,6,72,12,9,0,Taylor Kim,1755257931
+HS-100191,Aria,Davis,aria.davis8@aol.com,Beacon Health,lead,organic,317,263,5,0,0,1,Marcus Rivera,1755171531
+HS-100192,Amelia,Lewis,amelialewis@hotmail.com,Acme Corp,customer,paid,33942,13,13,9,6,10,Jordan Blake,1751283531
+HS-100193,Alexander,Gonzalez,alexander.gonzalez@outlook.com,Emerald Tech,sql,outbound,21591,8,56,13,5,2,Marcus Rivera,1756294731
+HS-100194,Charlotte,Davis,charlottedavis64@icloud.com,ClearView,subscriber,organic,0,25,8,4,0,0,Alex Patel,1769427531
+HS-100195,Harper,Wilson,harper_wilson74@hotmail.com,ClearView,subscriber,paid,0,24,25,3,0,0,Sarah Chen,1771587531
+HS-100196,Ethan,White,ethan.white@fastmail.com,Apex Analytics,customer,referral,30652,25,17,7,1,8,Alex Patel,1762774731
+HS-100197,Ella,Brown,ella.brown26@protonmail.com,Beacon Health,customer,outbound,13922,27,32,10,6,3,Marcus Rivera,1729769931
+HS-100198,Alexander,Rodriguez,alexanderrodriguez36@aol.com,Horizon Labs,customer,organic,8968,213,0,0,0,6,Marcus Rivera,1746445131
+HS-100199,Dylan,King,dylan.king@outlook.com,Cobalt Industries,mql,paid,117,253,4,1,1,0,Taylor Kim,1740569931
+HS-100200,Owen,King,owen.king@protonmail.com,Cobalt Industries,lead,paid,0,26,23,6,0,0,Marcus Rivera,1775043531
+HS-100201,Amelia,Harris,amelia.harris@aol.com,Cascade Digital,opportunity,partner,15429,0,49,14,13,0,Jordan Blake,1768217931
+HS-100202,Riley,Smith,riley.smith@icloud.com,IronBridge,sql,outbound,32079,12,47,6,13,3,Jordan Blake,1750765131
+HS-100203,Amelia,Clark,ameliaclark@protonmail.com,Prism Data,opportunity,partner,36741,10,41,7,6,0,Taylor Kim,1760441931
+HS-100204,Henry,Thomas,henrythomas@yahoo.com,TrueNorth,subscriber,paid,0,9,20,4,0,1,Sarah Chen,1770550731
+HS-100205,Harper,Sanchez,harper.sanchez@gmail.com,Horizon Labs,mql,paid,3505,172,3,2,0,2,Alex Patel,1717155531
+HS-100206,Matthew,Wright,matthew_wright79@hotmail.com,TrueNorth,customer,referral,7979,9,16,15,3,12,Jordan Blake,1725622731
+HS-100207,Olivia,Lewis,olivia_lewis@icloud.com,TrueNorth,lead,organic,0,58,15,2,0,0,Marcus Rivera,1769686731
+HS-100208,Lily,Robinson,lilyrobinson@fastmail.com,Keystone,sql,outbound,20345,4,59,13,7,4,Sarah Chen,1766489931
+HS-100209,Alexander,Moore,alexander.moore66@outlook.com,TechVision,customer,partner,22695,14,13,10,4,15,Jordan Blake,1758973131
+HS-100210,Samuel,Sanchez,samuel.sanchez@gmail.com,SkyNet Solutions,sql,partner,48030,9,41,8,13,2,Marcus Rivera,1769686731
+HS-100211,Harper,King,harper.king@icloud.com,Atlas Group,customer,referral,12861,7,35,9,4,1,Sarah Chen,1728473931
+HS-100212,Charlotte,Garcia,charlotte.garcia87@hotmail.com,ClearView,mql,organic,4304,110,5,0,0,2,Taylor Kim,1749555531
+HS-100213,Harper,Smith,harpersmith@outlook.com,SilverLine,customer,paid,28014,14,24,3,2,0,Taylor Kim,1740051531
+HS-100214,Aiden,Wilson,aidenwilson18@aol.com,Quantum Labs,lead,paid,0,54,22,5,0,0,Jordan Blake,1768390731
+HS-100215,Jack,White,jackwhite97@fastmail.com,PulsePoint,subscriber,paid,0,25,29,5,0,3,Alex Patel,1769773131
+HS-100216,Scarlett,Ramirez,scarlett.ramirez3@protonmail.com,CloudScale,customer,referral,18375,147,1,0,0,24,Alex Patel,1710502731
+HS-100217,Chloe,Young,chloe.young61@aol.com,Harbor Tech,customer,paid,4978,356,2,0,0,16,Sarah Chen,1746790731
+HS-100218,Emma,Torres,emma.torres58@fastmail.com,Apex Analytics,customer,referral,10948,14,35,14,7,12,Jordan Blake,1749728331
+HS-100219,Scarlett,Martinez,scarlett.martinez6@aol.com,Emerald Tech,sql,referral,19782,1,34,13,5,0,Alex Patel,1754221131
+HS-100220,Emily,White,emily.white@hotmail.com,Relay Networks,subscriber,paid,0,17,18,4,0,0,Taylor Kim,1769168331
+HS-100221,Victoria,Lopez,victoria.lopez77@yahoo.com,CloudScale,opportunity,referral,20202,10,37,5,3,2,Marcus Rivera,1764761931
+HS-100222,Sophia,Smith,sophia.smith3@fastmail.com,TechVision,customer,paid,7248,16,24,5,8,15,Jordan Blake,1740051531
+HS-100223,Mia,Anderson,mia_anderson@gmail.com,Starlight,customer,outbound,11547,327,0,0,0,28,Sarah Chen,1739360331
+HS-100224,Olivia,Scott,olivia.scott@yahoo.com,Keystone,subscriber,paid,0,48,5,6,0,2,Sarah Chen,1771501131
+HS-100225,Matthew,Miller,matthew.miller59@protonmail.com,Emerald Tech,sql,partner,46372,12,36,15,14,4,Jordan Blake,1758368331
+HS-100226,Alexander,Thomas,alexander.thomas19@hotmail.com,DataStream,sql,partner,25666,0,71,18,3,0,Jordan Blake,1753184331
+HS-100227,Samuel,Smith,samuel_smith@protonmail.com,TrueNorth,customer,paid,13166,243,0,0,0,17,Jordan Blake,1730201931
+HS-100228,Sophia,Taylor,sophiataylor@gmail.com,Cascade Digital,sql,partner,36221,10,52,9,11,5,Marcus Rivera,1766489931
+HS-100229,Emily,Thompson,emilythompson@icloud.com,Atlas Group,customer,referral,8699,198,3,0,0,19,Jordan Blake,1741001931
+HS-100230,Sebastian,Garcia,sebastiangarcia@gmail.com,Beacon Health,sql,partner,25262,7,65,15,13,0,Alex Patel,1750505931
+HS-100231,Layla,Thompson,layla_thompson@gmail.com,ClearView,customer,partner,7571,243,3,0,0,14,Marcus Rivera,1724758731
+HS-100232,Aria,Garcia,ariagarcia@protonmail.com,Orbit Media,lead,paid,0,36,26,6,0,0,Marcus Rivera,1774265931
+HS-100233,Olivia,Garcia,olivia.garcia@fastmail.com,TrueNorth,customer,paid,7640,350,2,0,0,17,Marcus Rivera,1724758731
+HS-100234,Noah,Hill,noahhill20@yahoo.com,Emerald Tech,sql,outbound,33945,8,61,14,11,2,Alex Patel,1764070731
+HS-100235,Ryan,Martinez,ryan_martinez45@hotmail.com,Redwood Systems,customer,referral,16258,313,0,0,0,23,Alex Patel,1736681931
+HS-100236,Chloe,Moore,chloe_moore43@yahoo.com,Apex Analytics,customer,organic,25428,12,30,13,1,6,Jordan Blake,1766057931
+HS-100237,Ava,Wilson,avawilson@icloud.com,PulsePoint,mql,organic,351,183,2,1,0,2,Marcus Rivera,1742816331
+HS-100238,Nathan,Hernandez,nathanhernandez53@yahoo.com,IronBridge,customer,paid,34915,29,44,4,6,1,Marcus Rivera,1762947531
+HS-100239,Mia,Jackson,mia.jackson46@yahoo.com,VertexAI,mql,organic,676,201,4,0,1,2,Sarah Chen,1716291531
+HS-100240,Owen,Thompson,owen.thompson@yahoo.com,Beacon Health,lead,paid,4078,218,0,1,0,1,Taylor Kim,1736854731
+HS-100241,Ryan,King,ryan_king@icloud.com,VertexAI,customer,paid,13214,22,23,11,7,6,Sarah Chen,1741433931
+HS-100242,Avery,Wilson,averywilson@fastmail.com,IronBridge,opportunity,outbound,38084,7,38,18,8,1,Alex Patel,1750246731
+HS-100243,Jackson,Young,jackson_young68@gmail.com,TechVision,customer,partner,5435,268,3,0,0,17,Jordan Blake,1745408331
+HS-100244,Riley,Lewis,riley.lewis@yahoo.com,Pine Valley,subscriber,organic,0,56,28,6,0,0,Taylor Kim,1770464331
+HS-100245,Elizabeth,Rodriguez,elizabeth_rodriguez2@gmail.com,SilverLine,subscriber,paid,0,42,18,8,0,1,Taylor Kim,1774611531
+HS-100246,Aria,Scott,aria.scott@protonmail.com,Quantum Labs,customer,outbound,2222,122,0,0,0,28,Alex Patel,1707737931
+HS-100247,Abigail,Miller,abigail.miller32@aol.com,Horizon Labs,sql,partner,32758,14,24,6,8,5,Alex Patel,1751715531
+HS-100248,Jackson,Davis,jacksondavis@yahoo.com,SilverLine,customer,organic,28327,28,37,4,8,13,Taylor Kim,1727609931
+HS-100249,Emma,Robinson,emmarobinson88@icloud.com,Starlight,customer,partner,13050,353,1,0,0,19,Taylor Kim,1744025931
+HS-100250,William,Robinson,william.robinson80@yahoo.com,Pine Valley,lead,organic,0,33,25,7,0,0,Marcus Rivera,1771155531
+HS-100251,Emma,Johnson,emmajohnson@outlook.com,PulsePoint,opportunity,outbound,24865,4,60,5,11,1,Marcus Rivera,1763725131
+HS-100252,Ryan,Smith,ryan.smith@fastmail.com,Orbit Media,mql,organic,2524,123,4,1,1,2,Alex Patel,1748777931
+HS-100253,Scarlett,Rodriguez,scarlettrodriguez89@protonmail.com,Quantum Labs,lead,organic,0,60,27,1,0,0,Taylor Kim,1771241931
+HS-100254,Caleb,Torres,caleb_torres@aol.com,DataStream,sql,partner,10280,11,45,5,12,5,Jordan Blake,1768390731
+HS-100255,Abigail,Johnson,abigailjohnson@aol.com,Momentum Inc,customer,referral,23197,7,32,10,5,2,Marcus Rivera,1756553931
+HS-100256,Noah,Moore,noah.moore@fastmail.com,ClearView,customer,organic,15266,148,1,0,0,16,Jordan Blake,1742989131
+HS-100257,Emily,Gonzalez,emily_gonzalez@yahoo.com,Apex Analytics,customer,paid,18412,124,3,0,0,30,Sarah Chen,1747136331
+HS-100258,Sofia,Thomas,sofia.thomas@aol.com,IronBridge,opportunity,partner,20679,8,25,16,7,2,Marcus Rivera,1767267531
+HS-100259,Alexander,Davis,alexander.davis36@icloud.com,Horizon Labs,opportunity,partner,37074,0,54,16,7,5,Marcus Rivera,1770723531
+HS-100260,Dylan,Gonzalez,dylangonzalez@protonmail.com,SilverLine,opportunity,partner,28768,14,63,7,12,1,Taylor Kim,1764502731
+HS-100261,Emily,Walker,emilywalker@aol.com,Orbit Media,customer,partner,12283,26,50,14,1,0,Marcus Rivera,1735904331
+HS-100262,Avery,Martin,avery_martin@outlook.com,BrightPath,opportunity,partner,14285,11,65,13,4,1,Sarah Chen,1764761931
+HS-100263,Aria,Garcia,aria_garcia@aol.com,VertexAI,customer,organic,11185,22,13,9,1,11,Jordan Blake,1749209931
+HS-100264,Charlotte,Jones,charlotte_jones42@aol.com,Forge Systems,customer,referral,16354,28,42,12,7,12,Alex Patel,1747136331
+HS-100265,Christian,Miller,christian_miller94@protonmail.com,Pine Valley,opportunity,partner,34829,14,69,5,15,2,Taylor Kim,1768649931
+HS-100266,Scarlett,Jackson,scarlettjackson65@fastmail.com,Keystone,subscriber,paid,0,31,19,7,0,3,Taylor Kim,1768995531
+HS-100267,Benjamin,Lopez,benjamin_lopez@aol.com,Acme Corp,customer,partner,7117,28,17,13,3,2,Marcus Rivera,1739792331
+HS-100268,Ethan,Torres,ethantorres@icloud.com,Acme Corp,mql,organic,2113,239,1,0,1,0,Marcus Rivera,1748432331
+HS-100269,Noah,Lewis,noah_lewis@protonmail.com,Starlight,opportunity,outbound,32043,11,46,15,9,0,Marcus Rivera,1758281931
+HS-100270,Samuel,Moore,samuel.moore93@hotmail.com,ClearView,lead,organic,0,34,15,1,0,3,Marcus Rivera,1771328331
+HS-100271,Isabella,Flores,isabella.flores96@protonmail.com,Zenith Digital,customer,organic,19094,259,3,0,0,26,Alex Patel,1716291531
+HS-100272,Henry,King,henryking@fastmail.com,TechVision,lead,paid,2202,248,4,2,1,1,Jordan Blake,1734003531
+HS-100273,Christian,Thomas,christianthomas34@aol.com,NexGen,lead,organic,0,13,30,2,0,0,Marcus Rivera,1774784331
+HS-100274,Olivia,Nguyen,olivianguyen45@outlook.com,VertexAI,customer,organic,18414,227,3,0,0,18,Sarah Chen,1717069131
+HS-100275,Abigail,Brown,abigailbrown@outlook.com,Oasis Network,lead,paid,3240,323,5,0,0,0,Taylor Kim,1728214731
+HS-100276,Victoria,Scott,victoriascott34@gmail.com,Zenith Digital,lead,paid,0,32,11,4,0,2,Taylor Kim,1775907531
+HS-100277,Aiden,Perez,aiden.perez80@fastmail.com,Momentum Inc,subscriber,paid,0,55,12,3,0,2,Sarah Chen,1769600331
+HS-100278,Hannah,Garcia,hannahgarcia@icloud.com,Starlight,customer,paid,16733,23,20,12,8,15,Marcus Rivera,1753961931
+HS-100279,Nathan,Johnson,nathan_johnson71@protonmail.com,Zenith Digital,customer,outbound,4627,185,2,0,0,6,Marcus Rivera,1750246731
+HS-100280,Evelyn,Gonzalez,evelyngonzalez95@icloud.com,Oasis Network,opportunity,outbound,43223,6,80,15,9,1,Taylor Kim,1754825931
+HS-100281,Elijah,Perez,elijahperez77@hotmail.com,NexGen,customer,partner,30735,6,38,6,3,7,Sarah Chen,1726141131
+HS-100282,Hannah,Lopez,hannah.lopez50@hotmail.com,DataStream,sql,referral,11114,4,27,15,12,1,Taylor Kim,1759491531
+HS-100283,Daniel,Hill,daniel.hill@aol.com,NexGen,subscriber,paid,0,27,12,4,0,1,Sarah Chen,1770550731
+HS-100284,Lucas,White,lucas.white@gmail.com,Orbit Media,lead,paid,2105,288,2,2,0,2,Alex Patel,1752320331
+HS-100285,Emma,Lopez,emma.lopez@outlook.com,Acme Corp,lead,paid,1064,135,3,1,0,0,Sarah Chen,1716550731
+HS-100286,Emily,Davis,emily_davis@aol.com,ClearView,mql,organic,2800,322,0,0,0,2,Alex Patel,1715686731
+HS-100287,Layla,Nguyen,layla_nguyen@yahoo.com,Pine Valley,customer,partner,5536,305,1,0,0,8,Taylor Kim,1726918731
+HS-100288,Chloe,Jackson,chloe_jackson89@gmail.com,Orbit Media,opportunity,referral,46222,5,78,13,9,0,Taylor Kim,1760873931
+HS-100289,Ryan,Wilson,ryan_wilson@outlook.com,Harbor Tech,customer,organic,4925,238,1,0,0,14,Jordan Blake,1741865931
+HS-100290,Elizabeth,Davis,elizabethdavis@aol.com,Quantum Labs,subscriber,organic,0,14,13,8,0,2,Taylor Kim,1774179531
+HS-100291,James,Torres,jamestorres@aol.com,Redwood Systems,sql,referral,19859,1,59,9,15,3,Taylor Kim,1752493131
+HS-100292,Matthew,Perez,matthewperez59@protonmail.com,Orbit Media,lead,organic,3154,246,0,1,0,2,Taylor Kim,1729510731
+HS-100293,Hannah,Johnson,hannah_johnson@gmail.com,Falcon Systems,mql,organic,1321,243,2,1,1,0,Marcus Rivera,1730979531
+HS-100294,Isaac,Thompson,isaacthompson29@gmail.com,Horizon Labs,lead,paid,1627,179,4,2,0,0,Taylor Kim,1755257931
+HS-100295,Elijah,Williams,elijah_williams89@protonmail.com,Prism Data,mql,paid,29,128,2,2,0,1,Alex Patel,1741606731
+HS-100296,Dylan,Jones,dylanjones@icloud.com,Pine Valley,mql,organic,4385,165,0,1,1,1,Alex Patel,1725017931
+HS-100297,Ava,Lee,avalee4@fastmail.com,BrightPath,customer,referral,10453,10,43,5,3,14,Marcus Rivera,1748864331
+HS-100298,Ethan,Thomas,ethan_thomas60@aol.com,Horizon Labs,subscriber,paid,0,45,14,3,0,0,Marcus Rivera,1769081931
+HS-100299,Ryan,Harris,ryanharris@icloud.com,Cobalt Industries,opportunity,outbound,35519,1,56,20,13,4,Taylor Kim,1768736331
+HS-100300,Lucas,Allen,lucas.allen@fastmail.com,PulsePoint,customer,referral,11267,213,1,0,0,28,Jordan Blake,1746877131
+HS-100301,Emma,Lopez,emma.lopez68@protonmail.com,Keystone,customer,partner,31869,2,31,6,3,0,Taylor Kim,1748777931
+HS-100302,Emily,Williams,emily_williams@protonmail.com,Apex Analytics,subscriber,organic,0,11,27,7,0,3,Taylor Kim,1770464331
+HS-100303,Elijah,Williams,elijah_williams@fastmail.com,Prism Data,lead,paid,0,6,15,5,0,3,Marcus Rivera,1771501131
+HS-100304,Sophia,Jones,sophia_jones6@fastmail.com,Falcon Systems,sql,partner,43472,12,46,7,11,0,Alex Patel,1760096331
+HS-100305,Ava,Brown,ava.brown@protonmail.com,Keystone,subscriber,paid,0,7,22,1,0,0,Jordan Blake,1771933131
+HS-100306,Noah,King,noahking@outlook.com,Cascade Digital,subscriber,paid,0,35,25,3,0,3,Taylor Kim,1775993931
+HS-100307,Sebastian,Martinez,sebastian_martinez60@fastmail.com,Quantum Labs,customer,referral,8581,184,2,0,0,30,Marcus Rivera,1721043531
+HS-100308,Victoria,Robinson,victoriarobinson76@icloud.com,Falcon Systems,lead,paid,0,30,23,6,0,3,Alex Patel,1773488331
+HS-100309,Henry,Gonzalez,henry_gonzalez93@icloud.com,Pine Valley,lead,paid,0,37,12,7,0,1,Alex Patel,1771760331
+HS-100310,Abigail,Hill,abigail_hill@icloud.com,Cascade Digital,customer,referral,18221,8,26,5,5,12,Marcus Rivera,1763725131
+HS-100311,William,Clark,william_clark@hotmail.com,Zenith Digital,opportunity,outbound,11608,7,34,17,14,0,Sarah Chen,1755949131
+HS-100312,Samuel,Gonzalez,samuel_gonzalez@gmail.com,Pine Valley,mql,paid,151,116,5,0,0,2,Taylor Kim,1719056331
+HS-100313,William,King,williamking49@outlook.com,Cascade Digital,lead,paid,2918,271,4,1,0,0,Marcus Rivera,1758195531
+HS-100314,Noah,Anderson,noah.anderson@protonmail.com,TrueNorth,lead,organic,3525,204,4,0,0,2,Sarah Chen,1740310731
+HS-100315,Chloe,Sanchez,chloe.sanchez@icloud.com,Atlas Group,customer,outbound,7107,28,17,13,5,8,Jordan Blake,1730201931
+HS-100316,Olivia,Young,olivia.young96@yahoo.com,ClearView,opportunity,partner,34934,11,67,8,14,5,Jordan Blake,1756553931
+HS-100317,Isaac,Gonzalez,isaac.gonzalez@fastmail.com,NexGen,customer,paid,10677,4,35,15,1,5,Sarah Chen,1761046731
+HS-100318,Grace,Jackson,grace.jackson56@gmail.com,TrueNorth,mql,paid,3352,150,4,2,0,0,Alex Patel,1740829131
+HS-100319,Leo,Brown,leo.brown39@fastmail.com,SkyNet Solutions,sql,partner,14749,12,62,7,7,5,Taylor Kim,1759577931
+HS-100320,Amelia,Lee,amelia_lee@fastmail.com,Apex Analytics,lead,paid,0,41,23,5,0,1,Jordan Blake,1773574731
+HS-100321,Henry,Johnson,henry.johnson@gmail.com,SilverLine,customer,partner,22271,9,17,13,8,8,Taylor Kim,1726054731
+HS-100322,Harper,Lee,harper_lee1@outlook.com,Acme Corp,sql,partner,33385,8,58,6,11,3,Marcus Rivera,1768822731
+HS-100323,Henry,Sanchez,henrysanchez@yahoo.com,Cobalt Industries,customer,partner,15135,341,0,0,0,29,Sarah Chen,1717673931
+HS-100324,Ethan,Ramirez,ethan_ramirez@gmail.com,Prism Data,opportunity,outbound,33772,6,59,16,13,2,Taylor Kim,1770464331
+HS-100325,Evelyn,Williams,evelyn_williams@protonmail.com,Zenith Digital,subscriber,organic,0,17,30,6,0,1,Jordan Blake,1775302731
+HS-100326,Sophia,Jones,sophiajones92@gmail.com,Redwood Systems,subscriber,organic,0,8,10,1,0,3,Alex Patel,1771587531
+HS-100327,Layla,Perez,layla.perez77@gmail.com,Relay Networks,customer,outbound,30656,25,50,8,8,9,Taylor Kim,1746358731
+HS-100328,Victoria,Williams,victoriawilliams35@protonmail.com,Cobalt Industries,mql,paid,324,242,2,1,0,0,Marcus Rivera,1720265931
+HS-100329,Emma,Miller,emma_miller@hotmail.com,NexGen,customer,paid,3659,335,0,0,0,12,Alex Patel,1749728331
+HS-100330,Elizabeth,Anderson,elizabeth.anderson59@outlook.com,TrueNorth,customer,organic,12162,281,3,0,0,25,Sarah Chen,1717155531
+HS-100331,Abigail,Lewis,abigaillewis@hotmail.com,PulsePoint,customer,partner,30771,4,31,8,6,4,Taylor Kim,1727005131
+HS-100332,Ryan,Brown,ryan_brown@icloud.com,Falcon Systems,customer,partner,26571,15,10,6,8,8,Alex Patel,1734521931
+HS-100333,Emily,Robinson,emilyrobinson32@icloud.com,Zenith Digital,lead,paid,3118,125,3,0,0,0,Marcus Rivera,1745235531
+HS-100334,Liam,Taylor,liamtaylor@gmail.com,CloudScale,customer,partner,6329,3,25,4,7,15,Taylor Kim,1760096331
+HS-100335,Samuel,Robinson,samuel_robinson2@aol.com,CloudScale,customer,partner,21676,28,11,4,2,14,Taylor Kim,1753443531
+HS-100336,Daniel,Anderson,daniel.anderson@aol.com,Starlight,sql,partner,20549,1,66,10,15,0,Alex Patel,1765193931
+HS-100337,Riley,Jones,rileyjones22@aol.com,PulsePoint,customer,partner,29416,8,36,4,2,9,Marcus Rivera,1759491531
+HS-100338,Emma,Rodriguez,emma.rodriguez@aol.com,Beacon Health,opportunity,outbound,48222,11,21,15,6,0,Jordan Blake,1752493131
+HS-100339,Harper,Wright,harper.wright@hotmail.com,Horizon Labs,customer,organic,15017,256,3,0,0,17,Jordan Blake,1730374731
+HS-100340,Sophia,Jones,sophiajones@fastmail.com,VertexAI,subscriber,paid,0,32,8,8,0,0,Marcus Rivera,1768649931
+HS-100341,Abigail,Rodriguez,abigailrodriguez76@protonmail.com,Keystone,sql,partner,15263,7,26,19,3,2,Sarah Chen,1761910731
+HS-100342,Ryan,Hill,ryan_hill3@gmail.com,Zenith Digital,lead,paid,1214,104,2,1,1,2,Marcus Rivera,1754393931
+HS-100343,Alexander,Thomas,alexander_thomas@hotmail.com,TechVision,customer,partner,21804,8,23,9,8,13,Alex Patel,1764589131
+HS-100344,Grace,Rodriguez,grace.rodriguez@hotmail.com,TrueNorth,sql,referral,23170,13,69,8,9,5,Jordan Blake,1752925131
+HS-100345,Emily,Rodriguez,emily.rodriguez85@aol.com,Harbor Tech,customer,referral,20142,13,36,4,4,0,Sarah Chen,1760787531
+HS-100346,William,Miller,william_miller84@gmail.com,Oasis Network,opportunity,referral,15768,12,78,13,4,4,Sarah Chen,1762515531
+HS-100347,Isabella,Smith,isabella_smith22@outlook.com,Prism Data,customer,paid,13520,24,12,5,8,8,Taylor Kim,1751369931
+HS-100348,Aria,Taylor,aria_taylor4@icloud.com,Harbor Tech,customer,paid,5100,17,34,15,1,8,Marcus Rivera,1752752331
+HS-100349,Victoria,Miller,victoria_miller61@hotmail.com,Acme Corp,mql,organic,1992,127,1,1,0,2,Marcus Rivera,1747049931
+HS-100350,Ryan,Smith,ryan.smith92@protonmail.com,TrueNorth,mql,paid,3194,259,5,2,0,1,Jordan Blake,1731670731
+HS-100351,Sofia,Smith,sofia.smith74@gmail.com,Redwood Systems,mql,paid,1588,153,5,1,1,0,Alex Patel,1716896331
+HS-100352,Ryan,Torres,ryan_torres80@aol.com,Redwood Systems,sql,partner,21685,5,66,11,3,0,Taylor Kim,1755517131
+HS-100353,Jack,Allen,jack.allen64@gmail.com,BrightPath,opportunity,partner,17146,5,32,12,11,5,Alex Patel,1770723531
+HS-100354,Daniel,Anderson,daniel_anderson41@outlook.com,Redwood Systems,customer,partner,4480,237,3,0,0,10,Taylor Kim,1734608331
+HS-100355,Lucas,Robinson,lucasrobinson@protonmail.com,Pine Valley,subscriber,organic,0,10,27,3,0,1,Taylor Kim,1774438731
+HS-100356,Nathan,King,nathan_king46@icloud.com,PulsePoint,customer,referral,9166,0,21,4,5,3,Sarah Chen,1731325131
+HS-100357,Elijah,Rodriguez,elijahrodriguez64@icloud.com,Apex Analytics,subscriber,paid,0,20,25,4,0,1,Jordan Blake,1775993931
+HS-100358,Aiden,Wright,aiden_wright34@protonmail.com,TechVision,mql,paid,3099,229,1,1,0,0,Marcus Rivera,1716032331
+HS-100359,Jackson,Moore,jackson.moore@icloud.com,Atlas Group,customer,partner,27023,20,20,5,1,10,Jordan Blake,1733830731
+HS-100360,Sofia,Garcia,sofia_garcia@hotmail.com,IronBridge,lead,paid,950,133,1,0,1,1,Alex Patel,1746531531
+HS-100361,Scarlett,Davis,scarlettdavis@protonmail.com,Relay Networks,customer,organic,23976,29,12,11,6,3,Jordan Blake,1728387531
+HS-100362,Benjamin,Garcia,benjamingarcia@aol.com,Forge Systems,customer,outbound,16250,166,0,0,0,24,Jordan Blake,1709465931
+HS-100363,Ethan,Torres,ethan.torres13@yahoo.com,VertexAI,opportunity,referral,24857,0,37,15,14,2,Sarah Chen,1755430731
+HS-100364,Jack,Allen,jack.allen@outlook.com,TrueNorth,customer,paid,7873,16,23,6,2,12,Sarah Chen,1732966731
+HS-100365,Emma,Brown,emmabrown@fastmail.com,BrightPath,lead,paid,2755,149,5,1,0,0,Sarah Chen,1745840331
+HS-100366,William,Nguyen,williamnguyen@yahoo.com,Keystone,lead,paid,2870,361,4,1,0,0,Marcus Rivera,1724413131
+HS-100367,Liam,Martinez,liam_martinez@hotmail.com,Apex Analytics,sql,referral,45903,3,24,10,4,5,Sarah Chen,1765625931
+HS-100368,Alexander,White,alexander_white11@gmail.com,Prism Data,lead,paid,0,20,6,2,0,2,Marcus Rivera,1769427531
+HS-100369,Elizabeth,Lewis,elizabeth_lewis@fastmail.com,PulsePoint,lead,organic,3291,234,5,1,1,0,Marcus Rivera,1716205131
+HS-100370,Emily,Gonzalez,emily.gonzalez@yahoo.com,VertexAI,customer,outbound,8752,139,1,0,0,8,Taylor Kim,1719920331
+HS-100371,Abigail,Smith,abigailsmith5@yahoo.com,NexGen,customer,organic,11503,326,1,0,0,27,Jordan Blake,1749296331
+HS-100372,Layla,Harris,layla.harris79@outlook.com,SilverLine,opportunity,referral,18951,4,34,16,11,5,Jordan Blake,1754653131
+HS-100373,Leo,Rodriguez,leorodriguez@fastmail.com,Orbit Media,customer,partner,23530,27,46,8,7,14,Taylor Kim,1750073931
+HS-100374,Samuel,Robinson,samuel.robinson@hotmail.com,Atlas Group,customer,partner,24505,30,12,12,7,3,Taylor Kim,1743593931
+HS-100375,Henry,Gonzalez,henrygonzalez@icloud.com,Momentum Inc,lead,organic,521,319,4,1,0,0,Taylor Kim,1731065931
+HS-100376,James,Gonzalez,jamesgonzalez@hotmail.com,Apex Analytics,mql,organic,1014,314,1,0,0,2,Alex Patel,1758195531
+HS-100377,Elijah,Torres,elijahtorres12@protonmail.com,PulsePoint,customer,outbound,22970,21,23,11,1,11,Sarah Chen,1738669131
+HS-100378,Mia,Martinez,mia.martinez@fastmail.com,Acme Corp,customer,referral,3296,238,1,0,0,18,Taylor Kim,1741433931
+HS-100379,James,Thompson,jamesthompson60@gmail.com,Quantum Labs,customer,partner,13086,24,12,12,3,3,Alex Patel,1766144331
+HS-100380,Sebastian,Young,sebastianyoung@aol.com,ClearView,customer,paid,20454,17,42,3,1,3,Taylor Kim,1733225931
+HS-100381,Lucas,Young,lucasyoung72@hotmail.com,SkyNet Solutions,customer,organic,15717,230,1,0,0,13,Sarah Chen,1738841931
+HS-100382,William,Thomas,william_thomas@protonmail.com,Zenith Digital,lead,organic,0,0,27,8,0,0,Taylor Kim,1773488331
+HS-100383,Harper,Wilson,harper_wilson@protonmail.com,BrightPath,subscriber,paid,0,16,11,2,0,1,Taylor Kim,1776080331
+HS-100384,Ava,Lopez,avalopez@gmail.com,PulsePoint,opportunity,partner,22871,5,63,11,11,5,Jordan Blake,1759577931
+HS-100385,Benjamin,Torres,benjamin.torres8@icloud.com,Beacon Health,customer,outbound,5112,157,2,0,0,11,Marcus Rivera,1749209931
+HS-100386,Samuel,Perez,samuel.perez81@protonmail.com,Quantum Labs,lead,paid,756,349,3,2,1,2,Marcus Rivera,1718797131
+HS-100387,Jack,Lopez,jack_lopez9@yahoo.com,Momentum Inc,subscriber,paid,0,8,5,5,0,3,Taylor Kim,1769254731
+HS-100388,Aiden,Thomas,aiden_thomas64@yahoo.com,Falcon Systems,customer,paid,9717,277,2,0,0,9,Taylor Kim,1741433931
+HS-100389,Emily,Young,emily.young39@aol.com,Pine Valley,opportunity,referral,39655,12,49,10,5,5,Sarah Chen,1760528331
+HS-100390,Victoria,Thomas,victoriathomas@aol.com,Orbit Media,customer,paid,10125,185,3,0,0,13,Marcus Rivera,1723289931
+HS-100391,Matthew,Sanchez,matthew.sanchez78@yahoo.com,CloudScale,customer,outbound,11057,19,26,7,7,7,Sarah Chen,1761651531
+HS-100392,Benjamin,Anderson,benjaminanderson@icloud.com,DataStream,opportunity,outbound,36780,3,59,15,12,0,Jordan Blake,1752579531
+HS-100393,Matthew,King,matthew.king23@protonmail.com,Falcon Systems,sql,referral,13733,6,54,15,7,0,Sarah Chen,1755171531
+HS-100394,Layla,Smith,laylasmith43@outlook.com,Keystone,opportunity,partner,27549,11,48,8,7,3,Marcus Rivera,1757331531
+HS-100395,Evelyn,Wilson,evelynwilson@fastmail.com,BrightPath,customer,partner,28837,6,46,6,4,4,Alex Patel,1749728331
+HS-100396,Emma,Lee,emma.lee@fastmail.com,NexGen,lead,paid,0,2,14,6,0,0,Sarah Chen,1774525131
+HS-100397,Charlotte,Smith,charlottesmith@gmail.com,Pine Valley,customer,organic,8676,8,38,9,6,6,Marcus Rivera,1754566731
+HS-100398,Layla,Hill,laylahill@hotmail.com,ClearView,sql,referral,28450,6,33,8,7,0,Alex Patel,1756208331
+HS-100399,Daniel,Clark,danielclark@fastmail.com,Keystone,customer,partner,33462,8,18,5,3,8,Taylor Kim,1727955531
+HS-100400,Mia,Robinson,mia_robinson@aol.com,Forge Systems,mql,paid,148,155,3,0,0,1,Sarah Chen,1735472331
+HS-100401,Emily,Jackson,emily_jackson4@gmail.com,Falcon Systems,mql,organic,2500,152,3,0,0,0,Marcus Rivera,1743334731
+HS-100402,Grace,Walker,grace_walker@hotmail.com,BrightPath,customer,referral,33430,2,34,3,1,5,Marcus Rivera,1748691531
+HS-100403,Noah,Jackson,noahjackson@aol.com,Starlight,opportunity,outbound,29197,5,38,19,4,1,Jordan Blake,1760096331
+HS-100404,Isaac,Moore,isaacmoore@yahoo.com,Harbor Tech,customer,paid,8226,9,48,13,2,13,Alex Patel,1743507531
+HS-100405,Olivia,Taylor,olivia_taylor18@yahoo.com,Summit Solutions,customer,organic,5020,230,0,0,0,18,Alex Patel,1740569931
+HS-100406,Lucas,Rodriguez,lucas_rodriguez@hotmail.com,Prism Data,customer,outbound,4852,217,3,0,0,30,Taylor Kim,1740483531
+HS-100407,Matthew,Anderson,matthewanderson32@outlook.com,PulsePoint,sql,outbound,17075,8,79,15,12,2,Jordan Blake,1764848331
+HS-100408,Layla,Walker,laylawalker@outlook.com,Falcon Systems,customer,partner,2451,135,2,0,0,18,Sarah Chen,1719833931
+HS-100409,Layla,Ramirez,laylaramirez@hotmail.com,Beacon Health,opportunity,partner,12476,6,69,20,6,3,Taylor Kim,1752493131
+HS-100410,James,Allen,james.allen@outlook.com,Cascade Digital,customer,paid,11384,139,0,0,0,23,Taylor Kim,1736336331
+HS-100411,Samuel,Martin,samuel_martin@gmail.com,Cobalt Industries,mql,organic,232,321,3,0,1,1,Taylor Kim,1734608331
+HS-100412,Emma,Taylor,emma.taylor35@fastmail.com,Cobalt Industries,customer,outbound,8512,200,1,0,0,13,Alex Patel,1711021131
+HS-100413,Avery,Johnson,avery.johnson@aol.com,Keystone,opportunity,outbound,29752,10,70,17,3,5,Taylor Kim,1756208331
+HS-100414,Layla,King,layla.king@gmail.com,BrightPath,lead,organic,0,40,13,3,0,3,Taylor Kim,1769773131
+HS-100415,Ethan,Jackson,ethanjackson49@protonmail.com,Starlight,subscriber,organic,0,28,6,7,0,2,Sarah Chen,1775216331
+HS-100416,Mia,Taylor,miataylor@outlook.com,Harbor Tech,lead,organic,0,37,9,1,0,3,Sarah Chen,1770377931
+HS-100417,Christian,Davis,christian_davis@hotmail.com,Apex Analytics,customer,partner,9233,1,46,11,3,4,Sarah Chen,1745581131
+HS-100418,Charlotte,Davis,charlotte_davis@protonmail.com,PulsePoint,mql,organic,1644,194,1,1,0,2,Taylor Kim,1753443531
+HS-100419,Isaac,Hill,isaac_hill@protonmail.com,IronBridge,customer,outbound,15995,3,32,6,7,1,Sarah Chen,1757677131
+HS-100420,Sofia,Rodriguez,sofiarodriguez@yahoo.com,PulsePoint,customer,paid,5289,24,41,14,2,13,Marcus Rivera,1739792331
+HS-100421,Isaac,Lewis,isaac_lewis@protonmail.com,BrightPath,subscriber,organic,0,59,23,2,0,2,Jordan Blake,1773661131
+HS-100422,Sebastian,Hernandez,sebastian.hernandez@protonmail.com,BrightPath,customer,paid,12396,165,1,0,0,5,Taylor Kim,1746790731
+HS-100423,Amelia,Flores,ameliaflores@hotmail.com,Summit Solutions,lead,paid,0,11,29,3,0,3,Marcus Rivera,1774611531
+HS-100424,Emma,Martinez,emma.martinez@aol.com,NexGen,customer,organic,5146,15,24,3,1,14,Taylor Kim,1735213131
+HS-100425,Benjamin,Perez,benjaminperez35@yahoo.com,ClearView,lead,organic,0,38,20,1,0,3,Marcus Rivera,1770550731
+HS-100426,Isaac,Garcia,isaacgarcia52@yahoo.com,Beacon Health,lead,paid,2371,243,0,1,1,1,Jordan Blake,1717760331
+HS-100427,Owen,Lee,owen.lee3@protonmail.com,TechVision,subscriber,organic,0,46,24,4,0,1,Taylor Kim,1774870731
+HS-100428,Victoria,Lewis,victorialewis@outlook.com,NexGen,customer,partner,25327,0,47,4,5,4,Sarah Chen,1750246731
+HS-100429,Grace,Wilson,gracewilson@gmail.com,Cobalt Industries,sql,partner,29099,0,48,11,7,3,Taylor Kim,1757245131
+HS-100430,Samuel,Anderson,samuelanderson87@outlook.com,SilverLine,customer,outbound,27443,0,26,9,8,15,Taylor Kim,1727177931
+HS-100431,Caleb,Martinez,calebmartinez@hotmail.com,Starlight,lead,paid,0,6,28,2,0,0,Marcus Rivera,1769081931
+HS-100432,Dylan,Lopez,dylan.lopez@hotmail.com,ClearView,subscriber,paid,0,58,18,2,0,0,Alex Patel,1772105931
+HS-100433,Henry,Thompson,henry_thompson@yahoo.com,CloudScale,subscriber,organic,0,10,16,5,0,3,Jordan Blake,1775561931
+HS-100434,Ava,Gonzalez,avagonzalez@icloud.com,VertexAI,customer,paid,33107,22,28,4,7,3,Marcus Rivera,1725017931
+HS-100435,Ava,Martin,avamartin@protonmail.com,TechVision,opportunity,partner,49877,11,53,12,6,5,Taylor Kim,1764761931
+HS-100436,Aria,Brown,ariabrown@outlook.com,Forge Systems,lead,paid,0,33,5,7,0,0,Taylor Kim,1771933131
+HS-100437,Ava,Robinson,ava_robinson@gmail.com,Quantum Labs,opportunity,outbound,42141,8,54,18,15,5,Taylor Kim,1769945931
+HS-100438,Noah,Lopez,noah_lopez21@icloud.com,VertexAI,customer,organic,8053,20,26,14,8,6,Marcus Rivera,1735904331
+HS-100439,Dylan,Smith,dylan.smith@aol.com,PulsePoint,subscriber,paid,0,33,24,4,0,3,Sarah Chen,1775993931
+HS-100440,Lily,Hernandez,lily_hernandez@outlook.com,Falcon Systems,customer,partner,13398,135,2,0,0,16,Taylor Kim,1727005131
+HS-100441,Amelia,Walker,amelia.walker6@hotmail.com,VertexAI,lead,paid,0,55,10,1,0,1,Jordan Blake,1769773131
+HS-100442,Owen,Flores,owen.flores72@protonmail.com,Keystone,lead,organic,4387,244,3,0,0,1,Alex Patel,1744544331
+HS-100443,Amelia,Lee,amelia_lee64@aol.com,Forge Systems,subscriber,organic,0,56,8,7,0,0,Alex Patel,1770896331
+HS-100444,Benjamin,Martin,benjaminmartin@protonmail.com,Keystone,customer,organic,15197,346,3,0,0,12,Alex Patel,1713008331
+HS-100445,Leo,Wright,leo_wright@yahoo.com,VertexAI,subscriber,paid,0,2,22,5,0,1,Jordan Blake,1775475531
+HS-100446,Jack,Perez,jack.perez@yahoo.com,Starlight,subscriber,organic,0,6,23,2,0,3,Taylor Kim,1773142731
+HS-100447,Owen,Thompson,owen_thompson@hotmail.com,TechVision,customer,organic,14939,20,39,5,1,4,Alex Patel,1757245131
+HS-100448,Victoria,Gonzalez,victoria.gonzalez79@outlook.com,BrightPath,customer,organic,16723,125,2,0,0,22,Marcus Rivera,1714909131
+HS-100449,Charlotte,White,charlotte.white53@icloud.com,NexGen,customer,organic,20592,0,12,3,3,6,Sarah Chen,1748259531
+HS-100450,Emily,Ramirez,emilyramirez@gmail.com,Zenith Digital,sql,referral,18555,11,26,17,6,3,Jordan Blake,1763725131
+HS-100451,Sophia,Jackson,sophia_jackson@protonmail.com,Atlas Group,subscriber,paid,0,34,18,8,0,2,Sarah Chen,1775475531
+HS-100452,Mia,Anderson,mia_anderson@protonmail.com,Cobalt Industries,lead,organic,3112,111,5,1,0,0,Taylor Kim,1747827531
+HS-100453,Ethan,White,ethan.white@fastmail.com,Relay Networks,customer,paid,16012,26,27,12,7,0,Alex Patel,1767094731
+HS-100454,Matthew,Thompson,matthew.thompson61@outlook.com,Cobalt Industries,customer,partner,4455,123,3,0,0,8,Jordan Blake,1718105931
+HS-100455,Avery,Torres,avery.torres@yahoo.com,VertexAI,lead,paid,2012,338,4,0,1,0,Taylor Kim,1751024331
+HS-100456,Charlotte,Miller,charlotte.miller@gmail.com,Momentum Inc,customer,partner,19271,143,1,0,0,26,Sarah Chen,1750246731
+HS-100457,Avery,Hernandez,averyhernandez53@yahoo.com,Cobalt Industries,mql,paid,2703,183,5,2,1,2,Marcus Rivera,1751801931
+HS-100458,Elijah,Young,elijah.young@yahoo.com,Momentum Inc,lead,paid,0,40,23,6,0,0,Marcus Rivera,1769686731
+HS-100459,Hannah,King,hannah.king54@protonmail.com,Acme Corp,customer,outbound,11977,182,0,0,0,22,Marcus Rivera,1727091531
+HS-100460,Caleb,Martin,caleb_martin57@fastmail.com,Pine Valley,customer,paid,11833,194,2,0,0,12,Taylor Kim,1741520331
+HS-100461,Samuel,Flores,samuelflores@outlook.com,IronBridge,subscriber,paid,0,19,14,2,0,3,Alex Patel,1772365131
+HS-100462,Henry,Williams,henry_williams@hotmail.com,SkyNet Solutions,customer,paid,18266,23,47,13,7,10,Alex Patel,1739533131
+HS-100463,Sophia,Harris,sophia.harris76@icloud.com,Cobalt Industries,customer,partner,8915,219,3,0,0,22,Sarah Chen,1723549131
+HS-100464,Layla,Lewis,layla_lewis63@outlook.com,Starlight,subscriber,paid,0,39,26,3,0,0,Jordan Blake,1776080331
+HS-100465,Caleb,Taylor,caleb.taylor71@protonmail.com,Redwood Systems,lead,organic,4835,149,4,2,1,0,Taylor Kim,1744112331
+HS-100466,Emily,Davis,emily.davis3@fastmail.com,Prism Data,customer,paid,10889,16,32,14,3,8,Taylor Kim,1725363531
+HS-100467,Liam,Harris,liamharris@gmail.com,Zenith Digital,sql,referral,17048,9,27,20,5,0,Taylor Kim,1761478731
+HS-100468,Isaac,Torres,isaac.torres@hotmail.com,Emerald Tech,customer,paid,29157,9,18,10,5,1,Jordan Blake,1735213131
+HS-100469,Liam,Young,liamyoung@protonmail.com,Prism Data,customer,organic,12959,214,1,0,0,21,Taylor Kim,1710416331
+HS-100470,Sophia,Nguyen,sophia_nguyen46@protonmail.com,NexGen,lead,paid,0,25,29,8,0,3,Alex Patel,1770896331
+HS-100471,Avery,Jackson,averyjackson@outlook.com,CloudScale,lead,organic,559,184,2,0,0,2,Jordan Blake,1754825931
+HS-100472,Harper,Martin,harper_martin60@icloud.com,TrueNorth,opportunity,outbound,38939,3,21,19,5,1,Marcus Rivera,1752838731
+HS-100473,Charlotte,Torres,charlotte_torres91@hotmail.com,ClearView,mql,organic,4082,187,1,2,0,2,Marcus Rivera,1745494731
+HS-100474,Isaac,Anderson,isaac_anderson@yahoo.com,SkyNet Solutions,customer,partner,28867,19,17,8,7,15,Jordan Blake,1764243531
+HS-100475,Christian,Perez,christian_perez74@protonmail.com,Horizon Labs,sql,partner,28030,6,49,8,10,1,Sarah Chen,1757158731
+HS-100476,Sophia,Scott,sophiascott57@yahoo.com,Cascade Digital,lead,organic,0,33,28,8,0,2,Taylor Kim,1770205131
+HS-100477,Riley,Hill,riley_hill@fastmail.com,VertexAI,subscriber,paid,0,54,5,5,0,3,Alex Patel,1775734731
+HS-100478,Henry,Williams,henry_williams@protonmail.com,Harbor Tech,customer,referral,9568,197,2,0,0,29,Taylor Kim,1743248331
+HS-100479,Benjamin,Martin,benjamin.martin@icloud.com,Cobalt Industries,opportunity,partner,18976,9,29,8,14,2,Jordan Blake,1756726731
+HS-100480,Christian,Clark,christianclark@fastmail.com,TrueNorth,customer,partner,13337,10,24,5,7,7,Jordan Blake,1757072331
+HS-100481,Nathan,Robinson,nathan.robinson@outlook.com,NexGen,subscriber,paid,0,20,29,1,0,3,Jordan Blake,1772537931
+HS-100482,Ava,Thomas,ava.thomas84@yahoo.com,Keystone,mql,paid,2162,255,0,2,0,0,Taylor Kim,1754653131
+HS-100483,Charlotte,Lopez,charlotte_lopez@outlook.com,DataStream,opportunity,partner,13018,3,22,7,4,3,Taylor Kim,1757849931
+HS-100484,Noah,Williams,noahwilliams@yahoo.com,Relay Networks,lead,paid,898,213,1,1,0,1,Jordan Blake,1750419531
+HS-100485,Elijah,Sanchez,elijahsanchez@hotmail.com,BrightPath,customer,organic,18289,179,2,0,0,12,Jordan Blake,1742297931
+HS-100486,Sophia,Hernandez,sophiahernandez@icloud.com,Beacon Health,opportunity,referral,15779,2,47,14,10,5,Alex Patel,1758281931
+HS-100487,Elijah,Thompson,elijah_thompson93@aol.com,CloudScale,customer,partner,29729,15,41,15,2,12,Sarah Chen,1767094731
+HS-100488,Sophia,Thomas,sophiathomas57@protonmail.com,Momentum Inc,mql,paid,3588,193,5,1,0,2,Taylor Kim,1741088331
+HS-100489,Elijah,Brown,elijah_brown@outlook.com,DataStream,customer,paid,27320,6,45,5,5,5,Taylor Kim,1757763531
+HS-100490,Grace,Wilson,gracewilson68@gmail.com,DataStream,customer,outbound,9362,323,1,0,0,18,Taylor Kim,1718797131
+HS-100491,Elijah,Perez,elijah.perez27@protonmail.com,BrightPath,customer,paid,20503,26,37,9,8,7,Jordan Blake,1753357131
+HS-100492,Amelia,Jackson,amelia_jackson53@hotmail.com,Horizon Labs,customer,referral,12828,192,1,0,0,10,Alex Patel,1748777931
+HS-100493,Christian,Young,christianyoung@fastmail.com,Redwood Systems,customer,organic,15364,360,0,0,0,22,Taylor Kim,1736163531
+HS-100494,James,Thomas,james_thomas30@gmail.com,IronBridge,subscriber,paid,0,40,22,7,0,0,Taylor Kim,1769686731
+HS-100495,Nathan,Lewis,nathan_lewis3@hotmail.com,PulsePoint,sql,outbound,17211,4,34,13,8,0,Alex Patel,1769168331
+HS-100496,Jackson,Harris,jacksonharris18@gmail.com,Quantum Labs,lead,paid,0,29,14,7,0,3,Marcus Rivera,1769081931
+HS-100497,Isaac,Davis,isaac.davis@protonmail.com,Apex Analytics,sql,outbound,22258,12,55,12,10,0,Alex Patel,1763120331
+HS-100498,Layla,Wilson,laylawilson@fastmail.com,Apex Analytics,subscriber,organic,0,34,8,6,0,3,Taylor Kim,1772883531
+HS-100499,Grace,Robinson,gracerobinson@outlook.com,Momentum Inc,customer,referral,12263,26,14,13,1,6,Alex Patel,1751715531

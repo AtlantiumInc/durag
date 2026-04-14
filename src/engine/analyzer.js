@@ -42,7 +42,8 @@ export function analyzeCluster(members, allRows, numericCols, mrrCol) {
     if (Math.abs(s.zscore) > bestScore) { bestScore = Math.abs(s.zscore); bestCol = col; bestDir = s.zscore > 0 ? 'high' : 'low'; }
   }
 
-  const label = bestScore > 0.3 ? `${bestDir} ${bestCol.replace(/^metadata[_.]/, '').replace(/_/g, ' ')}` : 'group';
+  const cleanName = bestCol ? bestCol.replace(/^metadata[_.]/, '').replace(/_/g, ' ') : '';
+  const label = bestCol ? `${bestDir} ${cleanName}` : `group ${Math.floor(Math.random() * 90 + 10)}`;
   const totalMrr = mrrCol ? members.reduce((s, r) => s + (parseFloat(r[mrrCol]) || 0), 0) : 0;
   const avgMrr = mrrCol && n ? totalMrr / n : 0;
 
@@ -71,7 +72,7 @@ export function generateInsights(cluster, allRows, numericCols, mrrCol) {
   const clean = col => col.replace(/^metadata[_.]/, '').replace(/_/g, ' ');
 
   const ranked = Object.entries(cluster.stats)
-    .filter(([col]) => Math.abs(cluster.stats[col].zscore) > 0.3)
+    .filter(([col]) => Math.abs(cluster.stats[col].zscore) > 0.1)
     .sort((a, b) => Math.abs(b[1].zscore) - Math.abs(a[1].zscore));
 
   if (ranked.length > 0) {

@@ -1,0 +1,501 @@
+id,email,name,created,currency,default_source,delinquent,description,livemode,metadata_plan,metadata_mrr,metadata_products,metadata_nps_score,metadata_last_contact_days,metadata_support_tickets,metadata_login_count_30d
+cus_CGG7hCypbOz7Yc,emma.rodriguez@aol.com,"Velocity Security",1758860919,usd,card_1aN4AQBsHGbw8QKmVoZ04wh,false,,true,starter,74,1,7,999,1,74
+cus_s9zjCj8g9fQ3tj,jason.kim@tutanota.com,"Keen Systems",1692007398,usd,card_1JUvnCwWNNK99yeFdeI5Rqr,true,"Trial conversion",true,enterprise,2379,2,4,160,50,8
+cus_vgTaipol3nDD5l,carolgarcia@pm.me,"Solar Supply",1745876649,usd,card_1egoDlfKfVfYlrIQwRrbNx1,false,,true,starter,53,1,,30,0,8
+cus_cqxUBAHIQpkca7,joshua_ruiz@aol.com,"Ember Finance",1714337848,usd,card_10JyvheNP5SeWHDZ8qpkrMR,false,"Product Hunt launch",true,growth,488,3,,999,4,39
+cus_hbudRDwUCnCHGZ,joshuaperez@gmail.com,"Wave Shop",1735088030,usd,card_1iGE630CxuDdWNJYaWpYH1G,false,"Trial conversion",true,enterprise,2599,3,0,181,40,6
+cus_XtZtogXelsLz3O,rebeccaallen@hey.com,"Core Finance",1701377743,usd,card_1YXG7oeIQFpAZsC8BTmzfcj,false,,true,growth,114,3,,999,7,34
+cus_h48gvbyO7duqj1,brian_myers@gmail.com,"Pinnacle Software",1736380900,usd,,true,"Referred by partner",true,starter,67,1,4,331,25,3
+cus_bs2cRtm6l8Yz9v,melissa.scott@company.co,"Cloud Hub",1720346932,usd,card_1O6QY3Ufdy3O3JV0cAUL6Jk,false,"Product Hunt launch",true,growth,335,1,7,350,0,52
+cus_py6Wdh7ANgygyX,brandon_cruz@company.co,"Trail Media",1775902895,usd,card_14wsVYReD9z7UYykFMiYQfb,false,"Renewed Q2",true,enterprise,3301,4,,19,11,79
+cus_zNtt1whafG8kj5,deborah_hernandez@yandex.com,"Nest Goods",1761292067,usd,card_1MQeQl5lf95xmoRN6jUMDw1,false,,true,starter,33,1,6,137,1,2
+cus_7ERZLwjuNafJm0,donaldcook@yandex.com,"Glow Tech",1747277031,usd,card_1fVgSKEe0oHXDyyEZLSkJHs,false,,true,growth,498,4,9,10,4,74
+cus_MHlK3VWrIAuBIX,nancy_cox@zoho.com,"Atlas Stack",1733969878,usd,card_1rbSmulgToN17Ogzyydlugr,false,,true,starter,59,1,,94,2,2
+cus_XhSoEm1dhh8uyp,pamelawilson@pm.me,"Loom Dynamics",1730933210,usd,card_1fH5vHBvrBRgLTHL04ezO72,false,"Upsell opportunity",true,growth,224,3,,77,19,72
+cus_ifHxA2TYqFm2o5,anna.roberts@outlook.com,"Peak Engineering",1706435856,usd,card_1Tjy5xbQSYDszRlejNywPMy,false,"Upsell opportunity",true,growth,446,4,7,39,3,101
+cus_U525krgF8T5EkR,emma.lopez@mail.com,"Pine Goods",1754346244,usd,card_1rJaIBd63udaHrNI0rSb1EI,false,,true,starter,56,1,,224,0,5
+cus_e2GMgsfi5lQefe,catherine_reed@protonmail.com,"Lark Insights",1739709354,usd,card_1z8c0pKg0TFqhA765ekH2B8,false,"Expansion deal",true,enterprise,2135,5,,21,3,162
+cus_GwrIC5H20dK3ZW,dorothyreed@mail.com,"Jade Insights",1717737488,usd,card_1HZR6OoTJAswt9J123p4yt1,false,"Trial conversion",true,starter,32,1,,191,1,6
+cus_TAYfXLSGeGkgfO,sharon.cox@icloud.com,"Leaf Consulting",1696934342,usd,card_1obj8fIfYc26BlPm6nQhBg9,false,,true,starter,35,1,6,200,0,7
+cus_5TH2iu4P3qY14i,debra_mendoza@zoho.com,"Ember Supply",1745638806,usd,card_1Tau8ek35rbdMgoxYCDmC6t,false,"Annual contract",true,enterprise,4468,3,7,11,5,175
+cus_Zs4hkX7IwZVMCp,dorothygutierrez@company.co,"Spire Digital",1686155419,usd,,false,"Product Hunt launch",true,growth,177,3,,200,2,35
+cus_5UWrTqNO2ttqhl,shirley.mitchell@hotmail.com,"True Ventures",1740742836,usd,card_1tZmJsmQTQKsKP82Db7bqWD,true,,true,starter,45,1,,128,3,0
+cus_fGVLj54f0px2aL,jack.wilson@outlook.com,"Wren Craft",1735475392,usd,card_10FeW3HEqcihMkKGEwqDaSQ,false,,true,starter,41,1,,125,3,4
+cus_xVRccZLXJClYY2,angela.moore@gmail.com,"Summit Ventures",1730630435,usd,card_1Cmea0pv7wF6YacA9tCrsf6,false,"Enterprise plan",true,business,1239,3,10,4,9,78
+cus_WvCVpPPp2g2HVA,joshuagonzalez@hotmail.com,"Mesa Pay",1761093020,usd,card_1p2eMQQEZRWjKdPHxy5YD6X,false,"Inbound lead",true,growth,194,4,9,85,4,53
+cus_54fFiHRlVQHxOf,donald_miller@gmail.com,"Tango Global",1721130296,usd,,false,"Inbound lead",true,growth,306,2,6,66,4,76
+cus_hxjOmMWqnorL2W,benjamin.james@zoho.com,"Kinetic Platform",1704797697,usd,card_1vzfURLdX1SS5NuCjai8Uex,false,"Upsell opportunity",true,growth,136,3,6,82,14,32
+cus_7eJX9ROeyZnxEJ,eric_reyes@company.co,"Nimbus Agency",1740896152,usd,card_1WYyldnmHiy0bsd2ZMzDjug,false,,true,enterprise,1590,4,8,13,1,72
+cus_L4iNyU0VqqdFwt,margaret.perez@fastmail.com,"Tide Consulting",1721836560,usd,,false,"Upsell opportunity",true,growth,428,4,,64,20,68
+cus_qiWonRG6UCNTfU,john.moore@mail.com,"Wave Craft",1696385210,usd,,false,,true,starter,58,1,4,137,0,0
+cus_DLYxXD8Xip4jp4,ronaldmorgan@outlook.com,"Trail Goods",1733207773,usd,,false,,true,starter,55,1,6,218,2,5
+cus_QsgJmcxEqS3vuN,rebeccaevans@yahoo.com,"Core Agency",1751311647,usd,,true,"Product Hunt launch",true,growth,440,1,8,999,5,40
+cus_hUEDtZHwYZEEWn,dennis.foster@zoho.com,"Pine Agency",1717480162,usd,,false,"Expansion deal",true,business,968,4,7,13,19,78
+cus_tSTM6DvyTzDZZB,scott_morgan@pm.me,"Jade Partners",1727558659,usd,,false,,true,starter,49,1,,60,0,8
+cus_loS4eoDk21L6UV,jerrydavis@yahoo.com,"Mesa Digital",1681549084,usd,card_1EakCKrWY3Thv8XSxDfwzhW,false,,true,starter,69,2,5,999,6,28
+cus_DxTFJYCqzTog7I,carolwhite@pm.me,"Vibe Labs",1752783154,usd,card_17xY3OLxyYkdPCjiR8F2thT,false,,true,starter,51,1,,33,1,0
+cus_sItZ61r7sHHORc,raymond.gonzalez@yandex.com,"Solar Platform",1723656124,usd,card_1arDeHo6u2nYb9TUeeVkmKi,true,"Demo request",true,starter,95,2,,299,22,7
+cus_0OTN9EGSXOyTOU,brandon.howard@tutanota.com,"Bright Supply",1767398023,usd,card_1bdLNgn5WrV2kjFROcuQbtL,false,,true,growth,437,3,8,58,15,86
+cus_J1MFy9ZlOxf4uY,kathleen_hall@hey.com,"Wren Insights",1745274825,usd,card_1h3szSlHUKFKtG5WiTHVlZj,false,,true,enterprise,1930,3,,109,25,9
+cus_GXB1CVvJAWOYK6,anna.thomas@outlook.com,"Pinnacle Consulting",1769805287,usd,card_1eFDw7yz7a5wf4frUu9ztp1,false,"Trial conversion",true,growth,107,3,2,351,50,7
+cus_OL1eqqtjliAZoX,scott_rodriguez@zoho.com,"Node Inc",1735241088,usd,,false,"Self-serve signup",true,growth,325,1,5,999,3,68
+cus_VOTjTSsOwwpFte,paul_richardson@protonmail.com,"Gate Security",1713082935,usd,card_1O8FXsAv62kRXbfKfaUa5ee,false,,true,growth,311,1,,999,5,51
+cus_DWKnXgpwIYVAqR,kenneth_howard@protonmail.com,"Lark Labs",1729706898,usd,,false,,true,growth,137,2,9,34,9,113
+cus_vmMVSqyZPipJrP,john_peterson@pm.me,"Spark Craft",1762066371,usd,card_1rMFkNWHO2h1KWPkU0tkEn2,false,,true,starter,48,1,7,56,2,0
+cus_QlBMny8WZHaXRR,eric_king@tutanota.com,"Cloud Creative",1735749863,usd,card_1xNbhH990xVPUxneMM7LLUU,false,"Product Hunt launch",true,starter,40,1,,235,1,53
+cus_jxeQWdauF7ofgO,nancy.robinson@outlook.com,"Craft Bakery",1755782607,usd,card_1CW9qzASRWjfskU8tGBesZs,false,,true,business,1468,5,,327,40,3
+cus_NBi1VC9Aa625nL,davidnelson@gmail.com,"Tango Pay",1702724420,usd,card_1FQByLs22Vatyy2kYahtBTW,false,,true,starter,53,1,,78,3,4
+cus_agVcW9eoE5IB3S,amypeterson@hotmail.com,"Spark Inc",1757643120,usd,card_1ftx6DKPoDnUQtdWM2cXFPC,false,"Expansion deal",true,business,1468,2,9,8,18,173
+cus_7wn2XNFh8w9GBb,john_cox@yandex.com,"Haven Solutions",1706864387,usd,,false,"Inbound lead",true,growth,408,2,10,43,3,98
+cus_iex8MZYxleieeX,christinesmith@protonmail.com,"Star Finance",1768811365,usd,card_15UxMsnJgp7AlCFID65OgZ3,false,"Custom integration",true,business,966,3,8,18,20,93
+cus_whMKVsUtVUKvv3,kenneth.murphy@aol.com,"Vibe Networks",1736875655,usd,card_1EiRVQjTJxBlFz4QC6fGqsl,false,"Annual contract",true,business,1016,3,10,19,4,72
+cus_z05uMsWKWm8z8K,jack_walker@aol.com,"Quantum Co",1687373103,usd,,false,,true,growth,195,3,,278,8,60
+cus_hO5aZOCGqRZmyg,jessicagomez@aol.com,"Luna Engineering",1745537946,usd,card_1Q9KkZbhSBPTWuXG1PaF43r,true,,true,starter,57,1,3,244,0,8
+cus_Weh5Bn2GgOs7x8,stephanie_white@mail.com,"Horizon Insights",1750883617,usd,card_1mGvp3HZxgqQGSJhVdzHjvc,false,,true,growth,379,2,,999,5,71
+cus_R82W8ECfiawqh1,robert.cooper@zoho.com,"Lime Pay",1730702553,usd,card_139XRMW3Xlec46zfGqJ3BmI,false,,true,starter,47,1,,87,2,0
+cus_mOsQ39goufqRlg,justin_smith@protonmail.com,"Sage Innovations",1738334536,usd,,false,"Upgraded from starter",true,growth,439,3,9,18,14,36
+cus_p62YOk03cJzDnj,angelakim@zoho.com,"Cloud Co",1742391871,usd,card_18VDwc14YbknG26jKfjUUTz,false,,true,growth,273,3,10,82,11,50
+cus_iQiXOTRt58j2DP,carol.rodriguez@yahoo.com,"Gate Global",1747227818,usd,card_1OcmraQ08bqXXLIO0fKuTbX,false,"Inbound lead",true,growth,423,2,,24,6,34
+cus_BjRkb3CNYyX728,frank_morgan@hotmail.com,"Nest Analytics",1700794599,usd,card_1Tw5GdmPNs83ErpLgXt7iy3,false,,true,enterprise,1949,4,8,14,17,121
+cus_j1WPMHwl2x7uEH,john.rodriguez@outlook.com,"Rail Data",1709387515,usd,card_1yIrhue2BxWT4HyM0RFQ6bw,false,,true,starter,44,1,,242,3,6
+cus_X07TCxbksrWBjO,karen_long@tutanota.com,"Pulse Industries",1701461507,usd,,false,"Referred by partner",true,enterprise,4022,5,0,317,47,3
+cus_1qgoeuYXfAD1ge,gregoryramos@mail.com,"Summit Goods",1749984763,usd,,false,,true,growth,136,2,,147,3,0
+cus_8x4aWzF3NUoa1h,jacob_campbell@hey.com,"Scala Hub",1692603031,usd,card_14rQg0bKgXewQpJuakfZko3,false,"Referred by John",true,growth,393,2,9,45,2,81
+cus_gRbA2bcuproPmm,sharon_carter@gmail.com,"Momentum Systems",1739846704,usd,,false,,true,growth,131,3,,255,5,5
+cus_pwbuiWD0O7oZMv,helenflores@company.co,"Atlas Supply",1772472597,usd,,false,"Upgraded from starter",true,growth,430,2,,59,10,71
+cus_N6qJSuYR0mlxru,kevinhall@yahoo.com,"Iron Data",1722715932,usd,card_1CZguPH4IjAf0bpwgCGWs9b,false,,true,growth,286,2,9,87,20,60
+cus_13cBWrmLjbsYKY,maria.cook@pm.me,"Stratosphere Group",1772837263,usd,,false,"Strategic account",true,business,1392,5,9,17,1,129
+cus_A0Ids9M1EDfPKJ,james.sanders@outlook.com,"Frost Pay",1753040529,usd,,false,,true,growth,254,4,7,39,8,42
+cus_6wIcF5okVnaOvZ,kathleensmith@icloud.com,"Mesa Bakery",1703281298,usd,card_1XYNScQe0GedOWZCDNOSZsg,false,"Trial conversion",true,business,606,4,0,354,24,2
+cus_rzNlF9Nun4tD9j,carolyn.james@yahoo.com,"Quartz Industries",1733912287,usd,card_1x2bkoblrQ7o8dKc7wnCHRX,false,"Referred by John",true,growth,355,3,8,19,9,83
+cus_tNfd9SI4XQjbR5,kathleenmiller@outlook.com,"Maple Finance",1712325713,usd,,false,,true,growth,187,2,0,262,49,8
+cus_kR5XpeBCPdYY13,betty.gonzalez@yahoo.com,"Wave Cloud",1759489256,usd,card_18uKVZLyqVx9YUsQgdLCv7K,false,"Expansion deal",true,enterprise,4674,4,9,19,8,182
+cus_qg3Ltbkc5gGtWm,nicholas.castillo@zoho.com,"Star Cloud",1764159431,usd,,false,"Annual contract",true,enterprise,3112,3,10,24,5,181
+cus_fPdaJnMfcFRBxN,carol.parker@yahoo.com,"Vibe Group",1773021302,usd,,false,,true,starter,34,1,3,162,2,0
+cus_L0pG20mS8emAmV,deborah.miller@protonmail.com,"Cloud Inc",1775056931,usd,card_1iS7nqYxl8GU2qm3h36ZsYO,false,"Product Hunt launch",true,growth,334,2,,999,6,43
+cus_kPVRQGfjJG7hP7,raymond.garcia@fastmail.com,"Venture Platform",1721523246,usd,card_16otNQgwi7GOSgznMsowz1c,false,,true,enterprise,1701,4,4,220,7,6
+cus_hjkPXqEgqWim1r,brian.ramos@hotmail.com,"True Technologies",1772730255,usd,card_1Dcj3g1gGL4SWQ3ocj21iPw,false,,true,growth,444,2,7,82,8,69
+cus_OamUmoeNCQ8kD1,brian.campbell@icloud.com,"Trail Goods",1749183774,usd,card_1DLASLzovLotAB4GcCAzFkb,false,"Upgraded from starter",true,growth,199,3,6,79,9,73
+cus_Xn7G75c50G8Wl8,ryan.gray@protonmail.com,"Tide Supply",1710764559,usd,card_1cQ2bBURLv7ghplJdVBpSP9,false,,true,growth,471,3,10,53,10,92
+cus_7RdYdE0HVREOY7,barbaraparker@icloud.com,"Rail Tech",1741893550,usd,,false,"Annual contract",true,business,1202,4,7,0,14,74
+cus_LZsWZSzjbSFLSy,matthew.davis@outlook.com,"Luna Supply",1689483264,usd,,false,,true,starter,72,2,5,144,14,8
+cus_zBAa6Id0zo1lkd,ryan_anderson@hey.com,"Dash Platform",1692109461,usd,,false,"Strategic account",true,business,869,5,7,27,8,81
+cus_uA1XijS9CJWRw4,donald.lopez@pm.me,"Maple Logistics",1767105617,usd,,true,"Demo request",true,starter,95,1,4,199,34,2
+cus_SJnjebTttBs9xw,carolyn.myers@hotmail.com,"Zeal Digital",1732584879,usd,,false,"Referred by partner",true,business,893,5,,122,26,8
+cus_wuJnc6EkcSw9yK,ericturner@pm.me,"Sail Studio",1732462816,usd,card_1RDRTHE74y4HVH6dYmPNnPn,false,"Trial conversion",true,starter,30,1,3,99,1,7
+cus_xYF8xUm5CsKsnW,andrew.morris@hotmail.com,"Quantum Health",1757665332,usd,card_143vgwY4qDPQ8W2AYUCIUki,false,,true,starter,35,2,5,339,8,56
+cus_A6FvZ5FOYSX9ud,scott_mendoza@hey.com,"Apex Goods",1701356017,usd,,false,"Demo request",true,enterprise,4756,3,5,154,46,1
+cus_gBH7SaqgIU3oZS,amy_cox@yandex.com,"Leaf Partners",1746544733,usd,card_1zflwsM0uO7gN9nw7rynV8D,false,,true,starter,53,1,6,999,2,18
+cus_WWMsaub2VrHUYS,charles_watson@gmail.com,"Leaf Global",1692469551,usd,card_1YQbls9NtrlvbwtWDw4XS2n,false,"Referred by partner",true,starter,41,2,,126,31,6
+cus_9d7q4ChoKVgm5I,heather_foster@company.co,"Trail Labs",1727025540,usd,card_1yCMpW4ZHivM0rIdmdmnMm9,false,,true,starter,57,1,,84,0,3
+cus_Mz6hjmqcWpiAIW,raymond.jackson@yahoo.com,"Harbor Stack",1770199665,usd,card_1YmvWzROuYSdSaOLCs1VSG0,true,,true,starter,42,1,6,150,0,8
+cus_seZbuRYAPGmupy,emily.rogers@company.co,"Quantum Security",1752728459,usd,card_189tgNKU3LFqbNBEEKHfZww,false,,true,growth,360,2,6,36,19,69
+cus_ZZZqAxWZnAoI1e,timothygreen@gmail.com,"Vista Goods",1728463799,usd,,false,,true,growth,276,1,9,202,2,44
+cus_0scgsPgcyepJeB,kathleen.davis@yandex.com,"Maple Shop",1747075350,usd,,false,"Demo request",true,business,1129,2,5,336,50,10
+cus_6uPUxfOHONghu6,donald_brown@icloud.com,"Dash Market",1774808971,usd,,false,"Strategic account",true,enterprise,4898,5,8,28,2,193
+cus_ZwDKloi195h9eW,brandonbrooks@gmail.com,"Atlas Hub",1746135038,usd,card_1lLw2js86yLyzyTwXRMck2w,false,,true,growth,285,2,,204,0,60
+cus_tEyLHuwS9hLDhN,susanwatson@yahoo.com,"Lark Pay",1689193553,usd,card_110gf7tpeI6ehvs8wAlILIY,false,"Trial conversion",true,starter,41,2,5,95,12,9
+cus_fpubdEZQj18e6B,raymond.torres@yahoo.com,"Haven Stack",1731020717,usd,card_15YKR2hMNa9huQu7RQW2ZK0,false,"Inbound lead",true,growth,312,3,6,40,6,73
+cus_XAVvXyqOx4b6JG,donald_walker@gmail.com,"Summit Cafe",1716392614,usd,card_1g3JWzzq34X4aJ1IK51Avam,false,"Trial conversion",true,starter,45,1,,74,0,3
+cus_JRBubDkbQ5ep1c,george.hill@protonmail.com,"Vibe Co",1759020235,usd,card_16Bnhe4yvM2CsySm0opxEeA,false,,true,growth,273,4,,89,4,74
+cus_DyfpKGVUwYT2N4,brianking@gmail.com,"Stack Creative",1718518986,usd,,false,"Upsell opportunity",true,growth,340,3,6,14,5,45
+cus_9DpITXGfT1OsLK,johnjimenez@outlook.com,"Stone Analytics",1698649699,usd,card_1OL52aBmsQqe3v3CTDsjBpT,false,,true,enterprise,3034,2,1,128,0,7
+cus_hyMae6tk2YiyEz,nicole.stewart@pm.me,"Trail Tech",1696214191,usd,card_1nMwRKzZWsL8CBhINindZFL,false,,true,growth,268,1,,999,4,79
+cus_r6YcQhqdJpPQQQ,jackalvarez@icloud.com,"Quantum Innovations",1756253422,usd,card_1yVDLyF77A9LBNNd9xnXIhR,true,,true,growth,415,3,,141,19,2
+cus_Lfr1R7KUWJv0G6,nancy_cook@fastmail.com,"Stream Consulting",1718787833,usd,,false,,true,starter,91,2,9,999,5,75
+cus_O1aqKS9eiFZnqs,alexander.walker@protonmail.com,"Gate Goods",1697479656,usd,card_1b8aUXLarx3iQoWGHmgQiT7,false,,true,starter,46,1,7,121,0,5
+cus_OyhlgUhBMFFqHy,donnaclark@pm.me,"Iron Solutions",1731261780,usd,card_1tPWZ0BNzOYZk0ZApk0m0tl,false,,true,business,1016,3,8,27,19,153
+cus_GNwRVJ7Wf1ugUZ,tyler.bennett@yahoo.com,"Catalyst Industries",1739985446,usd,,true,,true,starter,50,1,,45,2,8
+cus_nWddVw7g2BaYHB,timothykim@yahoo.com,"Lark Base",1732868614,usd,,false,"Enterprise plan",true,enterprise,2853,3,9,16,8,158
+cus_WJd0zAKlMtzZSs,margaret_hernandez@tutanota.com,"Terra Health",1700537064,usd,card_1qCeLShsi0xbBI8k1guwU00,false,"Upsell opportunity",true,growth,246,2,7,45,7,55
+cus_G8Dtf8aTaItSYf,ronald.clark@tutanota.com,"Forge Stack",1683270129,usd,card_1zqh1FRgtSXZ0ykbTuCuJVA,true,"Referred by partner",true,growth,494,3,3,274,4,0
+cus_47sjOqdZhsg34H,josephmendoza@yahoo.com,"Iron Creative",1720744609,usd,card_1RE38eJeSODE0uJWwGwBQqi,false,,true,growth,154,2,4,173,16,1
+cus_hu6EQGsyKcMEXj,edward_williams@yandex.com,"Shift Ventures",1743655898,usd,card_14zK5oM8hkdIgSt1jz5ckLr,false,"Trial conversion",true,starter,46,1,7,110,2,3
+cus_PqZD0fq7FQn5ZF,ryansmith@aol.com,"Grid Agency",1754545710,usd,,false,"Strategic account",true,enterprise,2861,6,9,14,1,189
+cus_DgQ2zfkfUT3M0g,justin.garcia@protonmail.com,"Grid Systems",1775820700,usd,card_1JxuJnv0J7VRAjw21SdKiGE,false,"Renewed Q2",true,enterprise,3224,6,8,29,16,122
+cus_hQRE1FMqJ41ZxM,michaelcastillo@pm.me,"Scala Networks",1762605073,usd,card_1NPyHzmvE5IxKzqBPVbNGzP,false,"Custom integration",true,enterprise,2084,6,10,28,17,54
+cus_RcApjMFbCeHh0e,ronald.hughes@hotmail.com,"Gate Ventures",1758229056,usd,card_1dhqYgUfjZ6yNdu3qxE947x,false,"Renewed Q2",true,enterprise,1738,6,9,28,9,136
+cus_9GZT3A6FCQfs6x,jennifer_kim@company.co,"Nest Creative",1726310862,usd,card_12Ca0wMzbVzS1zBFRBlUqf1,true,"Demo request",true,starter,35,2,,350,13,1
+cus_ILc0t0cIQtap9N,shirleymyers@outlook.com,"Peak Base",1771968826,usd,card_1WVAa7evHUOv1Td4Zck9hE9,false,,true,growth,300,4,,65,5,85
+cus_BnzBDe5ca7JN6F,lindalopez@tutanota.com,"Plum Labs",1689941675,usd,card_1IKxCVEutyjd8SyUkti1F48,false,,true,starter,29,1,,180,1,2
+cus_ZjQ75Zb8ayDhXT,mariadavis@icloud.com,"Bright Engineering",1692758036,usd,,true,"Referred by John",true,growth,211,4,,64,8,73
+cus_ax9y2DjBONEOkK,matthewchavez@hey.com,"Tide Shop",1747184204,usd,card_1ZdrKyLnWsCpMWbUmeXXt1c,false,"Referred by partner",true,starter,77,2,4,364,3,6
+cus_ldyeJz362ra8ym,sandramyers@fastmail.com,"Momentum Software",1740956781,usd,card_1TRB9URLtWzrFDGCkqAMSdr,true,,true,starter,63,2,5,144,15,4
+cus_PC62nCsQbwUoG0,josephedwards@mail.com,"Vibe Design",1768937406,usd,card_1xoiJ8460cszZOgpf6fYVGF,false,,true,starter,80,2,,148,46,4
+cus_ZJWCBt521Wufgy,kevin.foster@gmail.com,"Loom Cloud",1681964345,usd,card_1vxTS0gaeUuiEp5rzgJ3fNu,false,,true,starter,56,1,4,89,0,0
+cus_vfB1l8xla6RSsx,laura.edwards@hey.com,"Hive Security",1723119742,usd,card_1cYtgZf1vFlIjJUKKyUJH1Z,false,,true,starter,46,1,3,101,0,3
+cus_pdvkfnshEdWZK1,jack.rivera@aol.com,"Swift Dynamics",1762955412,usd,card_1r8BCtdWOp780XBNPRYATcj,false,"Enterprise plan",true,enterprise,4121,5,9,1,7,123
+cus_KrBYJCRhRkyidt,anthony_lopez@outlook.com,"Oak Logistics",1704094078,usd,card_1Y8c3BGgylAq7Hz7xuAAJV1,false,,true,growth,176,3,,54,5,70
+cus_ctOw93bXXkcbtH,patrick.hernandez@hotmail.com,"Plum Digital",1708268246,usd,card_1X5ztMWQkeF22cu5x5pziE2,false,,true,growth,300,3,,999,2,58
+cus_8GkGs1Fc0c9gE7,nicholas.lee@mail.com,"Solar Co",1775822295,usd,card_1inU81u8QJVnXYSnqDuRT4o,false,"Strategic account",true,enterprise,3706,3,9,11,10,51
+cus_7HhXWgwo1D7UXp,jessicasmith@tutanota.com,"Lark Hub",1705655563,usd,,false,"Upsell opportunity",true,growth,476,2,6,43,16,65
+cus_0BewyAyqpIr3LY,jack.kelly@yahoo.com,"Dash Logistics",1770159667,usd,card_1eVc6bOqyZQhp8nem9n3ifU,false,,true,growth,489,1,0,113,6,7
+cus_WzpUV4R9nq2j5h,patricia.kelly@zoho.com,"Quartz Solutions",1739041946,usd,,false,"Trial conversion",true,growth,209,3,,252,8,9
+cus_zoOCPu3ROKfMcX,carolyn_brown@mail.com,"Leaf Industries",1737372252,usd,card_1OwCQYSMpZgHFPOGTMLvcWI,false,,true,enterprise,4684,2,5,129,22,3
+cus_jLuI1Vs3hw4tzP,edward_campbell@yahoo.com,"Spark Innovations",1708155885,usd,card_1VMwTwL6tmAK59uHh8buwrV,false,,true,starter,58,1,7,83,3,3
+cus_qS9CtoLVyw0YQj,susanlong@hey.com,"Helix Partners",1764851213,usd,,false,"Custom integration",true,enterprise,3221,6,10,10,2,158
+cus_5MLtoGRX02qOOv,edward_edwards@fastmail.com,"Lime Base",1733053240,usd,card_1pQePKl2jngLnZIs7rKsjsU,false,,true,enterprise,3593,4,,338,47,10
+cus_mW2aYQOtR4GNKl,jack_ortiz@yandex.com,"Keystone Co",1748234139,usd,card_1I6RHEhAXUrW5CH8T5ce9jZ,false,"Expansion deal",true,enterprise,2571,4,7,3,1,87
+cus_ZtXZ2DylFsESzY,linda_watson@aol.com,"Bright Pay",1734186478,usd,card_14OSoj24s45QNNiQvUvKvAS,false,,true,growth,173,3,,35,8,39
+cus_zVfSykrtGR36Nt,charles_clark@protonmail.com,"Velocity Group",1722043143,usd,card_15vSJIATMuehCp60JlnlWkz,false,"Upgraded from starter",true,growth,205,4,10,87,16,90
+cus_RDDKpd6Q87cKST,sarah_ross@hey.com,"Mint Design",1707861861,usd,card_1vv0Cl4CQ5Z4yqakPahAXQu,false,"Upsell opportunity",true,growth,146,3,9,39,14,57
+cus_9QfkgvFgmTgPJJ,melissalong@pm.me,"Dynamo Software",1740528305,usd,,false,"Product Hunt launch",true,starter,54,2,6,999,7,18
+cus_b7cpQzO3css5nn,katherine.richardson@hey.com,"Node Software",1741088105,usd,,true,"Referred by partner",true,enterprise,2934,3,2,202,4,1
+cus_TW9sAi5FymipW3,larry_ward@yahoo.com,"Pinnacle Ventures",1681694427,usd,card_1Y7cWhNAdthl4qRRwhq7S3U,false,"Upgraded from starter",true,growth,320,3,8,23,20,50
+cus_8NdNykrH6x746l,donnapatel@fastmail.com,"Ember Agency",1766701555,usd,,false,,true,starter,42,2,5,343,3,54
+cus_kunOJSSVqdVlag,john_wilson@zoho.com,"Silk Services",1717690616,usd,card_1pzwtxoPIwWG6uhKe9UU4mB,true,"Referred by partner",true,business,1322,3,5,271,45,5
+cus_MLbIRH2EaL7cxT,katherine_allen@outlook.com,"Core Health",1747010515,usd,card_1wpauvUiB3FntS2gdH6HYsc,false,"Custom integration",true,enterprise,2537,6,8,29,15,83
+cus_dycQb53S6Podz9,elizabeththompson@yandex.com,"Spire Goods",1760734797,usd,card_1N3fpIieLRp7m4DFc0potfd,false,"Renewed Q1",true,enterprise,2518,3,8,11,10,177
+cus_80N3H4oV2Wcw1N,deborah.chavez@zoho.com,"Silk Group",1774755888,usd,,false,"Self-serve signup",true,growth,346,1,,341,0,15
+cus_7Y1lIFRgJrXBv8,gary.gonzalez@hotmail.com,"Wave Bakery",1739247778,usd,card_1HlDR9S2vpqMkEl7ynS7orL,false,,true,starter,52,1,5,240,1,2
+cus_vyZcR4Aar0AJz7,samuel_gray@icloud.com,"Helix Networks",1720298950,usd,card_1jsdQujUgPHqcjQtmiGwIsI,true,,true,business,548,5,5,241,19,2
+cus_dFjhYIfpkc2t6q,jackdavis@protonmail.com,"Zeal Systems",1730585039,usd,,false,"Product Hunt launch",true,starter,31,2,9,999,2,62
+cus_tBkPwARbQ9UXwN,raymond.gomez@protonmail.com,"Wren Co",1697189399,usd,,false,,true,business,857,4,9,24,2,155
+cus_R2I7TgQmu8AoIS,debra_williams@aol.com,"Swift Works",1727625234,usd,card_1mJNlDWdbvd2gGZX9YgYZst,false,"Upsell opportunity",true,growth,127,2,7,89,4,34
+cus_fRcF4xxKV5sQsm,benjamin_king@yandex.com,"Star Design",1767808304,usd,,true,,true,enterprise,4366,4,5,224,11,1
+cus_50ufzudWVd2mlL,melissaturner@fastmail.com,"Echo Services",1743277185,usd,card_1n4SyzcOpJQ6LBnXOzlB7mv,false,,true,enterprise,4627,4,4,252,32,3
+cus_IA8hIrYth64uht,michaelpeterson@yahoo.com,"Tango Insights",1773223173,usd,card_1xal7hHYsxtNvtUasj1QeFO,false,,true,starter,99,1,,143,3,2
+cus_ukTchgG99WG2GR,sarah_torres@aol.com,"Stream Software",1761150108,usd,card_1WlpJJ6i5Myiw9PEqkTjHxj,false,"Upgraded from starter",true,growth,376,4,,53,18,102
+cus_X59jl0G4IZ9exR,andrew_sanchez@tutanota.com,"Beacon Software",1714175834,usd,,false,,true,growth,390,3,7,999,2,23
+cus_IFIsnQKWZKldnI,ronald.morris@pm.me,"Pixel Solutions",1740422921,usd,card_1jMTanKoNolj5ojaDtikFCB,false,"Demo request",true,enterprise,1884,3,,361,40,0
+cus_8jlBaDijDBMcPF,daniel_price@hey.com,"Atlas Analytics",1694951308,usd,card_1Dn5uN7qUwvxRGaAzvm89gS,false,"Expansion deal",true,business,679,3,9,22,9,181
+cus_Z5uGEv5os53vMw,joshua.carter@yandex.com,"Torch Co",1770015239,usd,card_1SDImhEifPMBBNkHEdr9GKs,false,"Renewed Q2",true,business,775,2,,0,14,180
+cus_bXxowwTzUht87I,anthonycooper@company.co,"Atlas Stack",1708901606,usd,card_1XJPWvarwx0bJv0DPaVi0Xw,false,"Referred by partner",true,enterprise,3842,4,,163,40,4
+cus_so08ehFsGBzceC,patrickthomas@mail.com,"Ember Market",1702393383,usd,card_11bqlWrdnxIfAzhK9RJsRkO,false,,true,starter,91,1,5,999,7,19
+cus_voszhVFlMouk6L,lisa.young@icloud.com,"Trail Insights",1726417387,usd,card_1pxRVLiuRr6eOzrqiwV7e1l,false,"Product Hunt launch",true,growth,166,3,,267,4,32
+cus_LjpKFxFaCvfLRX,lindacox@company.co,"Luna Goods",1686765731,usd,,false,,true,enterprise,4487,3,,23,13,53
+cus_IUVCxrHHGRiV4y,gary.howard@yandex.com,"Core Logistics",1743596333,usd,card_1v8vgtwv0afUU0zKaewD88b,false,,true,enterprise,4515,6,10,29,7,67
+cus_rlzGBSGCK0TBs7,carolynhoward@gmail.com,"Star Cafe",1746152769,usd,card_1E6DOe4n6W6L5ueEjVNwrMz,false,,true,enterprise,1950,3,,355,32,5
+cus_NUlYhozy9TWfGH,samuel.jones@yandex.com,"Grid Studio",1748003607,usd,card_1EnTLqZYYL4rm1mUturgs8g,false,,true,starter,52,1,5,119,1,7
+cus_RavgV8TcBlDHQ4,margaret_stewart@yandex.com,"Nest Brew",1733990789,usd,card_13GusuQNTpcIEPtGN84Kf5J,false,"Demo request",true,enterprise,1732,5,,252,35,10
+cus_v3dq2yJyrBS9WB,jerry_stewart@outlook.com,"Bright Works",1760439675,usd,,false,,true,growth,101,3,,999,6,39
+cus_VPjtJZOl7DDceW,michaeldiaz@protonmail.com,"Stratosphere Commerce",1681838960,usd,card_12fXYjNXHaE2v2gx3KGvQRg,false,,true,business,1362,3,9,10,14,82
+cus_PbdJp8A9foDjcI,alexander.phillips@hey.com,"Stratosphere Platform",1724955269,usd,card_15j6cV71G8F4mFpf0FKikq6,true,"Trial conversion",true,growth,463,2,0,329,34,8
+cus_Ty0PEWMkjFLkBK,eric.flores@fastmail.com,"Spire Base",1752896384,usd,,false,"Enterprise plan",true,business,1494,4,9,3,0,187
+cus_uFbfydPNRPHdbq,dennis_johnson@hotmail.com,"Lark Ventures",1716363179,usd,card_1V2ffsicKiID5hI2sSg0Hfx,false,,true,starter,51,1,4,223,1,0
+cus_9m0UHBulTjhj0L,kevingray@protonmail.com,"Craft Market",1711906506,usd,card_17yI61JBF4eRjNXfFzOrFpN,false,"Inbound lead",true,growth,473,3,,63,1,104
+cus_MyI79Nd5sciaDw,jonathanbaker@aol.com,"Quantum Cloud",1714194322,usd,,false,"Renewed Q1",true,business,1064,5,7,5,5,189
+cus_MiWQNLKWv5tO9w,mark_ross@icloud.com,"Edge Software",1743041966,usd,,true,"Trial conversion",true,starter,57,1,7,44,2,2
+cus_W2c4y53kVV42Ym,janetyoung@hotmail.com,"Pixel AI",1696324076,usd,card_1SIpiZZSfjJMG2aTxxz9VlL,false,,true,growth,143,3,10,26,19,42
+cus_qEnnkxEfEZPLaB,stephaniethompson@outlook.com,"Ember Digital",1683527555,usd,card_10tQHMec3fcpVy6OtvF40xk,false,"Upgraded from starter",true,growth,370,3,7,46,10,100
+cus_t7k7CHQghZzEhv,barbara.garcia@aol.com,"Spectrum Inc",1694382735,usd,card_1aRzpWazBnJpaFXWmUCYkAv,true,,true,starter,52,1,,220,0,6
+cus_5Kl1ZNcrVWCsVq,nicole.williams@zoho.com,"True Goods",1725302051,usd,card_1M6ZYVsjH8c6UP5DPuH6fzJ,false,,true,enterprise,3390,3,,30,16,82
+cus_UAhfYn18QSOZp0,edward_wright@pm.me,"Snap Stack",1717768266,usd,card_1Z6K5ujhUjJdOcPmqbp776d,false,,true,starter,31,1,6,206,1,5
+cus_kgYPOOd244dO9N,mark_rodriguez@company.co,"Torch Analytics",1723131493,usd,,false,,true,starter,39,1,,250,2,7
+cus_wh4951HwVAykUY,ashleygonzalez@fastmail.com,"Scala Services",1738629447,usd,card_1vp14lt6p1PxYSZiL2R4ouQ,true,,true,starter,45,1,,37,0,4
+cus_Y3RpFIyt8FPOIu,nancycruz@zoho.com,"Bright Studio",1752773324,usd,card_17wPpSA2hFPFRLIGvkGxHKP,false,"Enterprise plan",true,enterprise,4982,3,9,3,17,153
+cus_OL097oxBRRDSbf,larryharris@hey.com,"Quartz Innovations",1738784955,usd,card_1IpSuB1A39MQqKQA8gPybeA,false,,true,growth,454,1,8,999,8,54
+cus_qHQVW6hxnInoQE,angelafoster@mail.com,"Vista Technologies",1771970344,usd,card_1jOtRNYCp9jyZJAk73aR7eX,false,"Expansion deal",true,business,1498,3,,29,19,125
+cus_9blym0tl97oZOp,paulmendoza@yahoo.com,"Stratosphere Hub",1702191368,usd,card_1bnIhZLIfER1mXJbI124j7W,false,"Renewed Q1",true,business,748,3,8,21,17,113
+cus_8qHaKUZoloqRyS,frankhughes@mail.com,"Horizon Systems",1759634636,usd,,false,"Trial conversion",true,starter,31,1,3,101,1,2
+cus_0R9selWKoFzyAZ,richardroberts@company.co,"Pinnacle Goods",1724645300,usd,card_1qnO4GicS9g7J4QdCAR9icx,false,,true,starter,35,1,6,235,2,0
+cus_lkrCbZ1BCDnew4,tyler_jimenez@hotmail.com,"Sail Commerce",1690527404,usd,card_1vKms4iqcZPKHZ7kzTfI7Ib,false,,true,starter,38,1,3,49,3,1
+cus_MIkPvbSyeGoi1U,joseph.morgan@pm.me,"Dash Group",1694036781,usd,,false,"Annual contract",true,enterprise,4449,6,10,18,14,199
+cus_zIFLjLwMS3U8Fk,jackhoward@gmail.com,"Catalyst Works",1708639745,usd,card_1PKFxIHDiekWXzmEUVztqUY,false,,true,growth,458,3,2,222,25,8
+cus_lMJKTM4TUrNWqk,james_smith@pm.me,"Summit Dynamics",1740805857,usd,card_1dOUHFnYCqnx14uUoEaeywq,false,,true,starter,34,1,6,200,2,4
+cus_B9hEIXtxFu7qln,dorothyjimenez@zoho.com,"Core Security",1764020422,usd,card_1cRdgeW1JNVkUETRxgbWb7d,false,,true,business,853,5,1,315,31,3
+cus_k9dOS1M3Iqq6Ae,ashley.sanchez@outlook.com,"Volt Pay",1754751580,usd,,false,,true,growth,307,3,,232,5,70
+cus_MVnKRKrXRlGZq9,mariamitchell@icloud.com,"Silk Studio",1765957972,usd,card_1BctOA9kuIOkPJ2Ty8RMukg,false,"Enterprise plan",true,business,1261,4,10,6,6,97
+cus_pJ1DVJ1kOBlQwK,samanthakim@tutanota.com,"Clarity Engineering",1694602884,usd,,false,,true,starter,39,1,,84,1,3
+cus_Ueab5ei6yE10kz,edward_gomez@yandex.com,"Mint Supply",1694098363,usd,card_1DsMOCNdrBNxaSXFk1ssUah,true,,true,starter,39,1,,168,1,0
+cus_kqzRVRRxzhmQQK,patricia.miller@outlook.com,"Node Innovations",1753963968,usd,card_13SFwcomU4OfgBzyfBXbhyr,false,,true,growth,184,3,5,282,30,8
+cus_uvfsiSSiIYrSSJ,andrewallen@yandex.com,"Link Craft",1727628079,usd,card_1RxYDYzcHDe7zqAFAs1h85p,false,,true,growth,195,4,7,72,11,51
+cus_b7BnRA3cdflGua,jonathanlewis@icloud.com,"Helix Logistics",1706904845,usd,card_1MFLrmeMP65S9kynEXbsNDV,false,"Inbound lead",true,growth,390,3,7,26,8,40
+cus_XQ8wQIoxfCJtXE,justin_cruz@hotmail.com,"Wren AI",1699949414,usd,card_179iUWL4xQmnv54FWV2JJbt,false,,true,starter,59,1,,295,1,53
+cus_fxerqNmcz9kWUt,nancymurphy@hey.com,"Venture Co",1692962786,usd,card_1K23bQf05Jmya6XiQyfSwFJ,false,,true,starter,37,2,7,347,3,73
+cus_uIzPeAHEBzFvhJ,alexander_clark@hey.com,"Spark Goods",1720258268,usd,card_1r5IEdEtzdtArECXAkd0rJz,false,,true,growth,230,3,6,34,14,75
+cus_s2WOpi9sbxVbOa,donaldgray@protonmail.com,"Nest Tech",1740760886,usd,,false,"Renewed Q1",true,business,895,4,9,16,9,191
+cus_xVA0yWsMHZu1t2,alexander_ramirez@pm.me,"Lark Inc",1724060305,usd,card_1eaDiUlZwa5feVZLzlLg3aF,true,,true,enterprise,2148,2,2,153,29,3
+cus_oISLmNX3i9L4yC,scott_campbell@fastmail.com,"Dynamo Agency",1736918235,usd,card_1QVo7UwTq2wNZU6oLbu8oGy,true,,true,starter,41,1,,52,3,2
+cus_iuPnEaLCfhJD0F,linda.reyes@pm.me,"Solar Dynamics",1724246212,usd,card_17tQKoo2KTxqh9Y7VJ4Nz8Y,false,"Self-serve signup",true,starter,32,1,9,345,3,38
+cus_LQIU38tF45qZR3,bettyrogers@hey.com,"Shift Health",1762139547,usd,card_1PUTztpl2hUJRrjDANRlRwM,false,"Upsell opportunity",true,growth,319,4,7,33,8,50
+cus_qBPt8OvjreerN5,nancygreen@hotmail.com,"Terra Supply",1734509244,usd,,false,,true,starter,44,1,5,199,1,5
+cus_zS6wq8EawZPHW8,charles.reed@yandex.com,"Pinnacle Goods",1724590675,usd,card_1qTe3Sz1Jxl8nlL7wnl4B2m,false,,true,enterprise,4422,2,3,172,3,1
+cus_poVAwwINvTKwPZ,heathersmith@hey.com,"Summit Technologies",1769085157,usd,card_1dzsjiJ5ylY3mwNjDYRZ2C6,false,"Trial conversion",true,starter,37,1,5,59,3,0
+cus_Sg8mxygb5ddNLT,margaret_adams@yahoo.com,"Luna Platform",1711078310,usd,card_1K57PphngpXDoDxImkMbZSI,false,"Trial conversion",true,starter,34,1,,69,2,6
+cus_UZ7YZpOFf2bVZU,ryan.richardson@pm.me,"Summit Consulting",1762126850,usd,,false,,true,starter,30,1,6,124,1,3
+cus_yA3veoTgBhRHqe,elizabeth.gutierrez@fastmail.com,"Jade Market",1740225969,usd,card_1TbWTfzOWCH01AWVPP0MnP0,true,,true,growth,479,1,5,278,7,7
+cus_XVptXc3c53kz8b,carolyn.green@yahoo.com,"Frost Cafe",1695700245,usd,,false,,true,starter,34,1,7,227,0,8
+cus_osINiOGh67URbi,john.smith@gmail.com,"Quartz Supply",1756057238,usd,card_1IshuadyqjkM7MhVJxyGAU9,false,"Trial conversion",true,business,504,3,,230,23,6
+cus_Vyk7SxNNp4wPgJ,raymond_reed@yahoo.com,"Kinetic Services",1707049154,usd,card_1l7mG2DGe22zjg4FkyCBwGq,false,,true,starter,41,1,,37,3,4
+cus_GtZJUtGiW5auEA,amanda.wood@zoho.com,"Sail Consulting",1754685217,usd,card_10G4xD05OO5N5YjgUjvGARw,false,,true,starter,43,1,,236,2,3
+cus_0UUR2nXOaSu2zk,gregorychavez@hotmail.com,"Horizon Tech",1695803486,usd,card_1CmQPkCQm85Oe5UBYk95qw6,false,,true,growth,234,1,2,172,27,6
+cus_Wr4auCcegl9VuK,emily_gray@company.co,"Glow Insights",1717072787,usd,card_1bknGG14OBQv3s80WpugYq6,false,"Upgraded from starter",true,growth,125,4,,62,1,85
+cus_Hu85dyKST3wK3l,karen.morgan@protonmail.com,"Iron Networks",1683468394,usd,card_1oXUXQLIK2EQZ4LL2btPz1H,false,"Renewed Q2",true,enterprise,2782,4,8,17,1,56
+cus_FnCCZTZvLT9SIP,margaretwright@zoho.com,"Edge Tech",1683261168,usd,,false,"Referred by John",true,growth,176,4,6,20,19,30
+cus_etNlFEDqVNUZu3,lisa_sanchez@yandex.com,"Spire Ventures",1758360263,usd,,false,,true,growth,328,4,10,71,8,106
+cus_ckkHs7um7V1lIZ,debrapeterson@protonmail.com,"Keen Global",1768312471,usd,card_13MQfRyKQwjuVrpmEsQKsc2,false,,true,enterprise,3007,6,7,3,5,151
+cus_ijsLli4tR8xwJf,barbaracampbell@outlook.com,"Mint Insights",1690060127,usd,card_1S34BuDBixf4ZAgfRArovMm,false,"Demo request",true,business,1053,2,0,133,28,8
+cus_lhJow6Hmt2KzsK,emma_walker@protonmail.com,"Catalyst Networks",1748762731,usd,card_1PS8SSBFSyX4qRtVjF7Pt1w,false,,true,starter,47,1,,198,0,8
+cus_f6QVrrEBSctTJx,ronaldjimenez@yandex.com,"Rail Insights",1686897811,usd,card_1o70oDcSCxnUNsMv3Jew3RM,false,"Trial conversion",true,starter,33,1,,211,0,5
+cus_tSnv2K8s0wzgYg,anthony.mendoza@hey.com,"Kinetic Networks",1696249884,usd,card_1vv7ieOg1443UF1xZQKgqRW,false,"Expansion deal",true,business,1278,5,9,7,18,146
+cus_E94hd6K1mhAtBU,tylerhoward@pm.me,"Glow Co",1715279671,usd,card_1YIypaasFXDv5in0jcSuh0Y,true,,true,business,844,4,2,227,17,4
+cus_NR1U6weUZVIPTh,cynthiajackson@protonmail.com,"Sail Digital",1753284614,usd,card_1geuPA46OGuYN3XsQxBsGCs,false,"Trial conversion",true,growth,278,2,,282,22,1
+cus_tZ7uhlK9dE7tFJ,thomas_cox@yahoo.com,"Grid Commerce",1683850072,usd,,false,,true,growth,264,2,7,60,17,81
+cus_cp8zUhdXgC04A9,michaelkim@gmail.com,"Stone Partners",1772437268,usd,card_18gQ0fKFJhlbSXpEVBeCHSz,false,,true,business,814,2,2,124,44,9
+cus_hTz1UE6fZt8qNP,carollopez@hotmail.com,"Scala Agency",1739075040,usd,card_1nhiMIsnliVYWQhqZW7sYeH,false,"Referred by John",true,growth,354,4,9,17,4,82
+cus_0JI7JYLSerq6aT,janet_cook@icloud.com,"Cloud Software",1719378568,usd,card_1Q608veebe1uHfQigwOOInn,false,,true,starter,40,1,5,289,8,70
+cus_E0ezqrhwaL6Pjt,debra.williams@aol.com,"Star Shop",1703858152,usd,card_1yS5rMmXpc2O2zr4yU6KfOZ,false,"Enterprise plan",true,business,1001,2,7,26,8,145
+cus_NrSE1KMBKHut1N,benjaminclark@tutanota.com,"Velocity Software",1713035157,usd,,false,"Renewed Q2",true,enterprise,2255,3,7,22,1,71
+cus_RBuR6Dg0KXp7kK,tyler.ward@protonmail.com,"Lime Commerce",1713654032,usd,card_18pZK0z6jucoqKWAgDttVCL,false,,true,growth,314,2,,59,13,84
+cus_LcoIczv85n1Nww,margaret.cruz@hey.com,"Atlas Agency",1728142633,usd,card_18wBQckPASQ5o8vj54NjQJx,false,"Renewed Q1",true,enterprise,1822,3,8,19,0,131
+cus_wOdIBfVF99h78O,mary.robinson@mail.com,"Nimbus Pay",1702061406,usd,card_17S27QI9SakhIBjVgIZr3T0,true,,true,growth,204,2,9,999,8,61
+cus_xW5yyhn3xZQPkv,steven.sanchez@protonmail.com,"Haven Software",1729607094,usd,,false,"Referred by John",true,growth,246,4,8,23,6,80
+cus_MD5HFSgV3s5dIV,donnawhite@tutanota.com,"Keystone Ventures",1701857315,usd,,false,"Trial conversion",true,starter,52,1,,136,1,5
+cus_RwNG8sI7z2hgBp,paul_allen@yahoo.com,"Rail Brew",1711287805,usd,,false,"Demo request",true,growth,110,2,3,112,28,9
+cus_yhsL1tCMzxEfHr,amanda_ross@gmail.com,"Nest Networks",1760383859,usd,,false,"Strategic account",true,business,722,2,9,25,1,181
+cus_PWQh7mYXSo2LUn,carolmendoza@icloud.com,"Pine Supply",1703258719,usd,,true,,true,enterprise,4217,4,,306,33,7
+cus_9r9RsLLR30wGWG,jonathan_young@yandex.com,"Quartz Security",1693003134,usd,card_1EoqWvKYab83MX3PhLlwahC,false,"Renewed Q1",true,business,676,2,10,1,4,185
+cus_qWU9DDHVeMB6eI,barbarawalker@zoho.com,"Momentum Studio",1686954392,usd,card_1xoeMkimELk3HmwpmQPcLzW,false,,true,growth,202,1,9,999,1,35
+cus_ziikwHV58Cy4Dl,larry.patel@gmail.com,"Sage Global",1740445729,usd,,false,"Product Hunt launch",true,growth,128,1,,999,7,79
+cus_raNQnEWOiunEav,jerrywood@yandex.com,"Luna Logistics",1708961791,usd,card_1oGvxyLnluSRhCpIASei8rB,false,,true,growth,225,3,9,38,1,58
+cus_zLPMHzjNVJaJhU,raymond.long@yahoo.com,"Stack Kitchen",1720726111,usd,,false,,true,growth,310,3,10,47,3,41
+cus_LYGMcvz2d03I0D,jamesprice@fastmail.com,"Pulse Systems",1741326639,usd,card_1HWGq4h6EJlRU6fbAEqcydE,false,"Custom integration",true,enterprise,3349,6,,9,19,160
+cus_pjJ8bwJYJu6E8G,david_morgan@company.co,"Leaf Finance",1754867186,usd,,false,"Enterprise plan",true,business,1034,5,7,26,12,103
+cus_CQ4715OedMua3T,mariakim@protonmail.com,"Echo Cloud",1710167090,usd,card_1hXP5FO8Q9mjY23Mt7FfqHJ,false,,true,growth,388,4,7,20,6,87
+cus_KzRdV1Vn7B838Y,michaelrobinson@mail.com,"Terra Networks",1703117616,usd,card_1WY1J6012rmckj67YflZxU6,false,"Renewed Q1",true,enterprise,2834,4,10,22,17,134
+cus_WKMZiw0UdpXf53,gary_young@yandex.com,"Harbor Analytics",1706439355,usd,,false,,true,growth,434,3,,73,6,67
+cus_FyXeOnPdM1fEZa,aaronroberts@protonmail.com,"Core Craft",1718491166,usd,card_1spXl4sB7iF2oJt9Iby6ECS,false,,true,starter,68,1,3,307,29,7
+cus_JRQNHJSHbWjFc1,deborah.parker@protonmail.com,"Helix Commerce",1719898599,usd,card_1QUUWGOCfbk7CSB5TzhCCfg,true,,true,growth,109,2,5,113,26,10
+cus_FWj5BUTwt2Manw,lindamorgan@mail.com,"Keen Finance",1701837121,usd,card_1v4F0lnVPtsQ1kuF9U3pvOF,true,,true,enterprise,3810,2,0,242,37,10
+cus_xu2z0Js0Z7Z866,anthony.ross@yahoo.com,"Nest Base",1710418391,usd,card_1cgBOKwjRVtAVZuycrX46vk,false,,true,enterprise,2206,2,5,127,37,7
+cus_8tgOZeZ6AUg0nm,nicholasyoung@yandex.com,"Momentum Cloud",1693595177,usd,card_1uCyjCgDsDKvo8dR1kQ8ZS0,false,,true,growth,122,1,4,278,27,5
+cus_7CMas5txeSxwRo,christine_rodriguez@fastmail.com,"Trail Ventures",1751991875,usd,,true,"Demo request",true,business,1073,3,1,200,37,4
+cus_SCZZgF6mgnqcsu,kennethfoster@mail.com,"Node Media",1768433322,usd,card_1DdZA06TZZBCWFFrOr9atbR,false,"Trial conversion",true,business,1009,5,2,323,26,2
+cus_5AOL69cOd1xj9R,gary.adams@tutanota.com,"Clarity Hub",1688938873,usd,,false,"Product Hunt launch",true,growth,478,3,9,363,0,67
+cus_81hQFiIqKtlIeo,pamela_ross@yahoo.com,"Node Works",1775415880,usd,,false,,true,starter,51,1,6,139,1,8
+cus_45TlS9V2Olomd5,richard.ramos@gmail.com,"Catalyst Inc",1710823313,usd,,false,,true,growth,307,4,7,55,7,77
+cus_JWKbjZq4g1bsYD,danielcastillo@company.co,"Iron Cafe",1766707929,usd,,false,"Upsell opportunity",true,growth,293,4,10,35,2,106
+cus_1GWhUVkytolhi1,davidmyers@icloud.com,"Shift Software",1708276260,usd,card_1vlVd00gXuRVYc5eRMXs7z7,false,,true,starter,56,1,,84,0,4
+cus_pLE2rJPx6GQrks,gregorybailey@hotmail.com,"Vibe Insights",1734404065,usd,card_1mM2BohiT4dhyYrxeJ3hStS,false,"Self-serve signup",true,growth,236,3,,999,0,50
+cus_zkFuL5rOe2EPzF,daniel.baker@aol.com,"Nova Market",1710567900,usd,card_1j9l9hxX0qDquUFn1WVb3TZ,false,"Inbound lead",true,growth,353,3,9,70,15,105
+cus_ODEqOpS4IAd8D3,shirleycampbell@hey.com,"Vista Dynamics",1699623366,usd,,false,"Custom integration",true,enterprise,4931,5,9,10,6,198
+cus_fRxZkHaBcM9lT7,emma.lopez@tutanota.com,"Kinetic Hub",1773620383,usd,,false,"Expansion deal",true,enterprise,3228,3,7,2,12,124
+cus_VM7Kg9raI8f2n5,anna.clark@fastmail.com,"Momentum Works",1732111779,usd,card_1z9QDIfbE8uUhkmqI3EjWV0,false,"Demo request",true,starter,54,2,2,321,46,9
+cus_4O227jnItpsa3t,nicole.hall@icloud.com,"Solar Engineering",1763058135,usd,card_1RpWxr2G8NWLo9rTPqqqLbh,true,"Referred by partner",true,enterprise,2517,2,3,221,5,10
+cus_FJoSP1T3fcnRWj,amycollins@outlook.com,"Cloud Industries",1750818172,usd,,false,,true,business,802,4,,350,38,1
+cus_qEsKUXyoGKOJTy,angelarobinson@gmail.com,"Horizon Agency",1766310070,usd,,false,,true,starter,39,2,,240,7,33
+cus_EF9A0w6WDZY8hD,garygomez@yandex.com,"Silk Co",1715419607,usd,card_1AMCfG8QQGB1zRIyIcUaDmf,false,,true,growth,157,1,8,999,4,31
+cus_hGiV7eOzKJaBv4,kevingray@aol.com,"Dynamo Engineering",1737150145,usd,,true,"Trial conversion",true,enterprise,4425,4,4,200,6,7
+cus_4YNKyzmK7svOMp,sharongomez@aol.com,"Sage Bakery",1719107372,usd,,false,"Expansion deal",true,enterprise,4204,5,7,7,5,66
+cus_PQVPnbC7bwIZMF,joshuagutierrez@protonmail.com,"Nova Works",1708405627,usd,card_1bDleXwE52U8lvGbT2gkQcC,false,"Custom integration",true,business,981,5,,23,8,115
+cus_2ziwY2OqHVgHGk,brenda.nelson@aol.com,"Solar Networks",1682171040,usd,card_1M5xwaVmVOlmHrVlpkNw0NS,false,"Referred by John",true,growth,356,3,6,30,8,93
+cus_CvnDKlLHgWWucd,rebeccadavis@icloud.com,"Hive Services",1774871241,usd,card_1JmNETWwBslyAmuR99E8NcD,false,"Demo request",true,enterprise,2095,2,3,328,3,9
+cus_dJaLeVfokupWqv,jennifer_phillips@icloud.com,"Summit Goods",1769294819,usd,card_1bolXwGPoStmqQDO9DBuKkM,false,,true,starter,80,1,9,999,2,40
+cus_Tielw5gNLCoAf0,carol.bailey@pm.me,"Frost Design",1696491763,usd,card_1IAwkrJ0L50AYj9axZm9qRf,false,"Upsell opportunity",true,growth,119,3,,60,14,67
+cus_mYTGG3FWKqZdE8,kathleen_white@hotmail.com,"Helix Market",1702227346,usd,card_1LKpikgb1PuGQeSDrZFvZxD,false,,true,starter,52,1,,999,8,71
+cus_7CigTTmfxMsCI7,carolyn.evans@yandex.com,"Trail Shop",1733214484,usd,card_1TKWkkz10zqmlsM1WzUTAUK,false,"Referred by partner",true,starter,50,1,,152,2,5
+cus_9JiN1br9KJsPjm,jackthomas@zoho.com,"Wave Analytics",1767613546,usd,card_1vQ5XquOBkiNKQW8lbMk1B4,false,"Inbound lead",true,growth,407,3,,57,15,48
+cus_Gn2nXmWBWd42Pi,james.young@icloud.com,"Clarity Base",1713430471,usd,,false,,true,growth,154,3,,999,0,17
+cus_mcsaDE0O6ScU2k,emma_cooper@protonmail.com,"Nimbus Analytics",1748569015,usd,card_1S3cZdWYYbvyUS6y3BHwce9,false,,true,starter,38,1,,201,1,4
+cus_b9AvRfA4QpR7Se,alexander.sanders@zoho.com,"Craft Co",1714683638,usd,,false,"Trial conversion",true,enterprise,4130,2,1,151,8,0
+cus_HpxmFaiLXTuPjE,dorothy.ross@tutanota.com,"Venture Platform",1744310182,usd,,false,,true,growth,193,4,9,40,4,116
+cus_0nL245sDUQ9VOK,gary.young@yahoo.com,"Tide Cloud",1709721404,usd,,false,"Demo request",true,starter,95,2,3,222,33,6
+cus_TWpMrQTTHhJBtW,stephanie.lopez@zoho.com,"Stack Innovations",1772483261,usd,card_19TNY5mfyihK7cE6JWZ9RId,false,"Custom integration",true,enterprise,2556,4,7,8,1,145
+cus_kqhqLFbCziuKKc,anna_roberts@outlook.com,"Stone Analytics",1739587305,usd,,false,"Trial conversion",true,starter,50,1,5,244,0,3
+cus_BH1O4aFm5wuHHS,margaret.rogers@yahoo.com,"Quantum Digital",1691311177,usd,,false,,true,starter,30,1,,203,3,8
+cus_Bba9gcLDPYHwdf,matthew_clark@icloud.com,"Mint Data",1772246878,usd,card_1ouiWiUAE0YoZsGgM5egi6G,false,,true,starter,48,1,,80,3,8
+cus_kNg1jAxw3u5k5E,alexander_campbell@outlook.com,"Momentum Labs",1728450444,usd,,false,,true,business,1106,5,0,229,23,3
+cus_biZvbdtJWsiTu2,samuelking@protonmail.com,"Helix Solutions",1748985997,usd,,false,,true,starter,92,1,1,243,24,6
+cus_UNETHVhExFAfXO,karen.davis@zoho.com,"Tango Global",1725955227,usd,card_1vZFGwoPyxIPmJQ2MWpv4bI,false,"Upgraded from starter",true,growth,422,4,,74,12,58
+cus_7sJYX6gDhdAY9f,matthewlong@gmail.com,"Nova Engineering",1700446061,usd,card_1NylxztI5IA9q68nOyWE2cQ,false,"Inbound lead",true,growth,323,4,,61,2,37
+cus_1A6qwkRUJSs689,rebeccalewis@fastmail.com,"Lime AI",1714563901,usd,card_1XP6w2ZHGmaxomDMdC4VtSX,false,"Trial conversion",true,enterprise,2922,4,2,283,19,3
+cus_ryAEeUzMA9jYIY,ashley.ross@pm.me,"Grid Consulting",1736995634,usd,card_1gycva8xX0zv1EEJ7WbHPL3,false,,true,enterprise,3731,5,,227,13,9
+cus_gMbAMeibbMdhOV,robertmoore@mail.com,"Bright Creative",1686640210,usd,card_1zAhooDmgZyV1JzxqLTng03,false,,true,starter,75,2,6,999,8,73
+cus_4JanxAKRcYf4k7,lisa_murphy@yahoo.com,"Link Health",1718491212,usd,card_1hVEgiGvdqrxcsK4tulPUlN,false,"Trial conversion",true,starter,58,1,,183,3,7
+cus_p8C4pFhQTTbXBH,rachel.walker@company.co,"Harbor Platform",1769174017,usd,,false,,true,growth,143,2,1,142,9,6
+cus_C23rJIDyLIRNfj,jerry.king@hey.com,"Core Data",1719439862,usd,card_1zvGTeLiScMq2iRokX0rcCf,false,"Expansion deal",true,business,1465,2,7,2,10,84
+cus_QhJWfBfzV8zrNc,shirleywalker@outlook.com,"Stratosphere Engineering",1693935861,usd,card_1ClmVz5UwZZOtTX8vvxKbKE,false,"Upsell opportunity",true,growth,166,3,9,11,5,106
+cus_4y7ur9nlR5Prcb,jessicabennett@yandex.com,"Spectrum Data",1725226912,usd,card_1OqGW4lNfoHREdzPjOLngXP,false,,true,starter,93,2,8,290,6,61
+cus_o8rBPUmOanw8rA,carol_jimenez@yahoo.com,"Peak Tech",1681564607,usd,card_1BRNJiAMvkxlX4KVMXOonnl,false,,true,business,821,2,4,347,33,2
+cus_M5B8MWQVbzwQAg,rachel_cooper@gmail.com,"Swift Partners",1690532785,usd,,false,"Custom integration",true,business,786,3,10,26,5,159
+cus_qemcPT0fFwgKBU,margaret.castillo@protonmail.com,"Jade Digital",1722540131,usd,card_1GbchNplBipVU8CWL9Cmgqd,false,"Renewed Q1",true,enterprise,4475,6,9,23,16,118
+cus_wMz2OwpZ9yOJF7,kevin.perez@protonmail.com,"Pact Studio",1692721886,usd,,false,,true,starter,57,1,7,237,1,1
+cus_lBi5FZselwMALd,ashleymiller@gmail.com,"Plum Base",1724068047,usd,card_1ODncOWq9hUomGHQwOJ9gny,false,,true,starter,54,2,6,272,7,33
+cus_f2r3F2dWoWuGGJ,deborahcampbell@company.co,"Star Kitchen",1689757211,usd,card_1I8TnEq8NChNPgIoS1R1H3l,false,,true,starter,42,1,4,177,0,5
+cus_gJmRKIlNtlSFaK,emily.king@zoho.com,"Scala Stack",1696385105,usd,card_1Dk7Ts7iWZAgnZi3nQFgbCF,false,"Upgraded from starter",true,growth,335,4,8,64,4,63
+cus_rqmfmKQ0DJGQ8s,rachelramirez@zoho.com,"Bright Digital",1753125682,usd,,false,,true,business,874,2,,131,25,10
+cus_DbbAQ9ObPHdyj1,steven_stewart@icloud.com,"Nova Goods",1774430341,usd,card_1KxbEirI8VBZ8mQMtLg8mZA,false,"Upsell opportunity",true,growth,383,4,10,81,18,31
+cus_RPhyPVqOTQjdot,nancy.chavez@fastmail.com,"Zeal Cloud",1725583995,usd,,false,"Expansion deal",true,business,954,3,9,20,14,187
+cus_PBgTehQfRMPqYW,carolyn_gutierrez@yandex.com,"Maple Craft",1720933844,usd,card_1Akzn7sqa3aJ3lihDOAnJ58,false,"Renewed Q2",true,enterprise,4208,4,,7,10,140
+cus_ewbJwXZAPrRDnf,melissa.robinson@outlook.com,"Dynamo Innovations",1767236791,usd,card_1rCCHbggfjw742i8UBqYr4d,false,"Annual contract",true,enterprise,4714,3,10,20,0,56
+cus_Ff4Z2aKW7At1Eb,marksanchez@zoho.com,"Bright Tech",1710007379,usd,card_1bOH8XTjaSfGV1rzZgmp1Yw,false,,true,business,1303,2,9,24,6,57
+cus_dnQ9MFd4qJBugI,kevin_gutierrez@hey.com,"Vista Networks",1684300193,usd,card_1klMlY6Tr6qzTYC9txsVhZA,true,"Trial conversion",true,starter,95,1,,122,25,7
+cus_WlJIfIlKzHpkeb,emmabennett@mail.com,"Pulse Market",1754043148,usd,,false,,true,growth,238,1,5,999,7,49
+cus_7c9m8qIiDGRKNK,gregory.wood@gmail.com,"Pulse Inc",1732293859,usd,card_138ByqjAPZlI1tuRrc9orn4,false,"Product Hunt launch",true,starter,65,1,5,999,0,56
+cus_CMPNA9G00wRayC,jason.reyes@hotmail.com,"Loom Health",1716991934,usd,,false,,true,growth,341,2,8,75,4,62
+cus_HKbpLjQvkTPAeZ,david.cook@outlook.com,"Shift Shop",1718641549,usd,card_16WwucSxUbP33MFdrOm6Wn7,true,"Trial conversion",true,enterprise,4048,3,0,281,38,8
+cus_1ODZnYFCPZ77Kf,emilyphillips@tutanota.com,"Loom Solutions",1728525302,usd,card_153hDnl3OR676BgR4GcPwo4,false,"Product Hunt launch",true,growth,186,1,,284,5,28
+cus_ms0ydMnZ3lXBO4,matthew.adams@protonmail.com,"Volt Kitchen",1719452038,usd,,false,,true,growth,353,3,,51,18,85
+cus_77Np7y8Ck1w8tZ,margaret.lopez@aol.com,"Stone Analytics",1767336239,usd,card_1myeUJKw2UHw5CHdZIMTiYE,false,"Renewed Q1",true,enterprise,4567,5,,3,5,178
+cus_cxdZYPo4hCRZ78,betty.hall@pm.me,"Venture Co",1681581697,usd,card_135foByIbOo2FaULgl9BOoT,false,,true,starter,48,1,,94,1,6
+cus_pqXd4FXjKYyTfe,charles.torres@hey.com,"Spark Insights",1706701596,usd,card_14pJ22An6LJNuHdHIeq9jAs,false,"Upsell opportunity",true,growth,471,3,,59,9,42
+cus_IZtdxzk5vFyJSg,josephthompson@zoho.com,"Wave Security",1729584239,usd,,false,,true,starter,45,1,,99,3,7
+cus_Nbn4RBNc4OyKXP,christineflores@gmail.com,"Summit Stack",1697295102,usd,card_1t1Pv8ZPdke7WTAWMboOfz8,true,"Demo request",true,business,1028,4,4,211,29,7
+cus_Wky6WzS10AEAb2,raymondlopez@company.co,"Sail Hub",1719102953,usd,card_1E9c1XW43GFyFVzFdWDFaSH,false,,true,starter,30,1,7,78,0,2
+cus_su5zgL8jgxLoNw,maryedwards@hey.com,"Mint Logistics",1691547965,usd,,true,,true,growth,163,3,4,206,30,7
+cus_lkPmWRaxNjmmfM,kathleenlee@tutanota.com,"Spectrum Data",1702141973,usd,,false,,true,business,1363,2,10,9,12,135
+cus_jXnHyoXvAmZ1Mm,kevin.sanders@mail.com,"Spectrum Market",1690777682,usd,card_1CvBUuen43fQOoaHyb5ZiIU,false,"Custom integration",true,business,1350,3,,1,9,101
+cus_5f18Kdgp2UMUb0,susanlong@fastmail.com,"Core Inc",1738412494,usd,card_1YoZFdExhkZdGv0q2pFdH9f,false,,true,growth,219,3,10,45,12,53
+cus_4FhCZ9foiRQ2LJ,gregorybrown@zoho.com,"Snap Brew",1695050671,usd,card_1DtvEyLR2moiEMFDp3nKaNY,false,,true,starter,56,1,5,144,1,8
+cus_FT1h9ZR0vOSzuN,andrewperez@outlook.com,"Silk Industries",1739295757,usd,card_1sG2GjByEaKAXsub1NYohSn,false,"Strategic account",true,enterprise,2406,6,9,24,6,54
+cus_6YRW1fXB1AAPAP,helen.hall@mail.com,"Pixel Agency",1715379164,usd,,true,,true,starter,59,1,4,79,3,8
+cus_YCWTBaIuoUC7i7,nancy_baker@yahoo.com,"Snap Ventures",1763545066,usd,,true,"Referred by partner",true,business,620,5,5,262,8,6
+cus_Ox1hbcKftCUCsU,jerry.thompson@yahoo.com,"Vibe Cafe",1760151163,usd,card_13UR6a6MGAIjYhpFahrRxKE,false,"Product Hunt launch",true,growth,131,1,,999,1,54
+cus_6sUxs3CkEwmXVP,donaldbailey@hey.com,"Dash Technologies",1682734374,usd,card_1uDdgv0osIoxj9ajzk6wzvo,false,,true,starter,49,1,7,88,3,6
+cus_gifKvdxEHgraid,donald.scott@fastmail.com,"Maple Goods",1713731152,usd,card_1HGp0Z7u6fP0CyUqpi79Kzc,false,"Demo request",true,enterprise,4420,2,3,118,2,5
+cus_Rdzb3psgznXkdH,emily_reed@fastmail.com,"Sail Insights",1686978768,usd,,false,"Product Hunt launch",true,growth,242,1,,999,1,31
+cus_oruNR3Zw7EqonE,michelle.adams@zoho.com,"Craft Co",1753309270,usd,card_1Vpl5vz6L3T2swKqmq4BEGN,false,"Inbound lead",true,growth,388,4,6,10,2,115
+cus_gpdE25aQOav062,steven_patel@mail.com,"Spark Networks",1734935017,usd,,true,"Referred by partner",true,business,1229,5,0,246,49,10
+cus_AXEMZhO1nmYFtY,donald.king@fastmail.com,"Nimbus Inc",1694709952,usd,card_1Ku67Ksp5rKf1pNZneJcwMz,false,"Custom integration",true,enterprise,3644,4,7,18,18,157
+cus_Go80vUbBXa5dWL,bettyalvarez@protonmail.com,"Pixel Engineering",1749292640,usd,,false,"Referred by John",true,growth,240,2,7,59,12,30
+cus_W8OhRiQ27CAIWE,katherine.williams@pm.me,"Rail Platform",1697010024,usd,,false,"Custom integration",true,business,764,3,9,22,17,200
+cus_XU0s1fdUH0LAYS,carol_rivera@protonmail.com,"Maple Engineering",1728585672,usd,card_1HZAycEfQxrN7jSjJoqMCuF,false,,true,growth,384,2,5,212,3,50
+cus_ITdwaGnpPem6CL,jack.kelly@yandex.com,"Pixel Engineering",1767529017,usd,,false,"Upgraded from starter",true,growth,160,4,10,61,9,77
+cus_3q7vh05l9R9Hy8,sharon_perez@yahoo.com,"Volt Systems",1759901801,usd,card_13kvUVJNMX1ps3kHnuYFZ01,false,,true,growth,461,4,6,30,7,102
+cus_HPwJe9AOJ97pTF,mariahughes@protonmail.com,"Swift Design",1684645872,usd,card_1lFIkFuuFvYvReIKH5lBA0i,false,"Referred by partner",true,starter,97,1,,269,29,9
+cus_XOuI8cTxu2TtXi,richard_edwards@zoho.com,"Keystone Labs",1718803671,usd,card_1NKAak9mL4xX9xuWfmf3GGV,false,,true,starter,54,1,3,224,0,0
+cus_XjpyW0L5Tonhlt,donald.lopez@tutanota.com,"Summit Data",1744544177,usd,,false,"Enterprise plan",true,business,768,3,7,6,8,116
+cus_5vVmTBSP3TAGc0,kathleen_rivera@tutanota.com,"Clarity Tech",1731666406,usd,card_1RomaR7yBCST3O4g17Q7uAO,false,,true,starter,54,1,,208,2,8
+cus_gEEFeR5VAJ6N88,donna_reed@fastmail.com,"Luna Creative",1729657892,usd,card_1u37W4ch20MBezSoXXrtS25,false,,true,starter,34,2,,999,8,54
+cus_kMLbqVzaU10Uqg,andrew_hernandez@company.co,"Pact Pay",1767308304,usd,,true,"Demo request",true,enterprise,2056,5,3,189,38,7
+cus_fyN9qpUu2ngidx,benjaminflores@gmail.com,"Peak Solutions",1711754772,usd,,true,,true,starter,54,1,,33,0,6
+cus_5EDVu3NsASWG6T,joshua_cooper@hey.com,"Tango Dynamics",1683320687,usd,,false,,true,starter,40,1,4,32,0,2
+cus_A80SQ3exn49Kzc,donna.evans@tutanota.com,"Lark Shop",1752406722,usd,card_17MIW3KrRENXKD7oNwj62I5,false,,true,growth,477,2,6,61,7,59
+cus_Tt7blSXVDOa0aW,stephanie_parker@protonmail.com,"Silk Innovations",1714856532,usd,,false,"Inbound lead",true,growth,340,4,10,21,12,47
+cus_8JArzI7wR6N3LY,deborah_cruz@fastmail.com,"Pulse Stack",1723878283,usd,,false,"Enterprise plan",true,enterprise,2841,6,9,6,10,189
+cus_GNMLIzWQ950qGB,william.morgan@zoho.com,"Clarity Supply",1772582774,usd,card_1OThqdTbkrChhN9ngwA97rH,true,,true,growth,122,1,4,128,35,9
+cus_VJnFmSsXVP7Ti6,kimberly.lewis@aol.com,"Tango Goods",1745056767,usd,card_1oQlYe9jEZQBBT7FUrhvhRR,false,,true,starter,59,1,,259,32,5
+cus_pm1E4WollgDWCN,brandon.lee@tutanota.com,"Tide Insights",1698220765,usd,card_1nH3VL1Q0lSRkgNdPNrfK9r,false,"Renewed Q2",true,business,1171,5,8,6,13,177
+cus_VwHHQUxq3qr7sU,john.adams@mail.com,"Star Tech",1756008289,usd,card_1YedFty0TKUG01e94XsvS8t,true,,true,enterprise,4762,3,,259,45,0
+cus_MW1F3L9czS2AJB,karensanders@yandex.com,"Vista Innovations",1684042329,usd,card_1H0bVasHwUNxJDTMtsfi7RT,false,,true,starter,38,1,5,60,3,7
+cus_sioXT7A2gyoX5I,lauracastillo@yahoo.com,"Spark Goods",1692924246,usd,card_1IyuuVpS1xk7LNLnbNKncPp,false,,true,growth,325,4,6,68,10,83
+cus_1KfTI6silu3073,lisa_james@protonmail.com,"Star Insights",1762296453,usd,,false,"Upgraded from starter",true,growth,236,4,9,26,1,113
+cus_TUrIlvMQ4jPsIY,scott.taylor@yahoo.com,"Wave Data",1733361260,usd,card_1mkDMar4RqVUWonj925rm7m,true,,true,growth,388,2,1,108,40,7
+cus_h2C6HAdjJZJPUS,daniel_flores@fastmail.com,"Silk Services",1754044976,usd,,true,,true,growth,297,4,9,77,19,52
+cus_RT4s1jXX2RVtfa,andrewwilliams@aol.com,"Terra Industries",1699052093,usd,,false,"Self-serve signup",true,starter,35,1,,999,5,33
+cus_ipaJUUddV1ztUI,dorothy_roberts@icloud.com,"Sail Cafe",1682056038,usd,,false,"Trial conversion",true,starter,55,1,,102,3,2
+cus_gHMgFiYugSoRsO,ashley_richardson@tutanota.com,"Nova Bakery",1686237330,usd,card_1REfFXSKqUUJnCAib36vXeF,false,"Trial conversion",true,starter,55,1,7,67,0,2
+cus_VIYa1nbGjfIHEx,debra_nelson@pm.me,"Nest Consulting",1756189754,usd,,false,,true,growth,483,1,0,119,16,0
+cus_J1tEeFdSWXtBYH,samuel.sanders@protonmail.com,"Haven Market",1736175052,usd,card_1IeNJlmrx5M9I8oN4WsDmkj,false,"Inbound lead",true,growth,327,2,9,66,17,77
+cus_UlFlh8nHRqXjUv,edward.diaz@yahoo.com,"Wave Consulting",1740896169,usd,,false,,true,starter,51,1,7,158,1,8
+cus_6KU4ZlkVrUBgxo,frank_robinson@icloud.com,"Nimbus Ventures",1731926003,usd,card_1ODXQKA5iBbJvJnGMyf9vvw,false,,true,starter,30,1,,247,3,5
+cus_bBgTWx6VvvHGw8,jennifer.lee@gmail.com,"Trail Market",1707382974,usd,,false,"Demo request",true,growth,383,1,,218,31,8
+cus_aUFPPxz5I5UJ2U,rachel.bennett@yandex.com,"Terra Global",1740479093,usd,,false,,true,growth,420,4,,17,19,31
+cus_KKtz5limSgupVK,patrick_foster@icloud.com,"Vista Platform",1771899017,usd,card_1PhEilbwbnPrYKwrkLPahLp,false,"Upgraded from starter",true,growth,485,4,7,66,2,93
+cus_Q7M0l1amOBOeMY,amandahill@mail.com,"Quantum Ventures",1718824372,usd,card_1xSPES80e1FJo7lUvj8qzYn,false,"Renewed Q1",true,business,1167,5,8,23,14,74
+cus_0EB1r4Pl6zs2c6,ronaldsanders@mail.com,"Glow Inc",1711473283,usd,card_1wEauscfrM8JfPK4sFOH0mv,false,"Self-serve signup",true,starter,62,2,8,999,8,61
+cus_JqPKaJzuUQa7Lu,angela_ortiz@tutanota.com,"Peak Finance",1729166804,usd,card_1vrrSp5oauVgbw8pAapsKmb,false,"Trial conversion",true,starter,54,1,,160,3,0
+cus_zfsf1CtvjxUwSN,jerry.adams@mail.com,"Maple Group",1775550837,usd,card_14dkDkvd6OPG361jTXouzG4,false,"Product Hunt launch",true,growth,375,2,,999,5,43
+cus_fcgPMzaFHUGWw2,maria.mendoza@zoho.com,"Horizon Studio",1755188729,usd,card_1BZuyJwEVVXa30W9LEDXERn,true,,true,business,1227,3,1,250,26,5
+cus_HFQugOI3mOmEAU,kimberlythomas@protonmail.com,"Solar Cloud",1703965120,usd,card_14HrKhK744ukmNMNK9YWu74,false,,true,growth,298,1,6,999,0,57
+cus_6zIBkAl2451HBf,mary.patel@company.co,"Rail Kitchen",1708709120,usd,,false,,true,growth,229,3,7,40,8,36
+cus_3pClxBTdwyPNek,rebeccaking@mail.com,"Keen Inc",1755192041,usd,card_1OFsBfBpiCjsQMhyFPlNrzF,false,,true,growth,470,1,5,999,6,28
+cus_mpZLMJJ9pKNAG2,deborah_thompson@mail.com,"Apex Brew",1703163716,usd,card_1itetIzvUpbOqK8Z3b8qyhF,false,"Annual contract",true,business,690,5,7,7,2,123
+cus_6kaiIPM3xbErzu,joseph_carter@outlook.com,"Echo Co",1729656112,usd,card_1ajQ2WP2uV3T7p27bS3KlrJ,false,,true,growth,220,2,6,18,18,84
+cus_szfxGPGB0a1WO0,jessica_rivera@yandex.com,"Pinnacle Tech",1738127352,usd,card_1RMYoMVZcHjFOzs9Uq206Zk,false,,true,growth,480,2,,42,15,76
+cus_Gj4XHSQYgX9dSY,john.thomas@yahoo.com,"Horizon Group",1752142343,usd,card_1Or5XZc53RM2McgDdQQTFnl,false,,true,starter,39,1,3,193,1,0
+cus_ZTwuwryg5OJTR6,angela_ramos@mail.com,"Flux Stack",1696369798,usd,,false,,true,starter,65,1,7,223,7,31
+cus_8TQnTpsPtV6kj8,tylercooper@icloud.com,"Lime Networks",1768230238,usd,card_17FtAgjuKiwvX3bDuTcZvdm,false,,true,starter,83,1,5,246,7,23
+cus_SYdsy2AJSq9t9L,donna.mendoza@yandex.com,"Maple Brew",1690120712,usd,,false,"Upgraded from starter",true,growth,417,2,7,68,19,53
+cus_BY76zHJz10M7nN,carol_wright@mail.com,"Sage AI",1757434542,usd,card_1QvjQLZnrgDjeGDKSPoRjnR,false,,true,growth,310,1,0,201,14,5
+cus_spGYEz1gSCtsOP,daniel.torres@icloud.com,"Frost Digital",1704547223,usd,,false,"Enterprise plan",true,business,863,2,,13,20,109
+cus_v76wZ0kiCM7jLw,timothy.myers@zoho.com,"Luna Health",1765902711,usd,,false,"Renewed Q2",true,business,1394,3,9,1,18,176
+cus_9WNwWBM3rYihnn,angelabaker@hotmail.com,"Vista Dynamics",1684536268,usd,,false,,true,starter,46,1,,233,3,0
+cus_3a8pwURFEZNgZT,carolyn.rodriguez@hotmail.com,"Lark Services",1683780168,usd,,false,,true,starter,32,1,3,190,1,5
+cus_G8ilELnfPLJ4yA,nancy.harris@yahoo.com,"Tide Dynamics",1774640945,usd,card_1muJ83xJegprmzWGgytDwfZ,false,"Product Hunt launch",true,growth,463,1,,311,8,46
+cus_BaIWbg9nJIg0KN,richard_reed@hotmail.com,"Plum Market",1738654515,usd,card_1L5Uz7az5HsRUUkOVkCsMGk,false,"Referred by John",true,growth,459,3,,59,1,63
+cus_j0ZBb5ffVJSFof,janet_smith@company.co,"Volt Brew",1757423713,usd,card_1HyPHCtAUtmhioMzXuDGz1h,false,"Product Hunt launch",true,starter,74,1,,999,0,47
+cus_Oo6UjIfzHAY2gr,timothy_gomez@zoho.com,"Tide Goods",1696253518,usd,card_1xZNeyKvuOLqsjB5BH8suSs,false,,true,growth,409,2,,74,15,68
+cus_yccPQ33xg3lYXB,melissa.scott@pm.me,"Venture Systems",1706807161,usd,,true,"Trial conversion",true,business,1297,2,0,102,3,0
+cus_9IZMwbtMWCor4M,michael_mendoza@icloud.com,"Frost Finance",1691689967,usd,card_1zGqSQtTIbIh0g8XWRPmJE3,false,,true,starter,99,2,,244,1,43
+cus_FsPgCXj52i8V6l,sharon_jones@outlook.com,"Spark Market",1761960889,usd,,false,"Demo request",true,starter,68,2,0,363,48,8
+cus_Dav513mkchiKC4,donnaking@tutanota.com,"Ridge Ventures",1694587452,usd,card_1BaMx7USdKPYtn9CLx9aRl0,true,,true,starter,94,1,,999,5,39
+cus_QAhm74UVGyzJo6,donnaward@hey.com,"Torch Software",1753922121,usd,card_1E7RKS0NhoHw9uRSyzPrEGs,false,,true,starter,29,1,,208,2,5
+cus_OckeAsigGeb17i,sandrarichardson@zoho.com,"Leaf Platform",1712597510,usd,,false,,true,business,1479,3,8,24,16,127
+cus_Z1swNPPBWnsOGK,angelabennett@zoho.com,"Nest Co",1739041539,usd,,false,,true,starter,52,1,,223,2,6
+cus_amjGuECW4UdN8U,jacob.baker@yahoo.com,"Quantum Pay",1708422541,usd,,false,,true,growth,198,2,,309,5,67
+cus_JrZrubMGDimUnQ,mary_ross@yahoo.com,"Zeal Kitchen",1733955537,usd,card_1Me1GFx8V5CQZQ3cEqyw76C,false,"Renewed Q1",true,business,522,3,10,6,15,88
+cus_8vD46MOHrkn4UO,jessica.ross@zoho.com,"Atlas Security",1711222602,usd,,false,"Referred by partner",true,business,1362,5,4,327,10,8
+cus_K5g7MyVSxPLfPQ,katherinemendoza@outlook.com,"Swift AI",1766306321,usd,,false,"Strategic account",true,enterprise,3069,4,8,2,5,63
+cus_YmRzPkI8LZmNZj,susan_robinson@aol.com,"Vista Health",1764586503,usd,card_1vk5RypUfM7527ujpVLaLnl,false,"Custom integration",true,business,693,3,8,27,7,177
+cus_upiVjmsezyiEoJ,edward_alvarez@company.co,"Peak Supply",1705435512,usd,card_1xdHHg4NobBS1sTFpNwVt4X,false,,true,starter,56,1,7,195,0,4
+cus_KxBt7EgqQ075MU,debra_baker@company.co,"Tango Co",1696390184,usd,card_13aJaUq5IX1TrQDP5hYdPuw,false,"Annual contract",true,enterprise,2807,5,10,0,7,75
+cus_yF86Bw6WmtTreN,susanmendoza@mail.com,"Radiant Systems",1707999591,usd,card_11H1nGBNXjC3rOnEIqAwL8S,false,"Self-serve signup",true,starter,70,2,,999,7,78
+cus_VHNwO7tykN37B1,ronaldwilson@hotmail.com,"Echo Security",1710627217,usd,card_1BW19reNjAPzEbJePyypSM4,false,,true,starter,41,2,3,355,8,3
+cus_fP3GP7xcSKiulk,john.james@tutanota.com,"Cloud Co",1690002611,usd,card_1OOr8Y0ggYL73sGEOjPyqMD,false,,true,starter,43,1,,103,1,1
+cus_bDSxJRrPXDSpFE,gary.alvarez@hotmail.com,"Spark Systems",1760254405,usd,card_1cutocjgKCU7D8tYuDnfqYs,false,,true,growth,203,3,9,85,12,88
+cus_U9DF71gQsXhyRJ,williamrodriguez@outlook.com,"Momentum Commerce",1709982589,usd,card_1wV1LAb1oQcSGDwYnerqhcV,false,"Referred by John",true,growth,166,4,8,69,3,103
+cus_B95GbM8k3e1BnX,emma.jackson@company.co,"Glow Security",1695857625,usd,,false,,true,growth,295,3,10,61,13,61
+cus_U5cLe8P4OT7r85,robert_evans@zoho.com,"Grid Cloud",1737018776,usd,card_1QALN9tlVLzGqh8ZBho9xBS,false,,true,starter,72,2,4,295,35,5
+cus_qGLwevkoLvBWbL,raymondhernandez@fastmail.com,"Cloud Systems",1775888065,usd,card_1ajXlitqjqIxiRZCriIej26,true,,true,growth,497,1,5,298,13,7
+cus_tDd2hCuBbuuq7B,william_thompson@mail.com,"Echo Engineering",1752838168,usd,card_1xF0smCo1HSPIb4TOwug1qx,false,"Product Hunt launch",true,growth,225,3,,357,3,40
+cus_1XyMFyDjsXgs52,stephaniecook@tutanota.com,"Star Brew",1696770674,usd,,true,,true,enterprise,1953,2,,313,1,3
+cus_sFhkOo5mfQUTQZ,elizabethmorris@outlook.com,"Star Cafe",1747075902,usd,card_1BE3fMf0CHMbknPguv4yX7g,false,,true,growth,308,2,3,241,16,4
+cus_8xRXDTzjgJ1Zt9,brandon_jackson@hey.com,"Mint Kitchen",1749141982,usd,card_1Udg0LSlKSo3f9IM9kqlf7N,false,"Upgraded from starter",true,growth,371,2,8,16,12,54
+cus_uhVdHyh0IW0H4f,tyler_morris@yandex.com,"Acme Co",1756896652,usd,card_1WgJrvP40TKQSE3BDjxwRaj,false,"Referred by John",true,growth,199,3,6,77,12,99
+cus_lv7eUt10IzGeCP,carol_morgan@icloud.com,"Nest Analytics",1705033676,usd,card_1J7eXI0OVS0crVkDlLONpwH,false,"Trial conversion",true,growth,207,2,,308,8,0
+cus_oQvvBQ6FNoRzTg,michelle.kim@outlook.com,"Helix Consulting",1736456665,usd,,false,,true,growth,227,4,8,13,8,50
+cus_8CrGZ4pbntVgl6,dorothy.evans@company.co,"Venture Insights",1721884753,usd,,true,,true,starter,46,1,5,98,0,5
+cus_DLN8Lj4R0NJeku,jennifermartin@yandex.com,"Velocity Logistics",1682893095,usd,,false,,true,growth,230,1,,206,4,36
+cus_0sriHaiXvyBJ1W,matthew_kelly@outlook.com,"Lark Data",1686800144,usd,card_1vPo3pYonDJ7fF8sckbiEBs,false,,true,starter,46,1,7,130,3,8
+cus_4zhW0uQjonAwH3,dorothy_moore@icloud.com,"Lark Studio",1712044266,usd,card_1I5l4qZpTZyJSx700NtFesY,true,,true,starter,40,2,5,358,7,8
+cus_gS0QxmVWgviDLk,scottlopez@yandex.com,"Cloud Stack",1709097157,usd,,false,,true,growth,146,3,8,321,2,69
+cus_6LhR9629WkcEmx,margaret_bennett@pm.me,"Grid Media",1688676794,usd,,false,,true,business,881,4,10,4,5,153
+cus_NxAaFQs1RhEXZE,susanlong@icloud.com,"Tango Creative",1717288586,usd,card_1jOFFn6IzBDQOITtJoelZUk,false,,true,starter,88,2,,357,6,35
+cus_RHCz9YYxqNi0aK,mark.patel@outlook.com,"Acme Bakery",1687026988,usd,card_1jT0YYERL2D7m32DzTSO4Ta,true,,true,starter,34,1,4,216,0,3
+cus_464RHUBenA9Qe5,emily_howard@aol.com,"Mint Stack",1769950374,usd,card_1h5sayFZNrb6U9H3mYJtrOj,false,,true,starter,50,1,5,236,2,6
+cus_WnGvJHSpUOPMtx,shirley_myers@hey.com,"Pulse Global",1729497723,usd,card_191sjQaT8ejhN65uyHPWDrd,false,"Enterprise plan",true,enterprise,3068,3,10,17,10,185
+cus_7sqgurcWYMGECS,alexander_thomas@aol.com,"Acme Finance",1737549321,usd,,false,,true,starter,34,2,,235,8,34
+cus_DzhdP2dilAGw4C,dennis_long@hey.com,"Grid Partners",1725341657,usd,card_1S3IEdu59yxsn7H9uC5xbk3,false,,true,starter,98,2,1,347,10,7
+cus_jDjlTDaxtbwQ8P,benjamin_brooks@company.co,"Pulse Tech",1763349864,usd,card_14Hsnf0O9dlmvyPEtuJYplE,false,,true,starter,43,1,,76,3,7
+cus_ya66V2tsEKDBtC,ronaldwilson@mail.com,"Apex Tech",1697668810,usd,card_1LVQYULLiqpGB9C1GcxPpzz,false,"Renewed Q1",true,business,1105,3,7,10,4,82
+cus_BncD5C21ojKimq,kimberly.young@hey.com,"Tango Supply",1739915189,usd,card_14kGyluag3HJuqUO0PSLsqA,false,,true,starter,40,1,,999,4,66
+cus_rG4plZ5O3vw5Jv,marycooper@yandex.com,"Swift Software",1770226585,usd,,true,"Referred by partner",true,starter,73,2,,223,22,10
+cus_ACjuq7M5KEWlg3,james.young@tutanota.com,"Iron Cafe",1748759372,usd,card_1GoDg3tkQCIZSAXv1Ec7Vkn,false,"Self-serve signup",true,growth,238,3,5,294,8,23
+cus_7AWh6IHu3LReZk,margaretnguyen@icloud.com,"Mint Software",1733307280,usd,,false,"Inbound lead",true,growth,474,4,9,34,3,75
+cus_AHAUzIgTm1uxJ6,larry.anderson@outlook.com,"Forge Systems",1771865941,usd,card_1oCLy4kdAVrL9p5S3vWw44V,false,"Upsell opportunity",true,growth,208,3,9,54,20,72
+cus_K74isnLxZI6eHd,david_jones@protonmail.com,"Grid Inc",1717943762,usd,card_1eOQQmaUMWQgoOYsUByyvLK,true,,true,starter,56,1,,236,1,7
+cus_N0BErhpeRAv90d,jenniferanderson@yahoo.com,"Spectrum Shop",1760736482,usd,,false,"Product Hunt launch",true,growth,375,3,8,999,6,16
+cus_xswrWkNTSGdYl7,anthony.martinez@fastmail.com,"Jade Ventures",1748856859,usd,card_1v9jka0lnjujkTtIFvC4yws,false,"Custom integration",true,business,751,3,10,3,7,100
+cus_0yO4vOpceaqVzz,ashley_diaz@mail.com,"Pact Brew",1742698279,usd,card_1JagEyArCcU64uttKywgHlr,false,"Upsell opportunity",true,growth,199,3,9,48,18,100
+cus_WrAW7yAB2X8FOJ,barbara_campbell@company.co,"Luna Systems",1769511093,usd,card_16WqXWbMfS3aL0srNZwEBcM,false,,true,starter,98,2,8,999,6,49
+cus_UAltZ9LFk5rNeQ,raymond.young@hotmail.com,"Orbit Tech",1731270861,usd,card_1bcxHmNQuEOcVEzWUGwmupE,false,,true,starter,40,1,6,132,1,4
+cus_1R86VeQQLmaX44,scottprice@icloud.com,"Vista Base",1705738828,usd,,false,"Strategic account",true,business,613,5,8,1,6,116
+cus_2qrDyEIddJLfp6,christine.nelson@hey.com,"Gate Tech",1684463688,usd,,false,"Renewed Q2",true,enterprise,3514,3,9,30,8,117
+cus_5KlqkTPUETnub8,paul_wilson@tutanota.com,"Orbit Networks",1714925054,usd,card_1fsW99rLuMDs7RcthLBEHHA,false,,true,growth,434,3,7,22,10,103
+cus_WhJ2n9aVNWlzED,paul.scott@tutanota.com,"Spectrum Cafe",1686728721,usd,card_1aMLC9BniJ1BAY3Gw1Nhjxg,false,,true,business,927,4,4,196,24,3
+cus_XrYLEwQG386FSs,james.peterson@zoho.com,"Apex Labs",1691991224,usd,card_1QAobUjsJ35Yhghhls2sb1C,false,,true,enterprise,2950,6,7,27,19,157
+cus_PWxuS3bWCOVWsa,deborahmartin@icloud.com,"Atlas Global",1699023400,usd,card_11yhQGv4oilt62RywiviA5i,false,"Trial conversion",true,starter,48,1,,206,1,8
+cus_ayh7Keat6Z4LZF,helenreyes@icloud.com,"Flux Hub",1717392133,usd,,false,,true,starter,58,1,5,197,3,7
+cus_FWxzZl4s6LDofM,gregory.martin@outlook.com,"Pulse Systems",1716020719,usd,card_1gEmiBdwSbh8wtfVJUi3a9p,false,,true,starter,53,1,,999,7,31
+cus_sCl47RVpBtqXtP,brendaflores@icloud.com,"Mesa Cloud",1724536277,usd,card_1ixqdWgI4XO3WI7mwGtmIi4,false,,true,business,1331,2,10,10,2,101
+cus_5gozTTpXzvIzy1,daniel.cruz@mail.com,"Vibe Consulting",1709007462,usd,,true,,true,enterprise,4250,5,2,294,39,1
+cus_kxYqjz4fZ1gdsr,nicole.james@hotmail.com,"Horizon Innovations",1766061279,usd,,false,"Referred by partner",true,growth,496,2,,129,33,2
+cus_Cy3xNyAmvYrMPI,christine.turner@icloud.com,"Iron Hub",1752301185,usd,,false,"Inbound lead",true,growth,248,4,9,60,8,37
+cus_ANkXl5KIMJAvMq,frank.gutierrez@gmail.com,"True Security",1726928693,usd,card_19bAbNrHYAXyIF9VxLBiI8X,false,"Renewed Q1",true,business,1204,4,,3,14,131
+cus_JZuRh3fPRuBhbF,emmapatel@mail.com,"Atlas Engineering",1755759895,usd,card_1ugMTCZ6h9zh9HoiwwKbFm7,false,"Annual contract",true,business,824,3,9,12,2,131
+cus_e7yNvR9H9OWbQ6,rebeccapatel@hey.com,"Radiant Media",1774269484,usd,card_1duoNbWnvDMnnJDmA9GBDMw,true,,true,enterprise,4726,3,1,177,46,7
+cus_XSUakHDxmE1zgd,kimberlythomas@pm.me,"Leaf Analytics",1694724785,usd,card_1hMhULdjnKS4W6BIvS7Rlve,false,,true,enterprise,1898,4,4,130,47,4
+cus_IvPqM7VITvVCxy,kathleen.cooper@icloud.com,"Stream Works",1706334014,usd,card_1PzoJVR9zegmYS0imN71M0V,true,"Trial conversion",true,starter,92,1,0,159,13,10
+cus_kCXN12AYyDUKFU,christine.thompson@icloud.com,"Mint Software",1744236643,usd,,true,"Trial conversion",true,starter,55,1,4,74,3,1
+cus_YCFCMPlBU6PrVC,alexanderruiz@gmail.com,"Atlas Health",1700801390,usd,,false,,true,starter,29,1,3,78,1,0
+cus_Ol2AElsTAgN811,jerrycampbell@icloud.com,"Kinetic Networks",1693665646,usd,card_1PeTw0Q9YOUlJJFHUFl0EwS,true,,true,starter,36,1,,86,0,7
+cus_eGIqGPSrwiGyf8,thomascooper@outlook.com,"Jade Group",1747795522,usd,card_17ykWEHIfcmZ7xlRsVxWGl4,false,"Trial conversion",true,starter,44,1,3,96,2,0
+cus_YB2Gocv6VNO9I1,amy_sanders@hotmail.com,"Jade Partners",1723878329,usd,card_1tusLW1PJwgf3jd9LdT0RkW,false,"Enterprise plan",true,enterprise,3413,5,9,23,3,98
+cus_4Z9JwMkhrdVbrN,paulward@mail.com,"Tango Creative",1752651829,usd,card_1P7ZrIH4trBNawhxHZJBJMT,false,"Inbound lead",true,growth,304,2,,34,15,95
+cus_tZ5Ksaiydne3SN,raymondrichardson@zoho.com,"Iron Hub",1750465250,usd,card_1q5iUai6DH4x0Qi76FYbzlA,false,"Self-serve signup",true,growth,456,1,,999,5,66
+cus_4pPV5cfTR5U3hl,timothy.nelson@icloud.com,"Nest Cafe",1694982751,usd,card_1PmjVmdEoD3FFnD8RSpPM4P,false,"Trial conversion",true,growth,128,2,5,92,8,4
+cus_wuLuuDQf5J7Ckb,sandra_hughes@yandex.com,"Wave Craft",1725793557,usd,,false,"Strategic account",true,enterprise,4660,4,9,17,14,108
+cus_9zkYeodRYK1DQM,james_allen@fastmail.com,"Momentum Hub",1720108219,usd,card_1rzxiKW0w15LGalF5kXt2h9,true,"Trial conversion",true,business,658,2,4,326,32,3
+cus_lN4LtVwPHe5tju,sandramartinez@pm.me,"Clarity Ventures",1727267708,usd,card_1eONEAFd4G6mAVHxgQqE5x8,false,,true,business,576,4,0,309,39,7
+cus_MUHBzLU7DNOQwH,gregoryanderson@hey.com,"Pinnacle Dynamics",1690629534,usd,card_1fapgaO41S2IFhYTyAdD2wL,false,,true,growth,315,1,4,317,33,3
+cus_G1udO4ECt1e6yZ,jamesadams@pm.me,"Stone Finance",1685160248,usd,,false,"Renewed Q2",true,enterprise,2561,3,7,6,5,151
+cus_M9CXMOxdBdHfOO,michaelmorris@yandex.com,"Leaf Studio",1696833816,usd,,false,"Self-serve signup",true,growth,484,1,8,204,6,38
+cus_KRODg0ZhDJY9EZ,deborah.king@yahoo.com,"Loom Systems",1767460221,usd,card_1k3NpzvuxxDo7qVQNtRWDAr,false,"Strategic account",true,business,782,4,9,5,3,105
+cus_nTb8Mbc3pfnXg3,jacknelson@hotmail.com,"Lark Analytics",1700817639,usd,,true,,true,growth,499,2,4,282,12,4
+cus_SbEUzyKHMZwPRC,stephenjimenez@pm.me,"Link Goods",1717275454,usd,card_1Djy3tRMhsNpvrvHiZ2GPqH,false,,true,growth,356,1,,234,4,15
+cus_PVolFWoVhaqAtp,kevindavis@pm.me,"Vista Analytics",1747091737,usd,card_1lC9wGzXHVwGtjWPU2Va08X,true,,true,starter,59,1,,159,1,4
+cus_bpzrLYO6ZXQf4j,angelawatson@hotmail.com,"Node Inc",1765806387,usd,card_1QlaWWkLxYKunUM66tVWOhl,false,"Strategic account",true,business,1348,4,9,29,1,93
+cus_Vg9Q3l82veHqIh,davidbaker@hotmail.com,"Stream Cloud",1721444316,usd,,false,"Custom integration",true,enterprise,3151,4,8,22,5,141
+cus_Am11dgjACop7ym,amandasanders@gmail.com,"Luna Media",1715120722,usd,,false,,true,enterprise,1581,2,3,104,3,5
