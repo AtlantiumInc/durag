@@ -15,7 +15,7 @@
  * @param {number} opts.threshold - How close to the bad profile to flag (0-1, default 0.7)
  * @returns {object} { atRisk, badProfile, globalProfile, signals }
  */
-export function findSignal(rows, numericCols, outcomeCol, badValue, opts = {}) {
+export function findPattern(rows, numericCols, outcomeCol, badValue, opts = {}) {
   const threshold = opts.threshold || 0.7;
 
   // Split into bad and good groups
