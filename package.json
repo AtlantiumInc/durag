@@ -1,0 +1,59 @@
+{
+  "name": "durag",
+  "version": "0.1.0",
+  "description": "360° data pattern recognition. Drop a CSV, discover segments, get insights.",
+  "type": "module",
+  "main": "dist/durag.umd.js",
+  "module": "dist/durag.esm.js",
+  "exports": {
+    ".": {
+      "import": "./dist/durag.esm.js",
+      "require": "./dist/durag.umd.js"
+    },
+    "./engine": {
+      "import": "./dist/engine.esm.js",
+      "require": "./dist/engine.umd.js"
+    }
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "npx serve demo -l 3000",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "data",
+    "analytics",
+    "clustering",
+    "segmentation",
+    "umap",
+    "visualization",
+    "insights",
+    "csv",
+    "pattern-recognition"
+  ],
+  "author": "Atlantium Inc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AtlantiumInc/durag.git"
+  },
+  "homepage": "https://github.com/AtlantiumInc/durag",
+  "peerDependencies": {
+    "three": ">=0.128.0"
+  },
+  "peerDependenciesMeta": {
+    "three": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "rollup": "^4.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-node-resolve": "^15.0.0"
+  }
+}
