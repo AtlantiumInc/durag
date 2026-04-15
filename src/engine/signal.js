@@ -1,74 +1,75 @@
 /**
- * True signal detection.
- * Instead of scoring everyone on polarity, learn the profile of known bad outcomes
- * and find people who match that profile but haven't triggered yet.
+ * Pattern detection.
+ * Learn the profile of a target group, then find records outside that group
+ * that match the same profile.
+ *
+ * Works for any boolean split — churn detection, upsell targeting,
+ * loyalty identification, fraud flagging, or any custom outcome.
  */
 
 /**
- * Find true pre-churn signal: customers who look like the bad group but aren't in it yet.
+ * Find records that match the profile of a target group but aren't in it yet.
  *
- * @param {object[]} rows - All customer rows
+ * @param {object[]} rows - All rows
  * @param {string[]} numericCols - Numeric column names
- * @param {string} outcomeCol - The outcome column (e.g., 'delinquent')
- * @param {string} badValue - The bad value (e.g., 'true')
+ * @param {string} outcomeCol - The column to split on (e.g., 'delinquent', 'converted', 'vip')
+ * @param {string} targetValue - The value that defines the target group (e.g., 'true', 'churned', 'yes')
  * @param {object} opts - Options
- * @param {number} opts.threshold - How close to the bad profile to flag (0-1, default 0.7)
- * @returns {object} { atRisk, badProfile, globalProfile, signals }
+ * @param {number} opts.threshold - Match threshold (0-1, default 0.7)
+ * @returns {object} { matching, targetProfile, baseProfile, signals, message }
  */
-export function findPattern(rows, numericCols, outcomeCol, badValue, opts = {}) {
+export function findPattern(rows, numericCols, outcomeCol, targetValue, opts = {}) {
   const threshold = opts.threshold || 0.7;
 
-  // Split into bad and good groups
-  const badRows = rows.filter(r => String(r[outcomeCol] || '').toLowerCase() === String(badValue).toLowerCase());
-  const goodRows = rows.filter(r => String(r[outcomeCol] || '').toLowerCase() !== String(badValue).toLowerCase());
+  // Split into target and base groups
+  const targetRows = rows.filter(r => String(r[outcomeCol] || '').toLowerCase() === String(targetValue).toLowerCase());
+  const baseRows = rows.filter(r => String(r[outcomeCol] || '').toLowerCase() !== String(targetValue).toLowerCase());
 
-  if (badRows.length === 0) return { atRisk: [], badProfile: {}, globalProfile: {}, signals: [], message: 'No bad outcomes found in the data.' };
-  if (goodRows.length === 0) return { atRisk: [], badProfile: {}, globalProfile: {}, signals: [], message: 'All rows have bad outcomes.' };
+  if (targetRows.length === 0) return { matching: [], matchCount: 0, targetCount: 0, baseCount: baseRows.length, targetProfile: {}, baseProfile: {}, signals: [], message: 'No records found with the target value.' };
+  if (baseRows.length === 0) return { matching: [], matchCount: 0, targetCount: targetRows.length, baseCount: 0, targetProfile: {}, baseProfile: {}, signals: [], message: 'All records have the target value.' };
 
-  // Build profiles: average of each numeric column for bad vs good vs global
-  const badProfile = {};
-  const goodProfile = {};
+  // Build profiles: average of each numeric column for target vs base
+  const targetProfile = {};
+  const baseProfile = {};
   const globalProfile = {};
   const colStats = {};
 
   for (const col of numericCols) {
     if (col === outcomeCol) continue;
 
-    const badVals = badRows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
-    const goodVals = goodRows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
+    const targetVals = targetRows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
+    const baseVals = baseRows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
     const allVals = rows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
 
-    if (badVals.length < 3 || goodVals.length < 3) continue;
+    if (targetVals.length < 3 || baseVals.length < 3) continue;
 
-    const badAvg = badVals.reduce((a, b) => a + b, 0) / badVals.length;
-    const goodAvg = goodVals.reduce((a, b) => a + b, 0) / goodVals.length;
+    const targetAvg = targetVals.reduce((a, b) => a + b, 0) / targetVals.length;
+    const baseAvg = baseVals.reduce((a, b) => a + b, 0) / baseVals.length;
     const globalAvg = allVals.reduce((a, b) => a + b, 0) / allVals.length;
     const globalStd = Math.sqrt(allVals.reduce((s, v) => s + Math.pow(v - globalAvg, 2), 0) / allVals.length) || 1;
     const mn = Math.min(...allVals);
     const mx = Math.max(...allVals);
     const range = mx - mn || 1;
 
-    // How different is bad from good on this column?
-    const separation = Math.abs(badAvg - goodAvg) / globalStd;
+    const separation = Math.abs(targetAvg - baseAvg) / globalStd;
 
-    badProfile[col] = { avg: Math.round(badAvg * 10) / 10 };
-    goodProfile[col] = { avg: Math.round(goodAvg * 10) / 10 };
+    targetProfile[col] = { avg: Math.round(targetAvg * 10) / 10 };
+    baseProfile[col] = { avg: Math.round(baseAvg * 10) / 10 };
     globalProfile[col] = { avg: Math.round(globalAvg * 10) / 10 };
-    colStats[col] = { badAvg, goodAvg, globalAvg, globalStd, mn, mx, range, separation };
+    colStats[col] = { targetAvg, baseAvg, globalAvg, globalStd, mn, mx, range, separation };
   }
 
-  // Rank columns by separation — which columns most distinguish bad from good
+  // Rank columns by separation
   const rankedCols = Object.entries(colStats)
     .filter(([, s]) => s.separation > 0.2)
     .sort((a, b) => b[1].separation - a[1].separation);
 
-  if (rankedCols.length === 0) return { atRisk: [], badProfile, goodProfile, globalProfile, signals: [], message: 'No columns significantly distinguish bad from good outcomes.' };
+  if (rankedCols.length === 0) return { matching: [], matchCount: 0, targetCount: targetRows.length, baseCount: baseRows.length, targetProfile, baseProfile, globalProfile, signals: [], message: 'No columns significantly distinguish the target group from the rest.' };
 
-  // Use top columns to compute a similarity score to the bad profile
   const topCols = rankedCols.slice(0, 8);
 
-  // Score each GOOD customer on how similar they are to the bad profile
-  const scored = goodRows.map(row => {
+  // Score each base record on similarity to target profile
+  const scored = baseRows.map(row => {
     let similarity = 0;
     let maxSim = 0;
     const reasons = [];
@@ -77,21 +78,19 @@ export function findPattern(rows, numericCols, outcomeCol, badValue, opts = {}) 
       const val = parseFloat(row[col]);
       if (isNaN(val)) continue;
 
-      // How close is this value to the bad average vs the good average?
-      const distToBad = Math.abs(val - stats.badAvg) / stats.range;
-      const distToGood = Math.abs(val - stats.goodAvg) / stats.range;
+      const distToTarget = Math.abs(val - stats.targetAvg) / stats.range;
+      const distToBase = Math.abs(val - stats.baseAvg) / stats.range;
 
-      // Similarity: closer to bad = higher score
-      const colSim = distToGood / (distToBad + distToGood + 0.001);
-      const weight = stats.separation; // more separating columns matter more
+      const colSim = distToBase / (distToTarget + distToBase + 0.001);
+      const weight = stats.separation;
 
       similarity += colSim * weight;
       maxSim += weight;
 
       if (colSim > 0.6) {
         const clean = col.replace(/^metadata[_.]/, '').replace(/_/g, ' ');
-        const direction = stats.badAvg > stats.goodAvg ? 'high' : 'low';
-        reasons.push(`${direction} ${clean} (${Math.round(val)} — bad avg: ${Math.round(stats.badAvg)}, good avg: ${Math.round(stats.goodAvg)})`);
+        const direction = stats.targetAvg > stats.baseAvg ? 'high' : 'low';
+        reasons.push(`${direction} ${clean} (${Math.round(val)} — target avg: ${Math.round(stats.targetAvg)}, base avg: ${Math.round(stats.baseAvg)})`);
       }
     }
 
@@ -101,50 +100,49 @@ export function findPattern(rows, numericCols, outcomeCol, badValue, opts = {}) 
 
   scored.sort((a, b) => b.score - a.score);
 
-  // Find the natural cutoff — who genuinely looks like the bad group?
-  const atRisk = scored.filter(s => s.score >= threshold);
+  // Find matches above threshold
+  let matching = scored.filter(s => s.score >= threshold);
 
-  // If no one passes the threshold, take the top few who are closest
-  if (atRisk.length === 0 && scored.length > 0 && scored[0].score > 0.4) {
-    // Take everyone above 90% of top score
+  // Soft fallback if no one passes hard threshold
+  if (matching.length === 0 && scored.length > 0 && scored[0].score > 0.4) {
     const softThreshold = scored[0].score * 0.9;
     const softResults = scored.filter(s => s.score >= softThreshold);
     if (softResults.length <= rows.length * 0.1) {
-      atRisk.push(...softResults);
+      matching = softResults;
     }
   }
 
   // Build signal descriptions
   const signals = topCols.map(([col, stats]) => {
     const clean = col.replace(/^metadata[_.]/, '').replace(/_/g, ' ');
-    const direction = stats.badAvg > stats.goodAvg ? 'higher' : 'lower';
+    const direction = stats.targetAvg > stats.baseAvg ? 'higher' : 'lower';
     return {
       column: clean,
       rawColumn: col,
       separation: Math.round(stats.separation * 100) / 100,
-      badAvg: Math.round(stats.badAvg * 10) / 10,
-      goodAvg: Math.round(stats.goodAvg * 10) / 10,
-      insight: `${clean} is ${direction} in bad outcomes (${Math.round(stats.badAvg)} vs ${Math.round(stats.goodAvg)}) — ${stats.separation.toFixed(1)} std devs apart`,
+      targetAvg: Math.round(stats.targetAvg * 10) / 10,
+      baseAvg: Math.round(stats.baseAvg * 10) / 10,
+      insight: `${clean} is ${direction} in target group (${Math.round(stats.targetAvg)} vs ${Math.round(stats.baseAvg)}) — ${stats.separation.toFixed(1)} std devs apart`,
     };
   });
 
   return {
-    atRisk: atRisk.map(s => ({
+    matching: matching.map(s => ({
       ...s.row,
-      _signalScore: Math.round(s.score * 100),
-      _signalReasons: s.reasons,
+      _matchScore: Math.round(s.score * 100),
+      _matchReasons: s.reasons,
     })),
-    atRiskCount: atRisk.length,
-    badCount: badRows.length,
-    goodCount: goodRows.length,
+    matchCount: matching.length,
+    targetCount: targetRows.length,
+    baseCount: baseRows.length,
     totalRows: rows.length,
-    badProfile,
-    goodProfile,
+    targetProfile,
+    baseProfile,
     globalProfile,
     signals,
     threshold,
-    message: atRisk.length > 0
-      ? `${atRisk.length} customers match the profile of the ${badRows.length} known bad outcomes but haven't triggered yet. These are your true pre-signals.`
-      : `No customers closely match the bad outcome profile. The ${badRows.length} bad outcomes may be random rather than pattern-driven.`,
+    message: matching.length > 0
+      ? `${matching.length} records match the profile of the ${targetRows.length} target records but aren't in the target group yet.`
+      : `No records closely match the target profile. The ${targetRows.length} target records may not follow a distinct pattern.`,
   };
 }
