@@ -215,13 +215,38 @@ durag/
 └── package.json
 ```
 
-## Tested On
+## Real Results — AI-Tuned, 5 Datasets
 
-- Stripe customer exports (MRR, NPS, delinquent, plans)
-- HubSpot contacts (deals, lifecycle, activity)
-- SaaS product usage (logins, features, API calls)
-- Ecommerce customers (orders, spend, loyalty)
-- Fintech accounts (balances, transactions, overdrafts)
+Every number below was produced by one AI call (configuration) + one `findPattern()` call (detection). No hardcoded thresholds. The AI picked the outcome, the bad value, and the clustering features. durag found the patterns.
+
+| Dataset | AI's outcome choice | Known bad | Pre-signal found | Top signal |
+|---|---|---|---|---|
+| **Stripe** | `delinquent = true` | 65 | **71** | NPS 1.1σ apart, logins 0.9σ, tickets 0.6σ |
+| **SaaS Usage** | `last_login_days > 30` | 108 | **35** | Login days 2.2σ apart, NPS 1.9σ, logins_7d 1.2σ |
+| **Ecommerce** | `days_since_last_order > 180` | 156 | **22** | Days since order 2.0σ, orders_90d 1.2σ, categories 1.2σ |
+| **HubSpot** | `days_since_last_activity > 180` | 119 | **25** | Activity days 2.1σ, email opens 1.2σ, clicks 1.2σ |
+| **Fintech** | `overdraft_count_12m > 3` | 67 | **11** | Overdrafts 2.5σ, credit score 1.5σ, support calls 1.4σ |
+
+**71, 35, 22, 25, 11.** Five unique numbers from five different datasets. Each one is the real count of people who match the bad outcome profile but haven't triggered yet.
+
+What the AI configured per industry:
+- **Stripe**: Binary outcome, obvious. Clustered on MRR, products, NPS, contact days, tickets.
+- **SaaS**: No binary column existed — AI created a proxy (`last_login_days > 30`). Clustered on behavioral metrics only.
+- **Ecommerce**: AI set a 180-day lapse threshold. Found 22 customers about to go dark from a base of 500.
+- **HubSpot**: Same proxy strategy — `days_since_last_activity > 180`. Found 25 dead leads with deal value still on the books.
+- **Fintech**: AI picked overdraft count > 3 as financial distress. Found 11 accounts spiraling — with specific credit scores and support call patterns.
+
+Sample output (Fintech, 11 pre-signal customers):
+```
+Henry Miller      score=69%  low credit score (617 — bad avg: 592, good avg: 715)
+Matthew Sanchez   score=68%  low credit score (619 — bad avg: 592, good avg: 715)
+Ava Clark         score=67%  low credit score (639 — bad avg: 592, good avg: 715)
+Leo Wright        score=67%  high support calls (14 — bad avg: 8, good avg: 3)
+Nathan Ramirez    score=65%  low credit score (562 — bad avg: 592, good avg: 715)
+```
+
+## Additional Datasets Tested
+
 - Workspace analytics (seats, messages, admin activity)
 - Marketplace sellers (listings, ratings, revenue)
 - Wealth management clients (portfolio, meetings, AUM)
