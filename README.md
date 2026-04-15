@@ -4,27 +4,83 @@
 
 A pattern detection engine for tabular data. Feed it rows and columns from any source — Stripe, HubSpot, Postgres, CSV — and it finds the patterns you didn't know to look for.
 
-No AI required. No backend. No API keys. Three lines of code to real results. Optionally pair with any LLM for automatic configuration and natural language strategy.
+No AI required. No backend. No API keys. Optionally pair with any LLM for automatic configuration and natural language strategy.
 
-## What It Does
+## Two Modes, One Engine
 
-durag takes your raw data and answers one question: **who in this dataset looks like they're about to have a bad outcome, but hasn't yet?**
+durag operates in two modes depending on what you know going in:
 
-It does this by:
+| | **Discovery Mode** | **Signal Mode** |
+|---|---|---|
+| **Function** | `durag()` | `findPattern()` |
+| **Question** | "What segments exist in my data?" | "Who looks like X?" |
+| **Input** | Raw CSV, no target needed | CSV + outcome column + target value |
+| **Output** | Clusters, labels, insights | Matches, signals, risk scores |
+| **Use when** | You don't know what to look for | You know the outcome, want lookalikes |
 
-1. **Learning what "bad" looks like** from your existing outcomes (churned customers, failed payments, dropped users)
-2. **Profiling the difference** between bad and good across every column — which metrics separate them, by how much
-3. **Scanning everyone else** for people who match the bad profile but haven't triggered yet
+### Discovery Mode — `durag()`
 
-The output is a specific list of people with scores and reasons. Not a percentile. Not a statistical cutoff. A real count that changes based on what the data actually contains.
+Drop a CSV. Get segments. No questions asked.
 
-## Install
+```js
+import { durag } from 'durag'
 
-```bash
-npm install durag
+const result = await durag(csvString, { k: 4 })
 ```
 
-## Three Lines to Results
+What comes back:
+
+```js
+{
+  k: 4,                          // 4 natural segments found
+  clusters: {
+    0: {
+      label: "high evening charges",  // auto-labeled by what separates them
+      count: 2221,                     // 67% of your base
+      pct: 67,
+      atRisk: false,
+      insights: [
+        "this is your largest segment at 67% — any improvement here moves the needle"
+      ]
+    },
+    1: {
+      label: "low phone activity",
+      count: 352,                      // 11% — potentially disengaging
+      pct: 11,
+      atRisk: false,
+    },
+    2: {
+      label: "low customer service calls",
+      count: 494,                      // 15% — happy or silently churning?
+      pct: 15,
+    },
+    3: {
+      label: "low intl charge",
+      count: 266,                      // 8% — compound risk factor
+      pct: 8,
+      insights: [
+        "paired with low Intl Mins — a compound risk factor"
+      ]
+    }
+  },
+  numericCols: ["Account Length", "Day Mins", "Day Charge", ...],
+  embedding: [...],               // UMAP 2D coordinates for visualization
+  meta: { seed: 42, rowCount: 3333, clusterCount: 4 }
+}
+```
+
+durag doesn't know what churn is. It doesn't know what revenue is. It just finds the natural groupings in your data by behavioral similarity — normalizes columns, reduces dimensions with UMAP, clusters with K-means++, then auto-labels each cluster by what makes it different.
+
+### How Discovery Mode Works
+
+1. **Parse & normalize.** Auto-detects column types (numeric, binary, categorical, ordinal). Picks the right normalization per column — min-max for normal distributions, robust for skewed data, binary encoding for yes/no, ordinal for tiers.
+2. **Reduce dimensions.** UMAP compresses all columns into 2D space where similar records cluster together. A customer with high MRR + high logins + low tickets lands near other customers with the same profile.
+3. **Cluster.** Seeded K-means++ groups the 2D points into k segments. Auto-picks k if you don't specify it.
+4. **Label & analyze.** For each cluster, computes z-scores across all numeric columns to find what separates it from the rest. The column with the highest z-score becomes the label. Generates plain-text insights.
+
+### Signal Mode — `findPattern()`
+
+You know the outcome. Show me who's next.
 
 ```js
 import { parseCSV, findPattern } from 'durag'
@@ -36,80 +92,80 @@ const numericCols = headers.filter(h => {
   return nums.length > rows.length * 0.5
 })
 
-const pattern = findPattern(rows, numericCols, 'delinquent', 'true')
+const pattern = findPattern(rows, numericCols, 'Churn?', 'True.', { allHeaders: headers })
 ```
 
 What comes back:
 
 ```js
 {
-  atRiskCount: 6,           // not 75. not a percentile. six real people.
-  badCount: 14,             // known bad outcomes in your data
-  goodCount: 486,           // everyone else
-  
-  signals: [                // what separates bad from good
-    { column: "support tickets", separation: 5.0, badAvg: 26, goodAvg: 3,
-      insight: "support tickets is higher in bad outcomes (26 vs 3) — 5.0 std devs apart" },
-    { column: "nps score", separation: 3.9, badAvg: 2, goodAvg: 8,
-      insight: "nps score is lower in bad outcomes (2 vs 8) — 3.9 std devs apart" },
-  ],
-  
-  atRisk: [                 // the 6 people, with match scores and reasons
-    { name: "Titan Platform", _signalScore: 77,
-      _signalReasons: ["low mrr (3161 — bad avg: 3294, good avg: 3868)"] },
+  matchCount: 1,              // 1 person matches the churn profile but hasn't churned
+  targetCount: 483,           // known churners
+  baseCount: 2850,            // everyone else
+
+  signals: [                  // what separates churners from retained, ranked
+    { column: "Int'l Plan = yes", separation: 0.7,
+      targetAvg: 0.28, baseAvg: 0.07,
+      insight: "Int'l Plan = yes: 28% in target vs 7% in base — 0.7 std devs" },
+    { column: "CustServ Calls", separation: 0.6,
+      targetAvg: 2, baseAvg: 1,
+      insight: "CustServ Calls is higher in target group (2 vs 1) — 0.6 std devs apart" },
+    { column: "Day Mins", separation: 0.6,
+      targetAvg: 207, baseAvg: 175,
+      insight: "Day Mins is higher in target group (207 vs 175) — 0.6 std devs apart" },
   ],
 
-  message: "6 customers match the profile of the 14 known bad outcomes
-            but haven't triggered yet. These are your true pre-signals."
+  matching: [                 // the at-risk records with scores and reasons
+    { State: "UT", _matchScore: 72,
+      _matchReasons: ["high CustServ Calls (3 — target avg: 2, base avg: 1)",
+                       "high Day Mins (209 — target avg: 207, base avg: 175)"] },
+  ],
+
+  message: "1 records match the profile of the 483 target records but aren't in the target group yet."
 }
 ```
 
-The number 6 is real because it comes from pattern matching against known outcomes, not from a formula. Run it on a different dataset and you'll get a different number — 0 if nobody matches, 163 if half your base is sliding.
+### How Signal Mode Works
 
-## How findPattern Works
+**Step 1: Split the data.** Your outcome column divides rows into two groups — target (483 churners) and base (2,850 retained).
 
-**Step 1: Split the data.** Your outcome column (e.g., `delinquent`) divides rows into two groups — bad (14 customers) and good (486 customers).
+**Step 2: Profile each group.** For every numeric column, compute the average for target vs base. Day Mins: churners avg 207, retained avg 175. This creates a fingerprint of what the target looks like.
 
-**Step 2: Profile each group.** For every numeric column, compute the average for bad vs good. Support tickets: bad avg 26, good avg 3. NPS: bad avg 2, good avg 8. This creates a "fingerprint" of what bad looks like.
+**Step 3: Expand categoricals.** Columns like `Int'l Plan` (yes/no) get one-hot encoded into binary features. This lets durag detect patterns like "28% of churners have international plans vs 7% of retained."
 
-**Step 3: Rank columns by separation.** Measure how many standard deviations apart the bad and good averages are. Support tickets: 5.0 std devs (massive gap). Products: 0.3 std devs (barely different). Only columns with real separation matter.
+**Step 4: Rank columns by separation.** Measure how many standard deviations apart the target and base averages are. Only columns with real separation (>0.2 std devs) matter.
 
-**Step 4: Score everyone in the good group.** For each non-bad customer, compute how similar their values are to the bad profile vs the good profile. Someone with 20 tickets and NPS 3 looks like the bad group. Someone with 1 ticket and NPS 9 doesn't.
+**Step 5: Score everyone in the base group.** For each non-target record, compute how similar their values are to the target profile vs the base profile.
 
-**Step 5: Return the matches.** Customers above the similarity threshold (default 0.7) are your pre-signals. If there's no natural group above the threshold, durag says so — "no customers closely match the bad outcome profile."
+**Step 6: Return the matches.** Records above the similarity threshold (default 0.7) are your pre-signals. If nobody matches, durag says so.
 
-## The Full Pipeline
+## Using Both Together
 
-For deeper analysis, durag also offers clustering, dimensionality reduction, and a question-answering engine:
+The power play: discover first, then investigate.
 
 ```js
-import { durag, ask, enrich, findPattern } from 'durag'
+import { durag, findPattern } from 'durag'
 
-// Full pipeline: normalize → UMAP → cluster → analyze
-const result = await durag(csvString, { seed: 42 })
+// Step 1: What segments exist?
+const result = await durag(csvString, { k: 4 })
+// → "You have 4 segments. Cluster 3 is at-risk — low intl usage, compound factor."
 
-// Ask natural language questions
-const answer = ask("who's about to churn?", result)
-// → { count: 14, confidence: 87%, reasons: [...], suggestedAction: "..." }
-
-// Correlation-based intelligence
-const enriched = enrich(result)
-// → { intelligence: { outcomeCol, featureImportance, compounds } }
-
-// True signal detection
-const pattern = findPattern(result.rows, result.numericCols, 'delinquent', 'true')
-// → { atRiskCount: 6, signals: [...], atRisk: [...] }
+// Step 2: Who in cluster 3 looks like they'll churn?
+const atRisk = findPattern(
+  result.rows,
+  result.numericCols,
+  'Churn?',
+  'True.',
+  { allHeaders: result.headers }
+)
+// → "1 customer matches the churn profile. Here's who and why."
 ```
 
-### What each function does:
+## Install
 
-**`durag(csv, config)`** — The full pipeline. Parses CSV, normalizes columns (auto-picks min-max, robust, binary, or ordinal per column), runs UMAP for 3D dimensionality reduction, clusters with seeded K-means++, auto-labels clusters by z-score analysis, generates plain-text insights. Returns rows, clusters, embedding, and metadata.
-
-**`ask(question, result)`** — Natural language question answering. Uses a polarity system that reads column names to determine if high is good or bad for each column, then scores every row against the question's intent. "Who's about to churn?" scores rows where negative-polarity columns are extreme. Returns a count, confidence score, reasons, and suggested action. Adaptive threshold: returns 14 when there's a tight cluster, 75 when the distribution is smooth (statistical outliers, not a discovery).
-
-**`enrich(result)`** — Intelligence layer. Auto-detects the outcome column, computes Pearson correlation between every numeric column and the outcome, ranks features by correlation strength, and detects compound signals ("low NPS + high support tickets → 2.5x delinquent rate"). Uses the `simple-statistics` package for proper statistical computation.
-
-**`findPattern(rows, numericCols, outcomeCol, badValue)`** — True signal detection. Learns the profile of known bad outcomes, scores every good customer on similarity to that profile, returns the ones who match. Every result count is unique to the data — no percentile defaults.
+```bash
+npm install durag
+```
 
 ## With AI (Optional)
 
@@ -117,24 +173,15 @@ durag works alone. But paired with any LLM, it gets smarter.
 
 ### AI configures durag
 
-The AI reads your column names (not your data) and fills in the configuration — which column is the outcome, what value is bad, which columns to cluster on, what risk thresholds to set. One API call, ~200 tokens, ~$0.01.
+The AI reads your column names (not your data) and fills in the configuration — which column is the outcome, what value is bad, which columns to cluster on. One API call, ~200 tokens, ~$0.01.
 
 ```js
 import { profileForAI, buildTunePrompt, parseAIConfig, aiConfigToDurag, durag } from 'durag'
 
-// Generate a data profile (column names + types + ranges)
 const profile = profileForAI(csv)
-
-// Build the prompt for any LLM
 const prompt = buildTunePrompt(profile)
-
-// Send to your LLM of choice
 const response = await yourLLM(prompt)
-
-// Parse the response into durag config
 const config = parseAIConfig(response)
-
-// Run durag with AI's configuration
 const result = await durag(csv, aiConfigToDurag(config))
 ```
 
@@ -162,8 +209,6 @@ const strategy = await yourLLM(
 | Deterministic | No | Yes | Yes |
 | Actionable output | Yes | Generic | Yes |
 
-The LLM can't read 100K rows. durag can, but its text output is generic. Together: durag compresses the data, AI reasons about the compressed context. Each does what the other can't.
-
 ## Configuration
 
 ```js
@@ -177,17 +222,15 @@ const result = await durag(csv, {
 })
 ```
 
-## Drop-in Widget
+## Additional APIs
 
-For a complete UI with no code:
+**`ask(question, result)`** — Natural language question answering over durag output. Uses a polarity system that reads column names to determine if high is good or bad, then scores every row against the question's intent. Returns a count, confidence score, reasons, and suggested action.
 
-```js
-import { mount } from 'durag'
+**`enrich(result)`** — Intelligence layer. Auto-detects outcome column, computes Pearson correlation between every numeric column and the outcome, ranks features by correlation strength, and detects compound signals ("low NPS + high support tickets = 2.5x delinquent rate").
 
-mount('#app')
-```
+**`merge(sources)`** — Combine multiple CSVs by a shared key column, then run analysis on the unified dataset.
 
-Renders: upload screen → tuning screen (configure outcome, revenue, identity columns) → dashboard with True Signal section, intelligence, segments, ask bar, customer table, and optional 3D constellation explorer. Includes light/dark mode.
+**`mount('#app')`** — Drop-in widget. Renders a complete UI with upload, tuning, dashboard, segments, ask bar, customer table, and optional 3D constellation explorer.
 
 ## What's Inside
 
@@ -195,11 +238,12 @@ Renders: upload screen → tuning screen (configure outcome, revenue, identity c
 durag/
 ├── src/
 │   ├── engine/
-│   │   ├── signal.js      ← findPattern() — true signal detection
-│   │   ├── ask.js         ← ask() — natural language polarity scoring
+│   │   ├── pipeline.js    ← durag() — discovery mode orchestrator
+│   │   ├── signal.js      ← findPattern() — signal mode detection
+│   │   ├── ask.js         ← ask() — natural language scoring
 │   │   ├── intelligence.js ← enrich() — correlation, compounds
 │   │   ├── ai-tune.js     ← AI configuration helpers
-│   │   ├── pipeline.js    ← durag() — full pipeline orchestrator
+│   │   ├── merge.js       ← multi-source data fusion
 │   │   ├── umap.js        ← dimensionality reduction
 │   │   ├── kmeans.js      ← seeded K-means++ clustering
 │   │   ├── normalizer.js  ← column profiling + normalization
@@ -210,93 +254,44 @@ durag/
 │       ├── index.js       ← mount() — drop-in widget
 │       └── styles.js      ← scoped CSS
 ├── dist/
-│   ├── durag.esm.js       ← ES module (37KB)
-│   └── durag.umd.js       ← UMD bundle
+│   ├── durag.esm.js       ← ES module
+│   ├── durag.umd.js       ← UMD bundle
+│   ├── engine.esm.js      ← Engine-only (no UI)
+│   └── engine.umd.js      ← Engine-only UMD
 └── package.json
 ```
 
-## Real Results — AI-Tuned, 5 Datasets
+## Real Results
 
-Every number below was produced by one AI call (configuration) + one `findPattern()` call (detection). No hardcoded thresholds. The AI picked the outcome, the bad value, and the clustering features. durag found the patterns.
+### IBM Telco Customer Churn (7,043 customers)
+
+**Discovery mode** found 4 natural segments without knowing what churn is. **Signal mode** then identified 248 pre-signal customers matching the churn profile — newer customers paying higher monthly charges who haven't left yet.
+
+### AI-Tuned, 5 Industries
 
 | Dataset | AI's outcome choice | Known bad | Pre-signal found | Top signal |
 |---|---|---|---|---|
-| **Stripe** | `delinquent = true` | 65 | **71** | NPS 1.1σ apart, logins 0.9σ, tickets 0.6σ |
-| **SaaS Usage** | `last_login_days > 30` | 108 | **35** | Login days 2.2σ apart, NPS 1.9σ, logins_7d 1.2σ |
-| **Ecommerce** | `days_since_last_order > 180` | 156 | **22** | Days since order 2.0σ, orders_90d 1.2σ, categories 1.2σ |
-| **HubSpot** | `days_since_last_activity > 180` | 119 | **25** | Activity days 2.1σ, email opens 1.2σ, clicks 1.2σ |
-| **Fintech** | `overdraft_count_12m > 3` | 67 | **11** | Overdrafts 2.5σ, credit score 1.5σ, support calls 1.4σ |
+| **Stripe** | `delinquent = true` | 65 | **71** | NPS 1.1 std apart |
+| **SaaS Usage** | `last_login_days > 30` | 108 | **35** | Login days 2.2 std apart |
+| **Ecommerce** | `days_since_last_order > 180` | 156 | **22** | Days since order 2.0 std apart |
+| **HubSpot** | `days_since_last_activity > 180` | 119 | **25** | Activity days 2.1 std apart |
+| **Fintech** | `overdraft_count_12m > 3` | 67 | **11** | Overdrafts 2.5 std apart |
 
-**71, 35, 22, 25, 11.** Five unique numbers from five different datasets. Each one is the real count of people who match the bad outcome profile but haven't triggered yet.
-
-What the AI configured per industry:
-- **Stripe**: Binary outcome, obvious. Clustered on MRR, products, NPS, contact days, tickets.
-- **SaaS**: No binary column existed — AI created a proxy (`last_login_days > 30`). Clustered on behavioral metrics only.
-- **Ecommerce**: AI set a 180-day lapse threshold. Found 22 customers about to go dark from a base of 500.
-- **HubSpot**: Same proxy strategy — `days_since_last_activity > 180`. Found 25 dead leads with deal value still on the books.
-- **Fintech**: AI picked overdraft count > 3 as financial distress. Found 11 accounts spiraling — with specific credit scores and support call patterns.
-
-Sample output (Fintech, 11 pre-signal customers):
-```
-Henry Miller      score=69%  low credit score (617 — bad avg: 592, good avg: 715)
-Matthew Sanchez   score=68%  low credit score (619 — bad avg: 592, good avg: 715)
-Ava Clark         score=67%  low credit score (639 — bad avg: 592, good avg: 715)
-Leo Wright        score=67%  high support calls (14 — bad avg: 8, good avg: 3)
-Nathan Ramirez    score=65%  low credit score (562 — bad avg: 592, good avg: 715)
-```
-
-## Real Data: IBM Telco Customer Churn
-
-Tested on [IBM's Telco Customer Churn dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) — 7,043 real customers, not synthetic. No configuration. Three lines of code.
-
-```
-7,043 customers, 27% churned (1,869)
-
-findPattern found 248 pre-signal customers.
-
-Signals:
-  tenure is lower in target group (18 vs 38 months) — 0.8σ apart
-  TotalCharges is lower in target group ($1,532 vs $2,555) — 0.5σ apart
-  MonthlyCharges is higher in target group ($74 vs $61) — 0.4σ apart
-
-Top match: customer 0439-IFYUN
-  score=88%, tenure=18mo, monthly=$74.70, total=$1,294.60
-```
-
-248 real customers who look like the 1,869 who already churned but haven't left yet. The signals make business sense — newer customers paying more per month are the highest risk. That pattern wasn't labeled, it was found.
+Five datasets, five unique counts. Each one is the real number of people matching the bad profile who haven't triggered yet.
 
 ## When durag Works Well
 
-durag performs best when the data has:
-
-**Numeric behavioral columns with variance.** Metrics like MRR, logins, NPS, support tickets, tenure — values that spread across a range and behave differently for different outcomes. The Telco dataset has tenure (0-72 months), monthly charges ($18-$118), total charges ($18-$8,684). Wide ranges, clear separation between churned and retained.
-
-**A clear outcome column.** Binary is best — churned/retained, delinquent/current, converted/not. findPattern needs a column to split on. If your data has one, durag lights up. If it doesn't, the AI tuning module can create a proxy from a numeric column (e.g., `last_login_days > 30`).
-
-**At least 3-4 numeric columns.** More dimensions = more ways to distinguish target from base. The Telco dataset has 4 usable numeric columns and found 4 signals. The Fintech dataset had 10+ and found stronger separation.
-
-**Hundreds of rows minimum.** findPattern computes averages per group. With 20 rows split into 5 target and 15 base, the averages are noisy. With 500+, they stabilize. The Telco dataset at 7,043 rows produced clean, confident results.
+- Numeric behavioral columns with variance (MRR, logins, NPS, tenure, charges)
+- Clear binary outcomes for signal mode (churned/retained, delinquent/current)
+- 500+ rows with 3+ numeric columns
+- Cross-source patterns when merging multiple CSVs
 
 ## When durag Struggles
 
-**Mostly categorical data.** If your columns are `plan`, `region`, `status`, `type` with few numeric values, findPattern has little to compute distances on. The RavenStack SaaS dataset had mostly categorical columns and findPattern returned 0 signals.
-
-**No clear outcome column.** If the data doesn't indicate what success or failure looks like, findPattern can't learn a profile. The AI tuning module helps by creating proxies, but the proxy is only as good as the threshold chosen.
-
-**Columns with no variance.** If everyone has the same NPS score or the same number of products, that column can't distinguish groups. durag auto-skips columns with low separation (<0.2 std devs) but if all columns are flat, nothing emerges.
-
-**Non-standard column names.** The polarity engine and ask() function read column names to infer meaning. `metadata_nps_score` works. `field_47` doesn't. AI tuning mitigates this but the zero-config experience degrades with opaque column names.
-
-## Additional Datasets Tested
-
-- Workspace analytics (seats, messages, admin activity)
-- Marketplace sellers (listings, ratings, revenue)
-- Wealth management clients (portfolio, meetings, AUM)
-- EdTech learners (courses, quiz scores, completion)
-- Healthcare patient engagement (appointments, adherence, no-shows)
-- Denver nonprofit member data (food pantry, counseling, crisis events)
-
-Same engine, different data, different patterns every time.
+- Mostly categorical data (plan names, regions, statuses without numeric metrics)
+- No clear outcome column for signal mode (discovery mode still works)
+- Under 50 rows — averages are unreliable
+- Opaque column names like `field_47` — suggest AI tuning
 
 ## License
 
