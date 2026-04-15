@@ -245,6 +245,48 @@ Leo Wright        score=67%  high support calls (14 — bad avg: 8, good avg: 3)
 Nathan Ramirez    score=65%  low credit score (562 — bad avg: 592, good avg: 715)
 ```
 
+## Real Data: IBM Telco Customer Churn
+
+Tested on [IBM's Telco Customer Churn dataset](https://www.kaggle.com/datasets/blastchar/telco-customer-churn) — 7,043 real customers, not synthetic. No configuration. Three lines of code.
+
+```
+7,043 customers, 27% churned (1,869)
+
+findPattern found 248 pre-signal customers.
+
+Signals:
+  tenure is lower in target group (18 vs 38 months) — 0.8σ apart
+  TotalCharges is lower in target group ($1,532 vs $2,555) — 0.5σ apart
+  MonthlyCharges is higher in target group ($74 vs $61) — 0.4σ apart
+
+Top match: customer 0439-IFYUN
+  score=88%, tenure=18mo, monthly=$74.70, total=$1,294.60
+```
+
+248 real customers who look like the 1,869 who already churned but haven't left yet. The signals make business sense — newer customers paying more per month are the highest risk. That pattern wasn't labeled, it was found.
+
+## When durag Works Well
+
+durag performs best when the data has:
+
+**Numeric behavioral columns with variance.** Metrics like MRR, logins, NPS, support tickets, tenure — values that spread across a range and behave differently for different outcomes. The Telco dataset has tenure (0-72 months), monthly charges ($18-$118), total charges ($18-$8,684). Wide ranges, clear separation between churned and retained.
+
+**A clear outcome column.** Binary is best — churned/retained, delinquent/current, converted/not. findPattern needs a column to split on. If your data has one, durag lights up. If it doesn't, the AI tuning module can create a proxy from a numeric column (e.g., `last_login_days > 30`).
+
+**At least 3-4 numeric columns.** More dimensions = more ways to distinguish target from base. The Telco dataset has 4 usable numeric columns and found 4 signals. The Fintech dataset had 10+ and found stronger separation.
+
+**Hundreds of rows minimum.** findPattern computes averages per group. With 20 rows split into 5 target and 15 base, the averages are noisy. With 500+, they stabilize. The Telco dataset at 7,043 rows produced clean, confident results.
+
+## When durag Struggles
+
+**Mostly categorical data.** If your columns are `plan`, `region`, `status`, `type` with few numeric values, findPattern has little to compute distances on. The RavenStack SaaS dataset had mostly categorical columns and findPattern returned 0 signals.
+
+**No clear outcome column.** If the data doesn't indicate what success or failure looks like, findPattern can't learn a profile. The AI tuning module helps by creating proxies, but the proxy is only as good as the threshold chosen.
+
+**Columns with no variance.** If everyone has the same NPS score or the same number of products, that column can't distinguish groups. durag auto-skips columns with low separation (<0.2 std devs) but if all columns are flat, nothing emerges.
+
+**Non-standard column names.** The polarity engine and ask() function read column names to infer meaning. `metadata_nps_score` works. `field_47` doesn't. AI tuning mitigates this but the zero-config experience degrades with opaque column names.
+
 ## Additional Datasets Tested
 
 - Workspace analytics (seats, messages, admin activity)
