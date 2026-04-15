@@ -2,21 +2,21 @@
 
 **where patterns emerge.**
 
-The pattern engine for your data. Finds segments, computes insights, answers questions — from any CSV, any size, in milliseconds.
+A pattern detection engine for tabular data. Feed it rows and columns from any source — Stripe, HubSpot, Postgres, CSV — and it finds the patterns you didn't know to look for.
 
-Alone, it's fast and free. With AI, it's accurate at scale. Together, they do what neither can alone.
+No AI required. No backend. No API keys. Three lines of code to real results. Optionally pair with any LLM for automatic configuration and natural language strategy.
 
-## The Problem
+## What It Does
 
-| | Raw data → LLM | durag alone | AI + durag |
-|---|---|---|---|
-| 500 rows | Works. $0.60. 2 min. | Works. Free. Instant. | Works. $0.02. Instant. |
-| 50K rows | Can't. Context limit. | Works. Free. 30 sec. | Works. $0.02. 30 sec. |
-| 500K rows | Impossible. | Works. Free. 5 min. | Works. $0.02. 5 min. |
-| Deterministic | No | Yes | Yes |
-| Actionable output | Yes | Mediocre | Yes |
+durag takes your raw data and answers one question: **who in this dataset looks like they're about to have a bad outcome, but hasn't yet?**
 
-AI can't read 100K rows. durag can, but its output is generic. Together: durag compresses 100K rows into 800 tokens of structured context. AI reads 800 tokens and generates strategy with specific names, numbers, and timelines.
+It does this by:
+
+1. **Learning what "bad" looks like** from your existing outcomes (churned customers, failed payments, dropped users)
+2. **Profiling the difference** between bad and good across every column — which metrics separate them, by how much
+3. **Scanning everyone else** for people who match the bad profile but haven't triggered yet
+
+The output is a specific list of people with scores and reasons. Not a percentile. Not a statistical cutoff. A real count that changes based on what the data actually contains.
 
 ## Install
 
@@ -24,90 +24,212 @@ AI can't read 100K rows. durag can, but its output is generic. Together: durag c
 npm install durag
 ```
 
-## Quick Start — Drop-in Widget
+## Three Lines to Results
 
 ```js
-import { mount } from 'durag'
-mount('#app')
+import { parseCSV, findPattern } from 'durag'
+
+const { rows, headers } = parseCSV(csvString)
+
+const numericCols = headers.filter(h => {
+  const nums = rows.map(r => parseFloat(r[h])).filter(v => !isNaN(v))
+  return nums.length > rows.length * 0.5
+})
+
+const pattern = findPattern(rows, numericCols, 'delinquent', 'true')
 ```
 
-One line. Upload screen → tuning → dashboard with segments, insights, and ask bar.
-
-## Quick Start — Engine Only
+What comes back:
 
 ```js
-import { durag, ask } from 'durag'
+{
+  atRiskCount: 6,           // not 75. not a percentile. six real people.
+  badCount: 14,             // known bad outcomes in your data
+  goodCount: 486,           // everyone else
+  
+  signals: [                // what separates bad from good
+    { column: "support tickets", separation: 5.0, badAvg: 26, goodAvg: 3,
+      insight: "support tickets is higher in bad outcomes (26 vs 3) — 5.0 std devs apart" },
+    { column: "nps score", separation: 3.9, badAvg: 2, goodAvg: 8,
+      insight: "nps score is lower in bad outcomes (2 vs 8) — 3.9 std devs apart" },
+  ],
+  
+  atRisk: [                 // the 6 people, with match scores and reasons
+    { name: "Titan Platform", _signalScore: 77,
+      _signalReasons: ["low mrr (3161 — bad avg: 3294, good avg: 3868)"] },
+  ],
 
+  message: "6 customers match the profile of the 14 known bad outcomes
+            but haven't triggered yet. These are your true pre-signals."
+}
+```
+
+The number 6 is real because it comes from pattern matching against known outcomes, not from a formula. Run it on a different dataset and you'll get a different number — 0 if nobody matches, 163 if half your base is sliding.
+
+## How findPattern Works
+
+**Step 1: Split the data.** Your outcome column (e.g., `delinquent`) divides rows into two groups — bad (14 customers) and good (486 customers).
+
+**Step 2: Profile each group.** For every numeric column, compute the average for bad vs good. Support tickets: bad avg 26, good avg 3. NPS: bad avg 2, good avg 8. This creates a "fingerprint" of what bad looks like.
+
+**Step 3: Rank columns by separation.** Measure how many standard deviations apart the bad and good averages are. Support tickets: 5.0 std devs (massive gap). Products: 0.3 std devs (barely different). Only columns with real separation matter.
+
+**Step 4: Score everyone in the good group.** For each non-bad customer, compute how similar their values are to the bad profile vs the good profile. Someone with 20 tickets and NPS 3 looks like the bad group. Someone with 1 ticket and NPS 9 doesn't.
+
+**Step 5: Return the matches.** Customers above the similarity threshold (default 0.7) are your pre-signals. If there's no natural group above the threshold, durag says so — "no customers closely match the bad outcome profile."
+
+## The Full Pipeline
+
+For deeper analysis, durag also offers clustering, dimensionality reduction, and a question-answering engine:
+
+```js
+import { durag, ask, enrich, findPattern } from 'durag'
+
+// Full pipeline: normalize → UMAP → cluster → analyze
 const result = await durag(csvString, { seed: 42 })
+
+// Ask natural language questions
 const answer = ask("who's about to churn?", result)
-// → { count: 14, confidence: 87, insight: "14 customers (3%) match...", reasons: [...] }
+// → { count: 14, confidence: 87%, reasons: [...], suggestedAction: "..." }
+
+// Correlation-based intelligence
+const enriched = enrich(result)
+// → { intelligence: { outcomeCol, featureImportance, compounds } }
+
+// True signal detection
+const pattern = findPattern(result.rows, result.numericCols, 'delinquent', 'true')
+// → { atRiskCount: 6, signals: [...], atRisk: [...] }
 ```
 
-## Quick Start — AI + durag (the unlock)
+### What each function does:
+
+**`durag(csv, config)`** — The full pipeline. Parses CSV, normalizes columns (auto-picks min-max, robust, binary, or ordinal per column), runs UMAP for 3D dimensionality reduction, clusters with seeded K-means++, auto-labels clusters by z-score analysis, generates plain-text insights. Returns rows, clusters, embedding, and metadata.
+
+**`ask(question, result)`** — Natural language question answering. Uses a polarity system that reads column names to determine if high is good or bad for each column, then scores every row against the question's intent. "Who's about to churn?" scores rows where negative-polarity columns are extreme. Returns a count, confidence score, reasons, and suggested action. Adaptive threshold: returns 14 when there's a tight cluster, 75 when the distribution is smooth (statistical outliers, not a discovery).
+
+**`enrich(result)`** — Intelligence layer. Auto-detects the outcome column, computes Pearson correlation between every numeric column and the outcome, ranks features by correlation strength, and detects compound signals ("low NPS + high support tickets → 2.5x delinquent rate"). Uses the `simple-statistics` package for proper statistical computation.
+
+**`findPattern(rows, numericCols, outcomeCol, badValue)`** — True signal detection. Learns the profile of known bad outcomes, scores every good customer on similarity to that profile, returns the ones who match. Every result count is unique to the data — no percentile defaults.
+
+## With AI (Optional)
+
+durag works alone. But paired with any LLM, it gets smarter.
+
+### AI configures durag
+
+The AI reads your column names (not your data) and fills in the configuration — which column is the outcome, what value is bad, which columns to cluster on, what risk thresholds to set. One API call, ~200 tokens, ~$0.01.
 
 ```js
-import { durag, ask, enrich } from 'durag'
-import Anthropic from '@anthropic-ai/sdk'
+import { profileForAI, buildTunePrompt, parseAIConfig, aiConfigToDurag, durag } from 'durag'
 
-const csv = await fetch('/api/customers').then(r => r.text())
+// Generate a data profile (column names + types + ranges)
+const profile = profileForAI(csv)
 
-// 1. AI configures durag (one call, ~200 tokens)
-const client = new Anthropic()
-const config = await client.messages.create({
-  model: 'claude-sonnet-4-20250514',
-  max_tokens: 300,
-  messages: [{
-    role: 'user',
-    content: `Columns: ${headers.join(', ')}\nReturn JSON: {outcomeColumn, badValue, revenueColumn, excludeColumns, suggestedQuestions}`
-  }]
-})
+// Build the prompt for any LLM
+const prompt = buildTunePrompt(profile)
 
-// 2. durag runs the math (free, instant, deterministic)
-const result = await durag(csv, { seed: 42, ignore: config.excludeColumns })
-const enriched = enrich(result)
+// Send to your LLM of choice
+const response = await yourLLM(prompt)
 
-// 3. AI reads structured context (one call, ~800 tokens instead of 100K)
-const strategy = await client.messages.create({
-  model: 'claude-sonnet-4-20250514',
-  max_tokens: 600,
-  messages: [{
-    role: 'user',
-    content: `Analysis of ${result.meta.rowCount} customers:\n${JSON.stringify(enriched.intelligence)}\nWhat should we do this week?`
-  }]
-})
+// Parse the response into durag config
+const config = parseAIConfig(response)
+
+// Run durag with AI's configuration
+const result = await durag(csv, aiConfigToDurag(config))
 ```
 
-Two AI calls ($0.02). One durag pass (free). 100K rows compressed to 800 tokens. Specific, actionable strategy with dollar amounts and timelines.
+### AI reads durag's output
 
-## What durag computes
+durag compresses your data into structured context. 500 rows of CSV (~10,000 tokens) becomes ~800 tokens of clusters, signals, and scores. Feed that to an LLM and it generates specific strategy:
 
-- **Normalization** — auto-profiles every column, picks the right scaling strategy
-- **UMAP** — dimensionality reduction, finds which dimensions actually matter
-- **K-means++** — clusters similar records, seeded for deterministic output
-- **Correlation polarity** — computes which columns drive the outcome (not guessed from names)
-- **Compound signals** — "low NPS + high support tickets → 2.5x delinquent rate"
-- **ask()** — natural language questions scored by polarity with adaptive thresholds
-- **enrich()** — outcome detection, feature importance, compound signal detection
+```js
+const pattern = findPattern(result.rows, result.numericCols, 'delinquent', 'true')
+
+const strategy = await yourLLM(
+  `Analysis of ${result.rows.length} customers:\n${JSON.stringify(pattern)}\nWhat should we do this week?`
+)
+// → "Schedule immediate calls with these 6 accounts by Friday.
+//    $7,203 MRR at risk. Start with Titan Platform — highest match score."
+```
+
+### Why both?
+
+| | LLM alone | durag alone | AI + durag |
+|---|---|---|---|
+| 500 rows | Works. $0.60. Slow. | Works. Free. Instant. | Works. $0.02. Instant. |
+| 50K rows | Can't. Context limit. | Works. Free. | Works. $0.02. |
+| 5M rows | Impossible. | Works. Seconds. | Works. $0.02. |
+| Deterministic | No | Yes | Yes |
+| Actionable output | Yes | Generic | Yes |
+
+The LLM can't read 100K rows. durag can, but its text output is generic. Together: durag compresses the data, AI reasons about the compressed context. Each does what the other can't.
 
 ## Configuration
 
 ```js
 const result = await durag(csv, {
-  seed: 42,           // deterministic output
-  k: 8,               // override cluster count
-  features: ['mrr', 'logins', 'nps'],  // whitelist columns
-  ignore: ['id', 'email'],              // blacklist columns
+  seed: 42,              // deterministic output (same input → same result)
+  k: 8,                  // number of clusters (default: auto)
+  features: ['mrr', 'logins', 'nps'],   // only use these columns
+  ignore: ['id', 'email', 'created'],    // skip these columns
+  nNeighbors: 15,        // UMAP neighbors (default: auto from row count)
+  minDist: 0.1,          // UMAP spread (default: 0.1)
 })
 ```
 
-## Tuning (UI)
+## Drop-in Widget
 
-The drop-in widget includes a tuning screen after CSV upload:
-- Select outcome column (what you're trying to prevent)
-- Set bad value or numeric threshold
-- Choose revenue and identity columns
-- Exclude irrelevant columns
-- Or skip and auto-detect everything
+For a complete UI with no code:
+
+```js
+import { mount } from 'durag'
+
+mount('#app')
+```
+
+Renders: upload screen → tuning screen (configure outcome, revenue, identity columns) → dashboard with True Signal section, intelligence, segments, ask bar, customer table, and optional 3D constellation explorer. Includes light/dark mode.
+
+## What's Inside
+
+```
+durag/
+├── src/
+│   ├── engine/
+│   │   ├── signal.js      ← findPattern() — true signal detection
+│   │   ├── ask.js         ← ask() — natural language polarity scoring
+│   │   ├── intelligence.js ← enrich() — correlation, compounds
+│   │   ├── ai-tune.js     ← AI configuration helpers
+│   │   ├── pipeline.js    ← durag() — full pipeline orchestrator
+│   │   ├── umap.js        ← dimensionality reduction
+│   │   ├── kmeans.js      ← seeded K-means++ clustering
+│   │   ├── normalizer.js  ← column profiling + normalization
+│   │   ├── analyzer.js    ← cluster analysis + insight generation
+│   │   ├── parser.js      ← CSV parser
+│   │   └── rng.js         ← seeded PRNG (deterministic randomness)
+│   └── ui/
+│       ├── index.js       ← mount() — drop-in widget
+│       └── styles.js      ← scoped CSS
+├── dist/
+│   ├── durag.esm.js       ← ES module (37KB)
+│   └── durag.umd.js       ← UMD bundle
+└── package.json
+```
+
+## Tested On
+
+- Stripe customer exports (MRR, NPS, delinquent, plans)
+- HubSpot contacts (deals, lifecycle, activity)
+- SaaS product usage (logins, features, API calls)
+- Ecommerce customers (orders, spend, loyalty)
+- Fintech accounts (balances, transactions, overdrafts)
+- Workspace analytics (seats, messages, admin activity)
+- Marketplace sellers (listings, ratings, revenue)
+- Wealth management clients (portfolio, meetings, AUM)
+- EdTech learners (courses, quiz scores, completion)
+- Healthcare patient engagement (appointments, adherence, no-shows)
+- Denver nonprofit member data (food pantry, counseling, crisis events)
+
+Same engine, different data, different patterns every time.
 
 ## License
 
