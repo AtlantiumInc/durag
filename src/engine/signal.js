@@ -5,41 +5,92 @@
  *
  * Works for any boolean split — churn detection, upsell targeting,
  * loyalty identification, fraud flagging, or any custom outcome.
+ *
+ * Automatically encodes categorical columns as binary features
+ * so patterns like "Contract = Month-to-month" are detected.
  */
+
+/**
+ * One-hot encode categorical columns into binary features.
+ * "Contract" with values ["Month-to-month", "One year", "Two year"]
+ * becomes three columns: Contract_Month-to-month (0/1), etc.
+ */
+function expandCategoricals(rows, headers, outcomeCol, maxUnique = 10) {
+  const expanded = rows.map(r => ({ ...r }));
+  const newCols = [];
+  const skipPatterns = ['id', 'email', 'name', 'customer', 'phone', 'address'];
+
+  for (const h of headers) {
+    if (h === outcomeCol) continue;
+    const lc = h.toLowerCase();
+    if (skipPatterns.some(p => lc.includes(p))) continue;
+
+    // Check if this column is categorical (not numeric)
+    const vals = rows.map(r => r[h]).filter(v => v !== '' && v !== null && v !== undefined);
+    const nums = vals.map(v => parseFloat(v)).filter(v => !isNaN(v));
+    if (nums.length > vals.length * 0.5) continue; // already numeric, skip
+
+    const unique = [...new Set(vals)];
+    if (unique.length < 2 || unique.length > maxUnique) continue;
+
+    // Create a binary column for each unique value
+    for (const uv of unique) {
+      const colName = h + '_is_' + String(uv).replace(/[^a-zA-Z0-9]/g, '_');
+      newCols.push(colName);
+      for (let i = 0; i < expanded.length; i++) {
+        expanded[i][colName] = String(rows[i][h]) === String(uv) ? 1 : 0;
+      }
+    }
+  }
+
+  return { rows: expanded, newCols };
+}
 
 /**
  * Find records that match the profile of a target group but aren't in it yet.
  *
  * @param {object[]} rows - All rows
- * @param {string[]} numericCols - Numeric column names
- * @param {string} outcomeCol - The column to split on (e.g., 'delinquent', 'converted', 'vip')
- * @param {string} targetValue - The value that defines the target group (e.g., 'true', 'churned', 'yes')
+ * @param {string[]} numericCols - Numeric column names (auto-expanded with categoricals)
+ * @param {string} outcomeCol - The column to split on
+ * @param {string} targetValue - The value that defines the target group
  * @param {object} opts - Options
  * @param {number} opts.threshold - Match threshold (0-1, default 0.7)
+ * @param {string[]} opts.allHeaders - All column headers (enables categorical encoding)
  * @returns {object} { matching, targetProfile, baseProfile, signals, message }
  */
 export function findPattern(rows, numericCols, outcomeCol, targetValue, opts = {}) {
   const threshold = opts.threshold || 0.7;
+  const allHeaders = opts.allHeaders || null;
+
+  // Expand categoricals if all headers provided
+  let workingRows = rows;
+  let workingCols = [...numericCols];
+
+  if (allHeaders) {
+    const { rows: expanded, newCols } = expandCategoricals(rows, allHeaders, outcomeCol);
+    workingRows = expanded;
+    workingCols = [...numericCols, ...newCols];
+  }
 
   // Split into target and base groups
-  const targetRows = rows.filter(r => String(r[outcomeCol] || '').toLowerCase() === String(targetValue).toLowerCase());
-  const baseRows = rows.filter(r => String(r[outcomeCol] || '').toLowerCase() !== String(targetValue).toLowerCase());
+  const targetRows = workingRows.filter(r => String(r[outcomeCol] || '').toLowerCase() === String(targetValue).toLowerCase());
+  const baseRows = workingRows.filter(r => String(r[outcomeCol] || '').toLowerCase() !== String(targetValue).toLowerCase());
 
   if (targetRows.length === 0) return { matching: [], matchCount: 0, targetCount: 0, baseCount: baseRows.length, targetProfile: {}, baseProfile: {}, signals: [], message: 'No records found with the target value.' };
   if (baseRows.length === 0) return { matching: [], matchCount: 0, targetCount: targetRows.length, baseCount: 0, targetProfile: {}, baseProfile: {}, signals: [], message: 'All records have the target value.' };
 
-  // Build profiles: average of each numeric column for target vs base
+  // Build profiles
   const targetProfile = {};
   const baseProfile = {};
   const globalProfile = {};
   const colStats = {};
 
-  for (const col of numericCols) {
+  for (const col of workingCols) {
     if (col === outcomeCol) continue;
 
     const targetVals = targetRows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
     const baseVals = baseRows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
-    const allVals = rows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
+    const allVals = workingRows.map(r => parseFloat(r[col])).filter(v => !isNaN(v));
 
     if (targetVals.length < 3 || baseVals.length < 3) continue;
 
@@ -53,9 +104,9 @@ export function findPattern(rows, numericCols, outcomeCol, targetValue, opts = {
 
     const separation = Math.abs(targetAvg - baseAvg) / globalStd;
 
-    targetProfile[col] = { avg: Math.round(targetAvg * 10) / 10 };
-    baseProfile[col] = { avg: Math.round(baseAvg * 10) / 10 };
-    globalProfile[col] = { avg: Math.round(globalAvg * 10) / 10 };
+    targetProfile[col] = { avg: Math.round(targetAvg * 1000) / 1000 };
+    baseProfile[col] = { avg: Math.round(baseAvg * 1000) / 1000 };
+    globalProfile[col] = { avg: Math.round(globalAvg * 1000) / 1000 };
     colStats[col] = { targetAvg, baseAvg, globalAvg, globalStd, mn, mx, range, separation };
   }
 
@@ -66,9 +117,9 @@ export function findPattern(rows, numericCols, outcomeCol, targetValue, opts = {
 
   if (rankedCols.length === 0) return { matching: [], matchCount: 0, targetCount: targetRows.length, baseCount: baseRows.length, targetProfile, baseProfile, globalProfile, signals: [], message: 'No columns significantly distinguish the target group from the rest.' };
 
-  const topCols = rankedCols.slice(0, 8);
+  const topCols = rankedCols.slice(0, 12); // more cols now that we have categoricals
 
-  // Score each base record on similarity to target profile
+  // Score each base record
   const scored = baseRows.map(row => {
     let similarity = 0;
     let maxSim = 0;
@@ -88,14 +139,29 @@ export function findPattern(rows, numericCols, outcomeCol, targetValue, opts = {
       maxSim += weight;
 
       if (colSim > 0.6) {
-        const clean = col.replace(/^metadata[_.]/, '').replace(/_/g, ' ');
+        // Clean up one-hot column names for display
+        let clean = col.replace(/^metadata[_.]/, '').replace(/_/g, ' ');
+        if (col.includes('_is_')) {
+          const parts = col.split('_is_');
+          clean = parts[0].replace(/_/g, ' ') + ' = ' + parts[1].replace(/_/g, ' ');
+        }
         const direction = stats.targetAvg > stats.baseAvg ? 'high' : 'low';
-        reasons.push(`${direction} ${clean} (${Math.round(val)} — target avg: ${Math.round(stats.targetAvg)}, base avg: ${Math.round(stats.baseAvg)})`);
+        const pct = col.includes('_is_') ? (Math.round(stats.targetAvg * 100) + '% in target vs ' + Math.round(stats.baseAvg * 100) + '% in base') : (Math.round(val) + ' — target avg: ' + Math.round(stats.targetAvg) + ', base avg: ' + Math.round(stats.baseAvg));
+        reasons.push(`${direction} ${clean} (${pct})`);
       }
     }
 
     const score = maxSim > 0 ? similarity / maxSim : 0;
-    return { row, score, reasons: reasons.slice(0, 4) };
+    // Map back to original row (without one-hot columns)
+    const originalRow = rows.find(r => {
+      // Match by checking all original columns
+      for (const h of numericCols.slice(0, 3)) {
+        if (String(r[h]) !== String(row[h])) return false;
+      }
+      return true;
+    }) || row;
+
+    return { row: originalRow, score, reasons: reasons.slice(0, 4) };
   });
 
   scored.sort((a, b) => b.score - a.score);
@@ -103,7 +169,6 @@ export function findPattern(rows, numericCols, outcomeCol, targetValue, opts = {
   // Find matches above threshold
   let matching = scored.filter(s => s.score >= threshold);
 
-  // Soft fallback if no one passes hard threshold
   if (matching.length === 0 && scored.length > 0 && scored[0].score > 0.4) {
     const softThreshold = scored[0].score * 0.9;
     const softResults = scored.filter(s => s.score >= softThreshold);
@@ -114,15 +179,23 @@ export function findPattern(rows, numericCols, outcomeCol, targetValue, opts = {
 
   // Build signal descriptions
   const signals = topCols.map(([col, stats]) => {
-    const clean = col.replace(/^metadata[_.]/, '').replace(/_/g, ' ');
+    let clean = col.replace(/^metadata[_.]/, '').replace(/_/g, ' ');
+    if (col.includes('_is_')) {
+      const parts = col.split('_is_');
+      clean = parts[0].replace(/_/g, ' ') + ' = ' + parts[1].replace(/_/g, ' ');
+    }
     const direction = stats.targetAvg > stats.baseAvg ? 'higher' : 'lower';
+    const detail = col.includes('_is_')
+      ? `${clean}: ${Math.round(stats.targetAvg * 100)}% in target vs ${Math.round(stats.baseAvg * 100)}% in base — ${stats.separation.toFixed(1)} std devs`
+      : `${clean} is ${direction} in target group (${Math.round(stats.targetAvg)} vs ${Math.round(stats.baseAvg)}) — ${stats.separation.toFixed(1)} std devs apart`;
+
     return {
       column: clean,
       rawColumn: col,
       separation: Math.round(stats.separation * 100) / 100,
-      targetAvg: Math.round(stats.targetAvg * 10) / 10,
-      baseAvg: Math.round(stats.baseAvg * 10) / 10,
-      insight: `${clean} is ${direction} in target group (${Math.round(stats.targetAvg)} vs ${Math.round(stats.baseAvg)}) — ${stats.separation.toFixed(1)} std devs apart`,
+      targetAvg: Math.round(stats.targetAvg * 1000) / 1000,
+      baseAvg: Math.round(stats.baseAvg * 1000) / 1000,
+      insight: detail,
     };
   });
 

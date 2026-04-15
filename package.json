@@ -1,6 +1,6 @@
 {
   "name": "durag",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "where patterns emerge. Drop your data, find the waves.",
   "type": "module",
   "main": "dist/durag.umd.js",
