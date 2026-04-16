@@ -1,7 +1,7 @@
 {
   "name": "durag",
   "version": "0.3.0",
-  "description": "where patterns emerge. Drop your data, find the waves.",
+  "description": "where patterns emerge. Multi-source pattern detection for JavaScript.",
   "type": "module",
   "main": "dist/durag.umd.js",
   "module": "dist/durag.esm.js",
@@ -9,10 +9,6 @@
     ".": {
       "import": "./dist/durag.esm.js",
       "require": "./dist/durag.umd.js"
-    },
-    "./engine": {
-      "import": "./dist/engine.esm.js",
-      "require": "./dist/engine.umd.js"
     }
   },
   "files": [
@@ -22,19 +18,15 @@
   ],
   "scripts": {
     "build": "rollup -c",
-    "dev": "npx serve demo -l 3000",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
     "data",
-    "analytics",
-    "clustering",
-    "segmentation",
-    "umap",
-    "visualization",
-    "insights",
+    "pattern-recognition",
     "csv",
-    "pattern-recognition"
+    "merge",
+    "analytics",
+    "admin-panel"
   ],
   "author": "Atlantium Inc",
   "license": "MIT",
@@ -43,20 +35,9 @@
     "url": "https://github.com/AtlantiumInc/durag.git"
   },
   "homepage": "https://github.com/AtlantiumInc/durag",
-  "peerDependencies": {
-    "three": ">=0.128.0"
-  },
-  "peerDependenciesMeta": {
-    "three": {
-      "optional": true
-    }
-  },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@rollup/plugin-terser": "^0.4.0",
     "rollup": "^4.0.0"
-  },
-  "dependencies": {
-    "simple-statistics": "^7.8.9"
   }
 }
