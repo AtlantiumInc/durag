@@ -199,6 +199,28 @@ export function findPattern(rows, numericCols, outcomeCol, targetValue, opts = {
     };
   });
 
+  // Build summary — one sentence for UI cards
+  let summary;
+  if (matching.length === 0) {
+    summary = `No matches found. The ${targetRows.length} target records don't follow a pattern distinct enough to predict.`;
+  } else {
+    const topSignal = signals[0];
+    const pct = Math.round(matching.length / baseRows.length * 100);
+    let signalText = '';
+    if (topSignal) {
+      if (topSignal.rawColumn.includes('_is_')) {
+        signalText = ` Top signal: ${topSignal.column} (${Math.round(topSignal.targetAvg * 100)}% vs ${Math.round(topSignal.baseAvg * 100)}% baseline).`;
+      } else {
+        const dir = topSignal.targetAvg > topSignal.baseAvg ? 'higher' : 'lower';
+        const ratio = topSignal.targetAvg > topSignal.baseAvg
+          ? (topSignal.targetAvg / (topSignal.baseAvg || 1)).toFixed(1)
+          : (topSignal.baseAvg / (topSignal.targetAvg || 1)).toFixed(1);
+        signalText = ` Top signal: ${topSignal.column} is ${ratio}x ${dir} in the target group.`;
+      }
+    }
+    summary = `${matching.length} records (${pct}% of base) match the target pattern but haven't crossed yet.${signalText}`;
+  }
+
   return {
     matching: matching.map(s => ({
       ...s.row,
@@ -214,6 +236,7 @@ export function findPattern(rows, numericCols, outcomeCol, targetValue, opts = {
     globalProfile,
     signals,
     threshold,
+    summary,
     message: matching.length > 0
       ? `${matching.length} records match the profile of the ${targetRows.length} target records but aren't in the target group yet.`
       : `No records closely match the target profile. The ${targetRows.length} target records may not follow a distinct pattern.`,

@@ -1,3 +1,19 @@
+/**
+ * Parse JSON input — array of objects or JSON string.
+ * Returns { rows, headers } matching parseCSV output shape.
+ */
+export function parseJSON(input) {
+  const data = typeof input === 'string' ? JSON.parse(input) : input;
+  if (!Array.isArray(data) || data.length === 0) throw new Error('Expected a non-empty array of objects');
+  const headers = [...new Set(data.flatMap(r => Object.keys(r)))];
+  const rows = data.map(r => {
+    const obj = {};
+    headers.forEach(h => { obj[h] = r[h] !== undefined && r[h] !== null ? String(r[h]) : ''; });
+    return obj;
+  });
+  return { headers, rows };
+}
+
 export function parseCSV(text) {
   const lines = text.trim().split(/\r?\n/);
   if (lines.length < 2) throw new Error('CSV needs header + data');

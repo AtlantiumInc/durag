@@ -1,6 +1,6 @@
 {
   "name": "durag",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "where patterns emerge. Multi-source pattern detection for JavaScript.",
   "type": "module",
   "main": "dist/durag.umd.js",
